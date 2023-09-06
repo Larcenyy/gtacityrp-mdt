@@ -12,18 +12,18 @@ const Modal = ({children, title, descrip}) => {
                 <h2 style={{fontSize: '15px'}}>{descrip ? descrip : "Aucune donnée"}</h2>
             </div>
             <div className="buttons">
-                {children && (
-                    children.map((child, index) => {
-                        if (child.type === 'div' && child.props.className === 'button') {
-                            return (
-                                <div key={index} className="map">
-                                    {child.props.children}
-                                </div>
-                            );
-                        }
-                        return null;
-                    })
-                )}
+                {/*On utilise Array.isArray(children) avant de faire children.map() pour vérifier que children
+                est bien un tableau car la méthode map() ne peut être utilisée que sur les tableaux.*/}
+                {Array.isArray(children) && children.map((child, index) => {
+                    if (child.type === 'div' && child.props.className === 'button') {
+                        return (
+                            <div key={index} className="map">
+                                {child.props.children}
+                            </div>
+                        );
+                    }
+                    return null;
+                })}
             </div>
         </div>
     )
