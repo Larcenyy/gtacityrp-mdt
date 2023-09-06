@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <title>Title</title>
+    <style>
+        #brandingGTA{
+            background: rgba(77, 77, 77, 0.58);
+            position: absolute;
+            z-index: 999!important;
+            width: max-content;
+            padding: 2px 15px;
+            right: 0;
+            bottom: 0;
+            color: white;
+            font-weight: 7000;
+        }
+
+        .map{
+            height: 360px;
+            width: 55vw;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            right: 23%;
+            outline-style: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="map" class="map">
+    <span id="brandingGTA">GTACITYRP (C)</span>
+</div>
+<script>
+    const SateliteStyle = L.tileLayer('./assets/mapStyles/styleSatelite/{z}/{x}/{y}.jpg', {minZoom: 0,maxZoom: 8,noWrap: true,continuousWorld: false,attribution: 'Online map GTA V',id: 'SateliteStyle map',})
+    const imageBounds = [
+        [100, 200], // Coin supérieur gauche (lat, lng)
+        [-150, -200]  // Coin inférieur droit (lat, lng)
+    ];
+
+    const map = L.map('map', {
+        minZoom: 3, // zoom minimal
+        maxZoom: 5, // Zoom maximal
+        maxNativeZoom: 122, // Je sais pas
+        preferCanvas: true,
+        layers: [SateliteStyle], // Permet + tard de choisir son style de satelite
+        center: [0, 0],
+        zoom: 15,
+        maxBounds: imageBounds,  // Limite de la carte.
+        attributionControl: false, // Retirer les crédits
+    }).setView([0, 0], 1);
+
+</script>
+</body>
+</html>

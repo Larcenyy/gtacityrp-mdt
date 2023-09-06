@@ -1,0 +1,790 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+* {
+    --dark: #142132;
+    --dark-bg-card: #202A38;
+    --dark-bg-img: #1E1E1E;
+    --yellow: #FFCB04;
+    --red: #ED1B22;
+    --green: #24958F;
+    margin: 0;
+    padding: 0;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark);
+    border-radius: 10px;
+}
+
+body {
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 20px 20px;
+    border-bottom: 5px solid var(--yellow);
+}
+
+.header .logo {
+    width: 90px;
+    height: 90px;
+    background-image: url('../../../public/assets/lapd_dac/logo_lapd.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: -80px;
+}
+
+.header .nav {
+    height: 57px;
+    margin-bottom: -22px;
+    overflow: hidden;
+}
+
+.header .nav ul {
+    display: block;
+    list-style: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+    position: relative;
+    top: 10px;
+}
+
+.header .nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.header .nav ul li{
+    display: inline-block;
+    margin: 0 7.5px;
+    font-size: .8em;
+    font-weight: 600;
+    cursor: pointer;
+
+&.active {
+     position: relative;
+     top: 9px;
+ }
+&.active::after {
+     content: "";
+     display: flex;
+     position: relative;
+     top: 6px;
+     left: 33%;
+     width: 18px;
+     height: 6px;
+     background-color: var(--yellow);
+     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+     box-shadow: -2px 16px 11px 14px var(--yellow);
+     transition: box-shadow 0.3s ease-in-out;
+ }
+&:nth-child(2).active::after {
+     left: 23%;
+ }
+&:nth-child(3).active::after {
+     left: 42%;
+ }
+&:nth-child(4).active::after {
+     left: 36%;
+ }
+&:nth-child(5).active::after {
+     left: 38%;
+ }
+&:nth-child(6).active::after {
+     left: 18%;
+ }
+&:nth-child(7).active::after {
+     left: 36%;
+ }
+&.active::before {
+     display: block;
+     content: "";
+     position: relative;
+     width: 100%;
+     height: 30px;
+     top: 43px;
+     margin-top: -43px;
+     border-radius: 60px;
+     background: radial-gradient(50% 50.00% at 50% 50.00%, var(--yellow) 0%, rgba(255, 203, 4, 0.00) 100%);
+     opacity: 0.5;
+ }
+}
+
+.header .title {
+    min-width: 167px;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-align: right;
+}
+
+.header .title .subtitle {
+    font-size: 1em;
+    font-weight: 400;
+    font-family: 'Caveat', cursive;
+}
+
+.account {
+    position: absolute;
+    right: 0;
+    font-size: .9em;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 60px;
+}
+
+.account .welcome .username {
+    font-weight: 700;
+}
+
+.account .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.account .buttons .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: var(--yellow);
+    font-size: .8em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+&:nth-child(1) {
+     color: var(--dark);
+ }
+&:nth-child(2) {
+     background-color: var(--red);
+&:hover {
+     color: var(--dark);
+ }
+}
+
+&:hover {
+     background-color: var(--yellow);
+ }
+}
+
+.app__content {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    padding: 20px 10px 20px 20px;
+    gap: 20px;
+    width: calc(100% - 40px);
+    height: 70%;
+    overflow: hidden;
+    overflow-y: auto;
+
+&::-webkit-scrollbar-thumb {
+     background: rgba(0, 0, 0, 0.459);
+     border-radius: 10px;
+ }
+}
+
+.app__content.app__home .alert__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    padding: 10px;
+    font-size: .8em;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    position: absolute;
+    top: 100px;
+    left: 10rem;
+
+&.stable {
+     background: rgba(55, 217, 208, 0.50);
+ }
+&.safe {
+     background: rgba(255, 203, 4, 0.50);
+ }
+&.warning {
+     background: rgba(243, 129, 60, 0.50);
+ }
+&.alerte {
+     background: rgba(237, 27, 34, 0.50);
+ }
+
+&.reduce {
+     width: 50%;
+     font-size: .6em;
+     border-radius: 10px;
+ }
+}
+
+.app__content.app__home .alert__box .alert__icon {
+    width: 35px;
+    height: 30px;
+    background-image: url('../../../public/assets/lapd_dac/info.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.app__content.app__home .alert__box.reduce .alert__icon {
+    width: 25px;
+    height: 20px;
+}
+
+.app__content.app__home .alert__box .alert__text .title {
+    font-weight: 600;
+}
+
+.app__content .content-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 150px;
+    border-radius: 20px;
+    border: 2px solid var(--yellow);
+    background: #273B4A;
+    overflow: hidden;
+
+&.officers__list {
+     margin-bottom: 20px;
+ }
+}
+
+.app__content .content-item .title-content {
+    display: flex;
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: var(--yellow);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
+    font-weight: 800;
+}
+
+.app__content .content-item .title-content .icon {
+    width: 25px;
+    height: 24px;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+&.icon__agenda-title {
+     background-color: #000;
+     -webkit-mask-image: url('../../../public/assets/lapd_dac/info.svg');
+     mask-image: url('../../../public/assets/lapd_dac/info.svg');
+ }
+
+&.icon__officers__list-title {
+     height: 16px;
+     background-color: #000;
+     -webkit-mask-image: url('../../../public/assets/lapd_dac/online.svg');
+     mask-image: url('../../../public/assets/lapd_dac/online.svg');
+ }
+
+&.icon__agenda-title {
+     background-color: #000;
+     -webkit-mask-image: url('../../../public/assets/lapd_dac/info.svg');
+     mask-image: url('../../../public/assets/lapd_dac/info.svg');
+ }
+}
+
+.app__content .content-item .content__agenda__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 20px);
+    height: 150px;
+    overflow-x: auto;
+    padding: 10px;
+    font-size: .8em;
+}
+
+.app__content .content-item .content__officers__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-start;
+    width: calc(100% - 20px);
+    height: 150px;
+    overflow-x: auto;
+    padding: 10px;
+    font-size: .8em;
+}
+
+.app__content .content-item .content__agenda__list .agenda__content {
+    padding: 10px 0;
+    border-bottom: var(--yellow) 2px solid;
+
+&:first-child {
+     padding-top: 0;
+ }
+&:last-child {
+     padding-bottom: 0;
+     border-bottom: none;
+ }
+}
+
+.app__content .content-item .content__agenda__list .agenda__content .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.app__content .content-item .content__agenda__list .agenda__content .top .title {
+    opacity: 0.75;
+    font-weight: 600;
+}
+
+.app__content .content-item .content__agenda__list .agenda__content .top .options {
+    display: flex;
+    gap: 10px;
+    float: right;
+
+& .delete {
+      width: 17.5px;
+      height: 17.5px;
+      background-color: var(--red);
+      -webkit-mask-image: url('../../../public/assets/lapd_dac/trash.svg');
+      mask-image: url('../../../public/assets/lapd_dac/trash.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+  }
+
+& .edit {
+      width: 17.5px;
+      height: 17.5px;
+      background-image: url('../../../public/assets/lapd_dac/edit.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+  }
+}
+
+.app__content .content-rooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__content .content-rooter .title-content {
+    display: flex;
+    flex-basis: fit-content;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #000;
+    align-items: center;
+    height: 40px;
+    border-radius: 15px 0 0 0;
+    font-weight: 800;
+    width: 100%;
+    max-height: 20px;
+}
+
+.w-rooter {
+    width: 15%;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0 0 0;
+    background-color: var(--yellow);
+    height: 20px;
+    color: black;
+    z-index: 99;
+    position: relative;
+
+
+
+    &::after {
+         content: "";
+         position: absolute;
+         right: -19px;
+         top: -0.5px;
+         border-style: solid;
+         border-width: 22px 0 0 20px;
+         border-color: transparent transparent transparent var(--yellow);
+     }
+}
+
+.w-rooter p{
+    margin: 1px 5px 1px;
+}
+
+.title-list{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 13px;
+}
+
+.title-list span{
+    color: white;
+}
+
+.separate-title{
+    font-size: 11px;
+    display: flex;
+    background: #1F3147;
+    height: 20px;
+    gap: 10px;
+    width: auto;
+    padding: 0 25px;
+    font-weight: 800;
+    color: white;
+    position: relative;
+    align-items: center;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
+
+
+    &::after {
+         content: "";
+         position: absolute;
+         right: -20px;
+         top: -1px;
+         border-style: solid;
+         border-width: 20px 0 0 21px;
+         border-color: transparent transparent transparent #1F3147;
+     }
+}
+
+.separate-title div{
+    display: flex;
+    align-items: center;
+}
+
+.separate-title hr{
+    background: var(--yellow);
+    height: 10px;
+    border: none;
+    width: 1px;
+    transform: rotate(-15deg);
+}
+
+.app__content .content-rooter .content-mdt {
+    width: 100%;
+    border: var(--yellow) 2px solid;
+    border-radius: 0 10px 10px 10px;
+    max-height: 200px;
+    overflow-x: auto;
+}
+
+.app__content .content-rooter .content-mdt table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.app__content .content-rooter .content-mdt table tr {
+    background-color: #273B4A;
+    color: #fff;
+    font-size: .8em;
+    font-weight: 600;
+
+&:last-child td {
+     border-bottom: none;
+ }
+}
+
+.app__content .content-rooter .content-mdt table tr th {
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: var(--yellow) 2px solid;
+    border-right: var(--yellow) 2px solid;
+    background-color: #334C6A;
+
+&:last-child {
+     border-right: none;
+ }
+}
+
+.app__content .content-rooter .content-mdt table tr td {
+    background-color: #273B4A;
+    padding: 10px 0;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 15px;
+    border-bottom: var(--yellow) 2px solid;
+    border-right: var(--yellow) 2px solid;
+
+&:last-child {
+     border-right: none;
+ }
+
+& select {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjUiIHZpZXdCb3g9IjAgMCA2IDUiIGZpbGw9Im5vbmUiPiA8cGF0aCBkPSJNMi4zNjk2NCA0Ljc3ODE3TDAuMjE1OTI1IDEuNzAxNDNDLTAuMDg1NjM4MyAxLjI3MDYyIDAuMjIyNTYxIDAuNjc4Njc2IDAuNzQ4NDI2IDAuNjc4Njc2TDQuNzUxNTcgMC42Nzg2NzZDNS4yNzc0NCAwLjY3ODY3NiA1LjU4NTY0IDEuMjcwNjIgNS4yODQwNyAxLjcwMTQzTDMuMTMwMzYgNC43NzgxN0MyLjk0NTUyIDUuMDQyMjEgMi41NTQ0OCA1LjA0MjIxIDIuMzY5NjQgNC43NzgxN1oiIGZpbGw9IiNGRkNCMDQiLz4gPC9zdmc+");
+      background-repeat: no-repeat;
+      background-position-x: 95%;
+      background-position-y: 6px;
+
+& option {
+      background-color: #273B4A;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+  }
+}
+
+& .officer, & .vehicle {
+                  display: inline-block;
+                  width: fit-content;
+                  block-size: fit-content;
+                  padding: 2px 10px;
+                  background-color: rgba(255, 203, 4, 0.25);
+                  border-radius: 10px;
+                  align-items: center;
+                  gap: 10px;
+                  margin-left: 4px;
+                  flex-basis: content;
+
+& .officer__name, & .vehicle__name {
+                        display: inline-block;
+                    }
+
+& .officer__delete, & .vehicle__delete {
+                          display: inline-block;
+                          width: 10px;
+                          height: 10px;
+                          background-color: var(--red);
+                          -webkit-mask-image: url('../../../public/assets/lapd_dac/cross.svg');
+                          mask-image: url('../../../public/assets/lapd_dac/cross.svg');
+                          background-size: cover;
+                          background-position: center;
+                          background-repeat: no-repeat;
+                          cursor: pointer;
+                      }
+}
+
+& .add__officer {
+      display: inline-block;
+      width: 10px;
+      margin-left: 4px;
+      height: 10px;
+      background-color: #FFCB04;
+      -webkit-mask-image: url('../../../public/assets/lapd_dac/plus.svg');
+      mask-image: url('../../../public/assets/lapd_dac/plus.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+  }
+
+& .add__vehicle {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-left: 2px;
+      background-color: #FFCB04;
+      -webkit-mask-image: url('../../../public/assets/lapd_dac/plus.svg');
+      mask-image: url('../../../public/assets/lapd_dac/plus.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+  }
+
+& .icon__localisation__mdt {
+      display: inline-block;
+      width: 12px;
+      height: 15px;
+      position: relative;
+      top: 2px;
+      background-color: #fff;
+      -webkit-mask-image: url('../../../public/assets/lapd_dac/localisation.svg');
+      mask-image: url('../../../public/assets/lapd_dac/localisation.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+  }
+
+& .dispo__status {
+      cursor: pointer;
+
+& .dispo__point {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: var(--green);
+
+&.dnd {
+     background-color: var(--red);
+ }
+}
+
+& .dispo__text {
+      display: inline-block;
+      margin-left: 5px;
+  }
+}
+}
+
+.deleteIcon{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+    -webkit-mask-image: url('../../../public/assets/lapd_dac/cross.svg');
+    mask-image: url('../../../public/assets/lapd_dac/cross.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.online{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: var(--green);
+}
+
+.officer__card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--dark-bg-card);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.officer__card.selected {
+    border: var(--yellow) solid 2px;
+}
+
+.cards-clickable .officer__card {
+    cursor: pointer;
+}
+
+.officer__card .officer__profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: var(--dark-bg-img);
+    background-image: url('../../../public/assets/lapd_dac/officer.png');
+    background-size: 80%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.officer__card .officer__informations {
+    font-weight: 600;
+
+& .matricule {
+      opacity: 0.5;
+  }
+}
+
+.officer__card .officer__rank {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+&.rank__off1 {
+     width: 30px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/off1.png');
+ }
+&.rank__off2 {
+     width: 30px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/off2.png');
+ }
+&.rank__off3 {
+     width: 30px;
+     height: 34px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/off3.png');
+ }
+&.rank__off3-1 {
+     width: 30px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/off3+1.png');
+ }
+&.rank__dptsgt {
+     width: 30px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/dpt_sgt.png');
+ }
+&.rank__sgt1 {
+     width: 30px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/sgt1.png');
+ }
+&.rank__sgt2 {
+     width: 23px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/sgt2.png');
+ }
+&.rank__ltn {
+     width: 13px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/ltn.png');
+ }
+&.rank__cpt {
+     width: 30px;
+     height: 30px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/cpt.png');
+ }
+&.rank__dptchief {
+     width: 50px;
+     height: 24px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/dpt_chief.png');
+ }
+&.rank__asstchief {
+     width: 80px;
+     height: 20px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/asst_chief.png');
+ }
+&.rank__chief {
+     width: 82px;
+     height: 20px;
+     background-image: url('../../../public/assets/lapd_dac/ranks/chief.png');
+ }
+}
