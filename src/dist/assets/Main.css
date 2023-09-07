@@ -235,6 +235,7 @@ body {
  }
 }
 
+
 .app__content.app__home .alert__box .alert__icon {
     width: 35px;
     height: 30px;
@@ -787,4 +788,10 @@ body {
      height: 20px;
      background-image: url('../../../public/assets/lapd_dac/ranks/chief.png');
  }
+}
+
+.mapFull{
+    height: 100%;
+    width: 457px;
+    background: rgba(255, 255, 255, 0.58);
 }
