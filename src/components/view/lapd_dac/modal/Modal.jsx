@@ -1,6 +1,8 @@
 import React from "react";
+import MapComponent from "../leaflet-map/leaflet-map";
 
-const Modal = ({children, title, descrip}) => {
+const Modal = ({children, textBouton, classButton, titlePlaceHolder, title, descrip, enableAgentCard, enableButtons, enableMap, enableSearchBar }) => {
+
 
     return (
         <div className="modal-content">
@@ -9,24 +11,44 @@ const Modal = ({children, title, descrip}) => {
                 <div className="closeModal"></div>
             </div>
             <div>
-                <h2 style={{fontSize: '15px'}}>{descrip ? descrip : "Aucune donnée"}</h2>
+                <h2 style={{ fontSize: '15px' }}>{descrip ? descrip : ""}</h2>
             </div>
-            <div className="buttons">
-                {children && (
-                    children.map((child, index) => {
-                        if (child.type === 'div' && child.props.className === 'button') {
-                            return (
-                                <div key={index} className="map">
-                                    {child.props.children}
-                                </div>
-                            );
-                        }
-                        return null;
-                    })
-                )}
-            </div>
+            {enableMap && (
+                <div className={"map"} style={{ width: '70vw', height: '300px', overflow: "hidden"}}>
+                    <MapComponent />
+                </div>
+            )}
+            {enableSearchBar && (
+                <div className="search-container">
+                    <input className="search-bar" placeholder={titlePlaceHolder ? titlePlaceHolder : "Rechercher un véhicule"}/>
+                    <div className="search-icon"></div>
+                </div>
+            )}
+            {enableAgentCard && (
+                <div className="search-result cards-clickable">
+                    <div className="officer__card">
+                        <div className="officer__profile"></div>
+                        <div className="officer__informations">
+                            <div className="name">
+                                John Doe
+                            </div>
+                            <div className="matricule">
+                                Matricule
+                            </div>
+                        </div>
+                        <div className="officer__rank rank__off1"></div>
+                    </div>
+                </div>
+            )}
+            {enableButtons && (
+                <div className="buttons">
+                    <button className={classButton ? classButton : "button modify"}>{textBouton ? textBouton : "Ajouter"}</button>
+                    <button className="button cancel closeModal">Annuler</button>
+                </div>
+            )}
+            {children}
         </div>
-    )
+    );
 }
 
 export default Modal;

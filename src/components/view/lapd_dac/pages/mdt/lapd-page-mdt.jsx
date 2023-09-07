@@ -450,116 +450,80 @@ class PageMDT extends Component {
 
                     {/* Modal POUR AJOUTER UN OFFICIER DU ROOTER */}
                     <div className="modal-background" id="add__officer__mdt">
-                        <div className="modal-content">
-                            <div className="title">
-                                <h1>Ajouter un officier au rooter</h1>
-                                <div className="closeModal"></div>
-                            </div>
-                            <div className="search-container">
-                                <input className="search-bar" placeholder="Rechercher un officier"/>
-                                <div className="search-icon"></div>
-                            </div>
-                            <div className="search-result cards-clickable">
-                                <div className="officer__card">
-                                    <div className="officer__profile"></div>
-                                    <div className="officer__informations">
-                                        <div className="name">
-                                            John Doe
-                                        </div>
-                                        <div className="matricule">
-                                            Matricule
-                                        </div>
-                                    </div>
-                                    <div className="officer__rank rank__off1"></div>
-                                </div>
-                            </div>
-                            <div className="buttons">
-                                <button className="button modify">Ajouter l'officier</button>
-                                <button className="button cancel closeModal">Annuler</button>
-                            </div>
-                        </div>
+                        <Modal
+                            title={"Ajouter un officier au rooter"}
+                            descrip={""}
+                            enableButtons={true}
+                            enableSearchBar={true}
+                            enableAgentCard={true}
+                            enableMap={false}
+                            titlePlaceHolder={"Rechercher un officier"}
+                            textBouton={"Ajouter"}
+                        >
+                        </Modal>
                     </div>
 
                     {/* Modal pour accepter un appel */}
                     <div className="modal-background" id="call_verif">
-                        <Modal title={"Répondre à un appel 911"} descrip={"Êtes vous sûr de vouloir prendre cette appel ?"} >
-                            <div>
-                                <button className="button modify">Prendre l'appel</button>
-                                <button className="button cancel closeModal">Annuler</button>
-                            </div>
+                        <Modal
+                            title={"Répondre à un appel 911"}
+                            descrip={"Êtes-vous sûr de vouloir prendre cet appel ?"}
+                            enableButtons={true}
+                            enableMap={false}
+                            textBouton={"Prendre l'appel"}
+                        >
                         </Modal>
                     </div>
 
                     {/* Modal pour delete un appel */}
                     <div className="modal-background" id="call_delete">
-                        <div className="modal-content">
-                            <div className="title">
-                                <h1>Supprimer un appel</h1>
-                                <div className="closeModal"></div>
-                            </div>
-                            <div>
-                                <h2 style={{fontSize: '15px'}}>Êtes vous sûr de supprimer cet appel 911 ?</h2>
-                            </div>
-                            <div className="buttons">
-                                <button className="button delete">Supprimer l'appel</button>
-                                <button className="button cancel closeModal">Annuler</button>
-                            </div>
-                        </div>
+                        <Modal
+                            title={"Supprimer un appel"}
+                            descrip={"Êtes vous sûr de supprimer cet appel 911 ?"}
+                            enableButtons={true}
+                            enableMap={false}
+                            textBouton={"Supprimer un appel"}
+                            classButton={"button delete"}
+                        >
+                        </Modal>
                     </div>
 
-                    {/* Modal pour localiser un appel */}
+
+                     {/*Modal pour localiser un appel*/}
                     <div className="modal-background" id="call_localisation">
-                        <div className="modal-content">
-                            <div className="title">
-                                <h1>Localiser un appel</h1>
-                                <div className="closeModal"></div>
-                            </div>
-                            <div style={{ width: '90vw', height: '370px'}}>
-                                <MapComponent />
-                            </div>
-                        </div>
+                        <Modal
+                            title={"Localiser un appel"}
+                            descrip={""}
+                            enableButtons={false}
+                            enableMap={true}
+                        >
+                        </Modal>
                     </div>
 
 
                     {/* Modal pour add un véhicule */}
                     <div className="modal-background" id="add__vehicle__mdt">
-                        <div className="modal-content">
-                            <div className="title">
-                                <h1>Ajouter un véhiculer au rooter</h1>
-                                <div className="closeModal"></div>
-                            </div>
-                            <div className="search-container">
-                                <input className="search-bar" placeholder="Rechercher un véhicule"/>
-                                <div className="search-icon"></div>
-                            </div>
-                            <div className="search-result cards-clickable">
-                                <div className="officer__card">
-                                    <div className="officer__profile"></div>
-                                    <div className="officer__informations">
-                                        <div className="name">
-                                            John Doe
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="buttons">
-                                <button className="button modify">Ajouter le véhicule</button>
-                                <button className="button cancel closeModal">Annuler</button>
-                            </div>
-                        </div>
+                        <Modal
+                            title={"Ajouter un véhiculer au rooter"}
+                            descrip={""}
+                            enableButtons={true}
+                            enableSearchBar={true}
+                            enableAgentCard={true}
+                            enableMap={false}
+                        >
+                        </Modal>
                     </div>
 
                     {/* Modal POUR AFFICHER LA POSITION D'UNE PATROUILLE */}
                     <div className="modal-background" id="view__location__patrouille">
-                        <div className="modal-content">
-                            <div className="title">
-                                <h1>Ajouter un véhiculer au rooter</h1>
-                                <div className="closeModal"></div>
-                            </div>
-                            <div style={{ width: '90vw', height: '350px'}}>
-                                <MapComponent />
-                            </div>
-                        </div>
+                        <Modal
+                            title={"Localisation"}
+                            descrip={""}
+                            enableButtons={false}
+                            enableMap={true}
+                            enableAgentCard={false}
+                        >
+                        </Modal>
                     </div>
                 </div>
             </>
