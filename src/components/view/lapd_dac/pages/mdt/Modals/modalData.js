@@ -50,5 +50,16 @@ export const modalData = [
         enableButtons: false,
         enableMap: true,
         enableAgentCard: false
+    },
+    {
+        id: "deleteFicheCitizen",
+        title: "Supprimer la fiche d'un citoyen",
+        descrip: "",
+        enableButtons: true,
+        enableSearchBar: false,
+        enableAgentCard: false,
+        enableMap: false,
+        titlePlaceHolder: "",
+        textBouton: "Ajouter",
     }
 ];

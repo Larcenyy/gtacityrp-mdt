@@ -1,7 +1,7 @@
 import React from "react";
 import MapComponent from "../leaflet-map/leaflet-map";
 
-const Modal = ({children, textBouton, classButton, titlePlaceHolder, title, descrip, enableAgentCard, enableButtons, enableMap, enableSearchBar }) => {
+const Modal = ({children, textBouton, classButton, enableTextArea, titlePlaceHolder, title, descrip, enableAgentCard, enableButtons, enableMap, enableSearchBar }) => {
 
 
     return (
@@ -39,6 +39,9 @@ const Modal = ({children, textBouton, classButton, titlePlaceHolder, title, desc
                         <div className="officer__rank rank__off1"></div>
                     </div>
                 </div>
+            )}
+            {enableTextArea && (
+                <textarea name="editAgenda" cols="10" rows="5"></textarea>
             )}
             {enableButtons && (
                 <div className="buttons">
