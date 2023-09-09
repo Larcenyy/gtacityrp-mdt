@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ListeCitoyen(modalDelete, firstName) {
+function ListeCitoyen(modalDelete) {
     return (
         <div className={"citizen-list"}>
             <div className={"search-container"}>
@@ -12,7 +12,7 @@ function ListeCitoyen(modalDelete, firstName) {
                     <div className={"card-citizen__info"}>
                         <img style={{ width: "30px" }} src="/assets/icon/avatarCitizen.png" alt="Citoyen" />
                         <div className={"card-citizen__name"}>
-                            <h4>{firstName}</h4>
+                            <h4>tt</h4>
                             <p>Date de naissance</p>
                         </div>
                     </div>

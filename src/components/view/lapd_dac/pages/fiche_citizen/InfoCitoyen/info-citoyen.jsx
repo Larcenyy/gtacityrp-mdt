@@ -203,8 +203,8 @@ function InfoCitoyen() {
                                         <h4>Amende #xxxxx</h4>
                                         <p>Date -
                                             <span className={"textBad"}>
-                                                                    <img style={{ width: "10px" }} src="/assets/icon/invalide.svg" alt="Supprimer" />
-                                                                    Impayé</span>
+                                            <img style={{ width: "10px" }} src="/assets/icon/invalide.svg" alt="Supprimer" />
+                                            Impayé</span>
                                         </p>
                                     </div>
                                     <div>

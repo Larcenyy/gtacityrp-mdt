@@ -34,40 +34,40 @@ class PageFicheCitizen extends Component {
         return (
             <>
                 <BoxFiche title="Fiche Citoyens">
-                    <div className="test">
-                        <div className="test-left">
+                    <div className="citizenContainer">
+                        <div className="citizen-left">
                             <div className={"citizen-list"}>
                                 <div className={"search-container"}>
                                     <input className="search-bar" type="text" placeholder={"Rechercher un citoyen "}/>
                                     <div className={"search-icon"}></div>
                                 </div>
                                 <div className={'card-container'}>
-                                        {Array.from({ length: 8 }, (_, index) => (
-                                            <div
-                                                className={`card-citizen ${
-                                                    this.state.activeCardIndex === index ? "cardActive" : ""
-                                                }`}
-                                                key={index}
-                                                onClick={() => this.handleCardClick(index)}
-                                            >
-                                                <div className={"card-citizen__info"}>
-                                                    <img style={{ width: "30px" }} src="/assets/icon/avatarCitizen.png" alt="Citoyen" />
-                                                    <div className={"card-citizen__name"}>
-                                                        <h4>NOM Prénom</h4>
-                                                        <p>Date de naissance</p>
-                                                    </div>
+                                    {Array.from({ length: 8 }, (_, index) => (
+                                        <div
+                                            className={`card-citizen ${
+                                                this.state.activeCardIndex === index ? "cardActive" : ""
+                                            }`}
+                                            key={index}
+                                            onClick={() => this.handleCardClick(index)}
+                                        >
+                                            <div className={"card-citizen__info"}>
+                                                <img style={{ width: "30px" }} src="/assets/icon/avatarCitizen.png" alt="Citoyen" />
+                                                <div className={"card-citizen__name"}>
+                                                    <h4>NOM Prénom</h4>
+                                                    <p>Date de naissance</p>
                                                 </div>
-                                                <hr/>
-                                                <img style={{ width: "18px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
                                             </div>
-                                        ))}
+                                            <hr/>
+                                            <img style={{ width: "18px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                        </div>
+                                    ))}
                                 </div>
                                 <div className={"newFiche"}>
                                     <span>+ Créer une fiche citoyen</span>
                                 </div>
                             </div>
                         </div>
-                        <div className="test-right">
+                        <div className="citizen-right">
                             {/*<div className={"notOpened"}>*/}
                             {/*    <h4>Aucune fiche citoyen sélectionnée</h4>*/}
                             {/*</div>*/}
@@ -147,7 +147,7 @@ class PageFicheCitizen extends Component {
                                         <div className={"citizen-fiche__coord__right"}>
                                             <div>
                                                 <h4>Profession : </h4>
-                                                <input type="text" placeholder={"Profession du citoyen"}/>
+                                                <input type="text" required={true} placeholder={"Profession du citoyen"}/>
                                             </div>
                                             <div>
                                                 <h4>Lieu de naissance : </h4>
@@ -174,8 +174,10 @@ class PageFicheCitizen extends Component {
                                         <div className={"container-civil-card"}>
                                             <div className={"civil-card"}>
                                                 <div className={"civil-card__info"}>
-                                                    <div>
-                                                        <img style={{ width: "15px" }} src="/assets/icon/fiche.svg" alt="Permis Sniper" />
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
                                                         <div>
                                                             <h4>Rapport #xxxxx</h4>
                                                             <p>Date</p>
@@ -186,16 +188,127 @@ class PageFicheCitizen extends Component {
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Permis Sniper" />
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
                                                         </li>
                                                         <li>
-                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Permis Sniper" />
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
                                                         </li>
                                                         <li>
-                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Permis Sniper" />
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
                                                         </li>
                                                     </ul>
                                                 </div>
+                                            </div>
+                                            <div className={"civil-card"}>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={"civil-card"}>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={"civil-card"}>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={"civil-card"}>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={"add-card"}>
+                                                <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt="Permis Sniper" />
                                             </div>
                                         </div>
                                     </div>
@@ -203,17 +316,224 @@ class PageFicheCitizen extends Component {
                                         <h3>Rapports de garde à vue</h3>
                                         <div className={"container-civil-card"}>
                                             <div className={"civil-card"}>
-                                                <img style={{ width: "15px" }} src="/assets/icon/fiche.svg" alt="Permis Sniper" />
-                                                <div>
-                                                    <h4>Rapport #xxxxx</h4>
-                                                    <p>Date</p>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <hr/>
-                                                <ul>
-                                                    <li>
-                                                        <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Permis Sniper" />
-                                                    </li>
-                                                </ul>
+                                            </div>
+                                            <div className={"civil-card"}>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={"civil-card"}>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={"civil-card"}>
+                                                <div className={"civil-card__info"}>
+                                                    <div className={"civil-card__info__left"}>
+                                                        <div className={"civil-card__info__left__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Rapport #xxxxx</h4>
+                                                            <p>Date</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <hr/>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/eyes.svg" alt="Voir" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" />
+                                                        </li>
+                                                        <li>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={"add-card"}>
+                                                <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt="Permis Sniper" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={"contraventions-container"}>
+                                    <div className={"contraventions-content"}>
+                                        <div>
+                                            <h3>Contraventions</h3>
+                                            <div className={"card-contrat-container"}>
+                                                <div className={"card-contrat"}>
+                                                    <div className={"card-contrat__info"}>
+                                                        <div className={"card-contrat__info__img"}>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/radarScan.svg" alt="Photo" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Amende #xxxxx</h4>
+                                                            <p>Date - <strong>Impayé</strong></p>
+                                                        </div>
+                                                        <div>
+                                                            <hr/>
+                                                        </div>
+                                                        <div>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className={"card-contrat"}>
+                                                    <div className={"card-contrat__info"}>
+                                                        <div className={"card-contrat__info__img"}>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/radarScan.svg" alt="Photo" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Amende #xxxxx</h4>
+                                                            <p>Date - <strong>Impayé</strong></p>
+                                                        </div>
+                                                        <div>
+                                                            <hr/>
+                                                        </div>
+                                                        <div>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className={"buttonAddContrat"}>
+                                                    <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt="Permis Sniper" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={"contraventions-container"}>
+                                    <div className={"contraventions-content"}>
+                                        <div>
+                                            <h3>Fourrière</h3>
+                                            <div className={"card-contrat-container"}>
+                                                <div className={"card-contrat"}>
+                                                    <div className={"card-contrat__info"}>
+                                                        <div className={"card-contrat__info__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/citizen/car.png" alt="Photo" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Intervention #xxxxx</h4>
+                                                            <p>Date - <strong>En fourrière</strong></p>
+                                                        </div>
+                                                        <div>
+                                                            <hr/>
+                                                        </div>
+                                                        <div>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className={"card-contrat"}>
+                                                    <div className={"card-contrat__info"}>
+                                                        <div className={"card-contrat__info__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/citizen/car.png" alt="Photo" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Intervention #xxxxx</h4>
+                                                            <p>Date - <strong>En fourrière</strong></p>
+                                                        </div>
+                                                        <div>
+                                                            <hr/>
+                                                        </div>
+                                                        <div>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className={"card-contrat"}>
+                                                    <div className={"card-contrat__info"}>
+                                                        <div className={"card-contrat__info__img"}>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/citizen/car.png" alt="Photo" />
+                                                        </div>
+                                                        <div>
+                                                            <h4>Intervention #xxxxx</h4>
+                                                            <p>Date - <span className={"textGood"}>Libéré</span></p>
+                                                        </div>
+                                                        <div>
+                                                            <hr/>
+                                                        </div>
+                                                        <div>
+                                                            <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className={"buttonAddContrat"}>
+                                                    <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt="Permis Sniper" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
