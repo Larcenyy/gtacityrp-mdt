@@ -1,6 +1,7 @@
 import React from 'react';
-
-function ListeCitoyen(modalDelete) {
+import CardCitoyen from "./CardCitoyen/card-citoyen";
+import {listeCitoyenData} from "./listeCitoyenData";
+function ListeCitoyen() {
     return (
         <div className={"citizen-list"}>
             <div className={"search-container"}>
@@ -8,25 +9,19 @@ function ListeCitoyen(modalDelete) {
                 <div className={"search-icon"}></div>
             </div>
             <div className={'card-container'}>
-                <div className="card-citizen">
-                    <div className={"card-citizen__info"}>
-                        <img style={{ width: "30px" }} src="/assets/icon/avatarCitizen.png" alt="Citoyen" />
-                        <div className={"card-citizen__name"}>
-                            <h4>tt</h4>
-                            <p>Date de naissance</p>
-                        </div>
-                    </div>
-                    <hr/>
-                    <span data-modal={modalDelete} className="openModal">
-                        <img style={{ width: "18px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
-                    </span>
-                </div>
+                {listeCitoyenData.map((dispatch, index) => (
+                    <CardCitoyen
+                        key={index}
+                        title={dispatch.title}
+                        dateBirthday={dispatch.dateBirthday}
+                        modalDelete={dispatch.modalDelete}
+                    />
+                ))}
             </div>
             <div className={"newFiche"}>
-                <span>+ Créer une fiche citoyen</span>
+                <span data-modal="add_fiche_citizen" className={"openModal"}>+ Créer une fiche citoyen</span>
             </div>
         </div>
-
     );
 }
 
