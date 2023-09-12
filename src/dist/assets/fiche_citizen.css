@@ -4,7 +4,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
 }
 
 .box-content {
@@ -139,12 +138,17 @@
     border-radius: 10px;
     padding: 12px 17px;
     margin-top: 7px;
-    font-size: 14px;
-    font-weight: 600;
     width: 80%;
     text-align: center;
     cursor: pointer;
     transition: 300ms ease-in;
+}
+
+.newFiche a{
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
 }
 
 .newFiche:hover {
@@ -183,7 +187,7 @@
 }
 
 .citizen-fiche {
-    padding: 60px 35px;
+    padding: 80px 10px;
     background-color: #1F3147;
     display: flex;
     flex-direction: column;
@@ -249,6 +253,11 @@
     transition: 300ms ease-in-out;
 }
 
+.buttonAction span{
+    color: white;
+    text-decoration: none;
+}
+
 .buttonAction:hover {
     opacity: 0.5;
 }
@@ -266,9 +275,9 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: #142132;
-    height: 300px;
     max-width: 100%;
     padding: 10px 15px;
+    height: max-content;
     gap: 1rem;
 }
 
@@ -304,6 +313,21 @@
     list-style: none;
     display: flex;
     gap: 14px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.blocked{
+    z-index: 88;
+    position: absolute;
+    height: 59%;
+    width: 22%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    font-weight: 800;
 }
 
 .citizen-fiche__coord div ul li {
@@ -393,8 +417,8 @@
     gap: 5px;
     border-radius: 12px;
     position: relative;
-    justify-content: space-around;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 
 .civil-card {
@@ -403,6 +427,7 @@
     padding: 10px 10px;
     font-weight: 700;
     gap: 14px;
+    width: 42%;
     background-color: #202A38;
     align-items: center;
     border-radius: 8px;
@@ -471,13 +496,14 @@
 }
 
 .contraventions-container {
-    padding: 1rem;
+    padding: 15px 10px;
     border-radius: 12px;
     background-color: #142132;
     height: max-content;
     display: flex;
     justify-content: center;
     gap: 5px;
+    position: relative !important;
 }
 
 .contraventions-content {
@@ -493,9 +519,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     justify-content: center;
-    position: relative !important;
+    margin-top: 7px;
 }
 
 .card-contrat {
@@ -520,7 +546,7 @@
 .card-contrat__info {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 15px;
     justify-content: space-between;
     align-items: center;
     z-index: 0;
@@ -548,7 +574,7 @@
     transition: 300ms ease-in-out;
     cursor: pointer;
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     z-index: 0;
 }
 

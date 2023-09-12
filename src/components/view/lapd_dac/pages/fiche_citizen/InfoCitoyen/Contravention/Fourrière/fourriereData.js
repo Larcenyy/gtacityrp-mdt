@@ -3,7 +3,7 @@ export const fourriereData = [
         title: "Intervention #xxxxx",
         date: "Date",
         isGood: true,
-        modalDelete: "deleteRapportArrest",
+        modalDelete: "deleteIntervention",
     },
     {
         title: "Intervention #xxxxx",

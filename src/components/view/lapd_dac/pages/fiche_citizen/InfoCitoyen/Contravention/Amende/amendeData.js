@@ -10,5 +10,6 @@ export const amendeData = [
         date: "Date",
         isGood: false,
         modalDelete: "deleteAmende",
-    }
+    },
+
 ];
