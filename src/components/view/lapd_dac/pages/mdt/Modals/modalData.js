@@ -60,6 +60,14 @@ export const modalData = [
         enableAgentCard: false
     },
     {
+        id: "editRapportArrest",
+        title: "Editer une fiche citoyen",
+        descrip: "",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false
+    },
+    {
         id: "deleteFicheCitizen",
         title: "Supprimer une fiche citoyen",
         descrip: "",

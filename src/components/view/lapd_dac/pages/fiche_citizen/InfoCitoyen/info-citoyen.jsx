@@ -1,33 +1,74 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import RapportArrest from "./RapportArrestation/rapport-arrest";
 import RapportGAV from "./RapportGAV/rapport-gav";
 import Contravention from "./Contravention/contravention-container";
+import {listeCitoyenData} from "../ListeCitoyen/listeCitoyenData";
 
-function InfoCitoyen() {
+function InfoCitoyen({ citizenId }) {
 
-    const [permis, setPermis] = useState({
+    const [citizenData, setCitizenData] = useState(null);
+    const [taille, setTaille] = useState('');
+    const [masse, setMasse] = useState('');
+    const [birhday, setBirhday] = useState('');
+    const [adresse, setAdresse] = useState('');
+    const [profession, setProfession] = useState('');
+    const [lieunaissance, setLieuNaissance] = useState('');
+    const [nationalite, setNationalite] = useState('');
+    const [vehicule, setVehicule] = useState('');
+    const [phone, setPhone] = useState('');
+    const [permisActifs, setPermisActifs] = useState({
+        vehicle: false,
+        air: false,
+        boat: false,
         pistol: false,
         smg: false,
         pompe: false,
         assaut: false,
         sniper: false,
-
-        vehicle: false,
-        air: false,
-        boat: false,
     });
 
     const togglePermis = (data) => {
-        setPermis({
-            ...permis,
-            [data]: !permis[data],
-        });
+        setPermisActifs((prevPermisActifs) => ({
+            ...prevPermisActifs,
+            [data]: !prevPermisActifs[data],
+        }));
     };
+
+    useEffect(() => {
+        // Recherchez les données du citoyen en fonction de l'ID
+        const data = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
+
+        // Mettez à jour les données du citoyen dans l'état
+        setCitizenData(data);
+
+        // Si les données du citoyen sont disponibles, initialisez les valeurs du formaulaiures
+        if (data) {
+            setTaille(data.taille);
+            setMasse(data.masse);
+            setBirhday(data.dateBirthday);
+            setAdresse(data.adresse);
+            setProfession(data.profession);
+            setLieuNaissance(data.naissance);
+            setNationalite(data.nationalite);
+            setVehicule(data.vehicule);
+            setPhone(data.phone);
+        }
+
+    }, [citizenId]);
+
+
+    if (citizenData === null) {
+        return <div>Loading...</div>;
+    }
+
+    if (!citizenData) {
+        return <div>Aucune fiche citoyen sélectionnée</div>;
+    }
 
     return (
         <div className={"citizen-fiche"}>
             <div className={"citizen-fiche__top"}>
-                <form action="#">
+                <form >
                     <div className={"citizen-fiche__info"}>
                         <div>
                             <button className={"submit goodAction"} type='submit'>
@@ -40,55 +81,90 @@ function InfoCitoyen() {
                                 <img style={{ width: "80px" }} src="/assets/icon/avatarCitizen.png" alt="Supprimer" />
                             </div>
                             <div>
-                                <h4>NOM Prénom</h4>
-                                <small>xx ans - sexe</small>
+                                <h4>{citizenData.title}</h4>
+                                <small>id : {citizenData.citizenId}</small>
+                                <small>{citizenData.age} ans - {citizenData.sexe}</small>
                             </div>
                         </div>
                         <div className={"buttonAction deleteAction"}>
                             <img style={{ width: "18px" }} src="/assets/icon/trash.svg" alt="Supprimer" />
-                            <span>Supprimer la fiche</span>
+                            <span data-modal={"deleteFicheCitizen"} className={'openModal'}>Supprimer la fiche</span>
                         </div>
                     </div>
                     <div className={"citizen-fiche__coord"}>
                         <div className={"citizen-fiche__coord__left"}>
                             <div>
                                 <h4>Adresse: </h4>
-                                <input type="text" required={true} placeholder={"Adresse de résidence du citoyen"}/>
+                                <input
+                                    type="text"
+                                    required={true}
+                                    placeholder={"Adresse de résidence du citoyen"}
+                                    value={adresse}
+                                    onChange={(e) => setAdresse(e.target.value)}
+                                />
                             </div>
                             <div>
                                 <h4>Date de naissance : </h4>
-                                <input type="text"  required={true} placeholder={"Profession du citoyen"}/>
+                                <input
+                                    type="text"
+                                    required={true}
+                                    placeholder={"Date de naissance"}
+                                    value={birhday}
+                                    onChange={(e) => setBirhday(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <div>
+                                    <h4>Taille : </h4>
+                                    <input
+                                        type="text"
+                                        required={true}
+                                        placeholder={"Taille du citoyen"}
+                                        value={taille}
+                                        onChange={(e) => setTaille(e.target.value)}
+                                    />
+                                </div>
+                                <div>
+                                    <h4>Masse : </h4>
+                                    <input
+                                        type="text"
+                                        required={true}
+                                        placeholder={"Masse du citoyen"}
+                                        value={masse}
+                                        onChange={(e) => setMasse(e.target.value)}
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <h4>Permis de conduire : </h4>
                                 <ul>
-                                    <li className={permis.vehicle ? 'allowed' : ''} onClick={() => togglePermis('vehicle')}>
+                                    <li className={permisActifs.vehicle ? 'allowed' : ''} onClick={() => togglePermis('vehicle')}>
                                         <img style={{ width: "20px" }} src="/assets/icon/citizen/car.png" alt="permis voiture" />
                                     </li>
-                                    <li className={permis.air ? 'allowed' : ''} onClick={() => togglePermis('air')}>
-                                        <img style={{ width: "20px" }} src="/assets/icon/citizen/plane.png" alt="permis voiture" />
+                                    <li className={permisActifs.air ? 'allowed' : ''} onClick={() => togglePermis('air')}>
+                                        <img style={{ width: "20px" }} src="/assets/icon/citizen/plane.png" alt="permis avion" />
                                     </li>
-                                    <li className={permis.boat ? 'allowed' : ''} onClick={() => togglePermis('boat')}>
-                                        <img style={{ width: "20px" }} src="/assets/icon/citizen/bateau.png" alt="permis voiture" />
+                                    <li className={permisActifs.boat ? 'allowed' : ''} onClick={() => togglePermis('boat')}>
+                                        <img style={{ width: "20px" }} src="/assets/icon/citizen/bateau.png" alt="permis bateau" />
                                     </li>
                                 </ul>
                             </div>
                             <div>
                                 <h4>Permis d'arme : </h4>
                                 <ul>
-                                    <li className={permis.pistol ? 'allowed' : ''} onClick={() => togglePermis('pistol')}>
+                                    <li className={permisActifs.pistol ? 'allowed' : ''} onClick={() => togglePermis('pistol')}>
                                         <img style={{ width: '20px' }} src="/assets/icon/citizen/pistol.png" alt="Permis pistolet" />
                                     </li>
-                                    <li className={permis.smg ? 'allowed' : ''} onClick={() => togglePermis('smg')}>
+                                    <li className={permisActifs.smg ? 'allowed' : ''} onClick={() => togglePermis('smg')}>
                                         <img style={{ width: '20px' }} src="/assets/icon/citizen/smg.png" alt="Permis SMG" />
                                     </li>
-                                    <li className={permis.pompe ? 'allowed' : ''} onClick={() => togglePermis('pompe')}>
+                                    <li className={permisActifs.pompe ? 'allowed' : ''} onClick={() => togglePermis('pompe')}>
                                         <img style={{ width: '20px' }} src="/assets/icon/citizen/pompe.png" alt="Permis pompe" />
                                     </li>
-                                    <li className={permis.assaut ? 'allowed' : ''} onClick={() => togglePermis('assaut')}>
+                                    <li className={permisActifs.assaut ? 'allowed' : ''} onClick={() => togglePermis('assaut')}>
                                         <img style={{ width: '20px' }} src="/assets/icon/citizen/rifle.png" alt="Permis Assaut" />
                                     </li>
-                                    <li className={permis.sniper ? 'allowed' : ''} onClick={() => togglePermis('sniper')}>
+                                    <li className={permisActifs.sniper ? 'allowed' : ''} onClick={() => togglePermis('sniper')}>
                                         <img style={{ width: '20px' }} src="/assets/icon/citizen/snip.png" alt="Permis Sniper" />
                                     </li>
                                 </ul>
@@ -97,23 +173,53 @@ function InfoCitoyen() {
                         <div className={"citizen-fiche__coord__right"}>
                             <div>
                                 <h4>Profession : </h4>
-                                <input type="text" required={true} placeholder={"Profession du citoyen"}/>
+                                <input
+                                    type="text"
+                                    required={true}
+                                    placeholder={"Profession du citoyen"}
+                                    value={profession}
+                                    onChange={(e) => setProfession(e.target.value)}
+                                />
                             </div>
                             <div>
                                 <h4>Lieu de naissance : </h4>
-                                <input type="text" required={true} placeholder={"Lieu de naissance du citoyen"}/>
+                                <input
+                                    type="text"
+                                    required={true}
+                                    placeholder={"Lieu de naissance du citoyen"}
+                                    value={lieunaissance}
+                                    onChange={(e) => setLieuNaissance(e.target.value)}
+                                />
                             </div>
                             <div>
                                 <h4>Nationalité : </h4>
-                                <input type="text" required={true} placeholder={"Nationalité du citoyen"}/>
+                                <input
+                                    type="text"
+                                    required={true}
+                                    placeholder={"Nationalité du citoyen"}
+                                    value={nationalite}
+                                    onChange={(e) => setNationalite(e.target.value)}
+                                />
                             </div>
                             <div>
                                 <h4>Véhicule : </h4>
-                                <input type="text" required={true} placeholder={"Véhicule principal du citoyen"}/>
+                                <input
+                                    type="text"
+                                    required={true}
+                                    placeholder={"Véhicule principal du citoyen"}
+                                    value={vehicule}
+                                    onChange={(e) => setVehicule(e.target.value)}
+                                />
                             </div>
                             <div>
                                 <h4>N° de téléphone : </h4>
-                                <input type="text" required={true} placeholder={"N° de téléphone du citoyen"}/>
+                                <input
+                                    type="text"
+                                    required={true}
+                                    placeholder={"N° de téléphone du citoyen"}
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                />
                             </div>
                         </div>
                     </div>

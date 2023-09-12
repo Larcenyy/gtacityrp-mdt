@@ -4,15 +4,16 @@ import ListeCitoyen from "./ListeCitoyen/liste-citoyen";
 import InfoCitoyen from "./InfoCitoyen/info-citoyen";
 import ModalManager from "../mdt/Modals/ModalMap";
 
-
-
 class PageFicheCitizen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeCardIndex: null, // Index de la carte active
+            selectedCitizenId: null,
         };
     }
+    handleCitizenSelect = (citizenId) => {
+        this.setState({ selectedCitizenId: citizenId });
+    };
 
     render() {
         return (
@@ -20,18 +21,21 @@ class PageFicheCitizen extends Component {
                 <BoxFiche title="Fiche Citoyens">
                     <div className="citizenContainer">
                         <div className="citizen-left">
-                            <ListeCitoyen/>
+                            <ListeCitoyen onCitizenSelect={this.handleCitizenSelect} />
                         </div>
                         <div className="citizen-right">
-                            {/*<div className={"notOpened"}>*/}
-                            {/*    <h4>Aucune fiche citoyen sélectionnée</h4>*/}
-                            {/*</div>*/}
-                            <InfoCitoyen/>
+                            {this.state.selectedCitizenId !== null ? (
+                                <InfoCitoyen citizenId={this.state.selectedCitizenId} />
+                            ) : (
+                                <div className={"notOpened"}>
+                                    <h4>Aucune fiche citoyen sélectionnée</h4>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </BoxFiche>
 
-                <ModalManager/>
+                <ModalManager />
             </>
         );
     }

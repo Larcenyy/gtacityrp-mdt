@@ -54,8 +54,9 @@
 }
 
 .cardDispatch__left__top__code h5{
+    width: 80%;
     margin: 0!important;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .cardDispatch__left__top__info{
@@ -93,7 +94,7 @@
 
 .cardDispatch__right{
     display: flex;
-    width: 20%;
+    width: 12%;
     align-items: center;
     justify-content: flex-end;
     padding: 0 10px;
@@ -113,6 +114,7 @@
     font-size: 10px;
     font-weight: 800;
     text-align: center;
+    width: 25%;
 }
 
 .badgeId{

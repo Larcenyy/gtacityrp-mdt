@@ -3,7 +3,7 @@ import React from 'react';
 function CardFourriere({ title, date, modalDelete, isGood}) {
     const textClass = isGood ? 'textGood' : 'textBad';
     const iconSrc = isGood ? '/assets/icon/valid.svg' : '/assets/icon/invalide.svg';
-    const paymentStatus = isGood ? 'Libéré' : 'En Fourrière';
+    const paymentStatus = isGood ? 'Libéré' : 'Fourrière';
 
     return (
         <div className={"card-contrat"}>
