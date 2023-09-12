@@ -30,6 +30,25 @@
     justify-content: center;
 }
 
+.submit{
+    font-weight: 800;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 7px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: 300ms ease-in-out;
+}
+.submit:hover{
+    opacity: 0.5;
+}
 
 .citizenContainer {
     display: flex;

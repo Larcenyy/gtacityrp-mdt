@@ -50,5 +50,37 @@ export const modalData = [
         enableButtons: false,
         enableMap: true,
         enableAgentCard: false
+    },
+    {
+        id: "add_fiche_citizen",
+        title: "Ajouter une fiche citoyen",
+        descrip: "Souhaitez vous créer une nouvelle fiche citoyen ?",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false
+    },
+    {
+        id: "deleteFicheCitizen",
+        title: "Supprimer une fiche citoyen",
+        descrip: "",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false
+    },
+    {
+        id: "deleteAmende",
+        title: "Supprimer une amende",
+        descrip: "",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false
+    },
+    {
+        id: "deleteIntervention",
+        title: "Supprimer une intervention",
+        descrip: "",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false
     }
 ];

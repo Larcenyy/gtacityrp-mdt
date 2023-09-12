@@ -9,7 +9,7 @@ class PageMap extends Component {
         return (
             <>
                 <BoxFiche title="Carte de Los Angeles">
-                    <div className={"mapFull"} style={{ width: '100%', height: '500px', overflow: "hidden"}}>
+                    <div className={"mapFull"} style={{ width: '100%', height: '455px', overflow: "hidden"}}>
                         <MapComponent />
                     </div>
                 </BoxFiche>
