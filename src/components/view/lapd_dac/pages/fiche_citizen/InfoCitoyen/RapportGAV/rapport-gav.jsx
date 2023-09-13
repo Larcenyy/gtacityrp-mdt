@@ -1,13 +1,12 @@
 import React from 'react';
-
 import RapportCard from "../RapportArrestation/rapportCard";
-import {rapportGAV} from "./rapportGAV";
-function RapportGAV() {
+
+function RapportGAV({ reports }) {
     return (
         <div className={"citizen-fiche__down__right"}>
             <h3>Rapports de garde à vue</h3>
             <div className={"container-civil-card"}>
-                {rapportGAV.map((dispatch, index) => (
+                {reports.map((dispatch, index) => (
                     <RapportCard
                         key={index}
                         title={dispatch.title}

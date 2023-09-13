@@ -5,6 +5,7 @@ export const rapportArrest = [
         modalDelete: "deleteRapportArrest",
         modalEdit: "editRapportArrest",
         modalSee: "seeRapportArrest",
+        citizenId: 1, // ID du citoyen
     },
     {
         title: "Rapport #xxxxx",
@@ -12,6 +13,8 @@ export const rapportArrest = [
         modalDelete: "deleteRapportArrest",
         modalEdit: "editRapportArrest",
         modalSee: "seeRapportArrest",
+        citizenId: 1, // ID du citoyen
+
     },
     {
         title: "Rapport #xxxxx",
@@ -19,5 +22,7 @@ export const rapportArrest = [
         modalDelete: "deleteRapportArrest",
         modalEdit: "editRapportArrest",
         modalSee: "seeRapportArrest",
+        citizenId: 2, // ID du citoyen
+
     }
 ];

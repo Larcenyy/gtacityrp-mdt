@@ -3,6 +3,11 @@ import RapportArrest from "./RapportArrestation/rapport-arrest";
 import RapportGAV from "./RapportGAV/rapport-gav";
 import Contravention from "./Contravention/contravention-container";
 import {listeCitoyenData} from "../ListeCitoyen/listeCitoyenData";
+import {rapportArrest} from "./RapportArrestation/rapportArrest";
+import {rapportGAV} from "./RapportGAV/rapportGAV";
+import {amendeData} from "./Contravention/Amende/amendeData";
+import {fourriereData} from "./Contravention/Fourrière/fourriereData";
+
 
 function InfoCitoyen({ citizenId }) {
 
@@ -26,6 +31,19 @@ function InfoCitoyen({ citizenId }) {
         assaut: false,
         sniper: false,
     });
+
+    // Filtrer les contraventions de la fourrière par citizenId
+    const filteredFourriereContraventions = fourriereData.filter((contravention) => contravention.citizenId === citizenId);
+
+    // Filtrer les contraventions d'amende par citizenId
+    const filteredAmendeContraventions = amendeData.filter((contravention) => contravention.citizenId === citizenId);
+
+    // Filtrer les rapports d'arrestation par citizenId
+    const filteredArrestReports = rapportArrest.filter((report) => report.citizenId === citizenId);
+
+    // Filtrer les rapports de GAV par citizenId
+    const filteredGAVReports = rapportGAV.filter((report) => report.citizenId === citizenId);
+
 
     const togglePermis = (data) => {
         setPermisActifs((prevPermisActifs) => ({
@@ -226,10 +244,13 @@ function InfoCitoyen({ citizenId }) {
                 </form>
             </div>
             <div className={"citizen-fiche__down"}>
-                <RapportArrest/>
-                <RapportGAV/>
+                <RapportArrest reports={filteredArrestReports} />
+                <RapportGAV reports={filteredGAVReports} />
             </div>
-            <Contravention/>
+            {/* Afficher les contraventions de la fourrière filtrées */}
+            <Contravention contraventions={filteredFourriereContraventions} />
+            {/* Afficher les contraventions d'amende filtrées */}
+            <Contravention contraventions={filteredAmendeContraventions} />
         </div>
     );
 }
