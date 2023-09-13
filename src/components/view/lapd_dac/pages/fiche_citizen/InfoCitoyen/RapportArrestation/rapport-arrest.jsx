@@ -1,13 +1,12 @@
 import React from 'react';
-
 import RapportCard from "./rapportCard";
-import {rapportArrest} from "./rapportArrest";
-function RapportArrest() {
+
+function RapportArrest({ reports }) {
     return (
         <div className={"citizen-fiche__down_left"}>
             <h3>Rapports d'arrestation</h3>
             <div className={"container-civil-card"}>
-                {rapportArrest.map((dispatch, index) => (
+                {reports.map((dispatch, index) => (
                     <RapportCard
                         key={index}
                         title={dispatch.title}
@@ -18,7 +17,7 @@ function RapportArrest() {
                     />
                 ))}
                 <div className={"add-card"}>
-                    <img style={{ width: "15px" }} src="/assets/icon/plus.svg"/>
+                    <img style={{ width: "15px" }} src="/assets/icon/plus.svg" />
                 </div>
             </div>
         </div>
