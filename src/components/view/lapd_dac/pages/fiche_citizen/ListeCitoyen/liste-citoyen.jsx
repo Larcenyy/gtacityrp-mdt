@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import CardCitoyen from "./CardCitoyen/card-citoyen";
-import { listeCitoyenData } from "./listeCitoyenData";
-import { Link } from "react-router-dom";
+import {listeCitoyenData} from "./listeCitoyenData";
+import {Link} from "react-router-dom";
 
-function ListeCitoyen({ onCitizenSelect }) {
+function ListeCitoyen({onCitizenSelect}) {
     const [activeCardIndex, setActiveCardIndex] = useState(-1);
+    const [searchValue, setSearchValue] = useState("");
 
     const handleCardClick = (index) => {
         console.log("Card clicked:", index);
@@ -21,11 +22,17 @@ function ListeCitoyen({ onCitizenSelect }) {
     return (
         <div className={"citizen-list"}>
             <div className={"search-container"}>
-                <input className="search-bar" type="text" placeholder={"Rechercher un citoyen "} />
+                <input
+                    className="search-bar"
+                    type="text"
+                    value={searchValue ?? ""}
+                    onChange={(e) => setSearchValue(e.target.value)}
+                    placeholder={"Rechercher un citoyen "}
+                />
                 <div className={"search-icon"}></div>
             </div>
             <div className={'card-container'}>
-                {listeCitoyenData.map((card, index) => (
+                {listeCitoyenData.filter(card => card.title.toLowerCase().includes(searchValue.toLowerCase())).map((card, index) => (
                     <CardCitoyen
                         key={index}
                         title={card.title}
@@ -33,7 +40,7 @@ function ListeCitoyen({ onCitizenSelect }) {
                         modalDelete={card.modalDelete}
                         isActive={index === activeCardIndex}
                         onClick={() => handleCardClick(index)}
-                        citizenId={card.citizenId} // Passez l'ID du citoyen à la carte
+                        citizenId={card.citizenId}
                     />
                 ))}
             </div>
