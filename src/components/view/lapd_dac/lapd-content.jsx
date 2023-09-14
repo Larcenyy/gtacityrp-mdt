@@ -7,7 +7,6 @@ import NotifBell from "./bell-notification/bell-notification";
 
 const TabletteContent = () => {
     const { page } = useParams(); // Récupère la valeur du paramètre de l'URL
-
     return (
         <div className="tablet-content">
             <Header />

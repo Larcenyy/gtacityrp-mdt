@@ -2,12 +2,11 @@ import React, {useEffect, useState} from 'react';
 import RapportArrest from "./RapportArrestation/rapport-arrest";
 import RapportGAV from "./RapportGAV/rapport-gav";
 import Contravention from "./Contravention/contravention-container";
-import {listeCitoyenData} from "../ListeCitoyen/listeCitoyenData";
 import {rapportArrest} from "./RapportArrestation/rapportArrest";
 import {rapportGAV} from "./RapportGAV/rapportGAV";
 import {amendeData} from "./Contravention/Amende/amendeData";
 import {fourriereData} from "./Contravention/Fourrière/fourriereData";
-
+import {listeCitoyenData, supprimerCitoyenParId} from "../ListeCitoyen/listeCitoyenData";
 
 function InfoCitoyen({ citizenId }) {
 
@@ -53,6 +52,7 @@ function InfoCitoyen({ citizenId }) {
     };
 
     useEffect(() => {
+
         // Recherchez les données du citoyen en fonction de l'ID
         const data = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
 
@@ -83,10 +83,26 @@ function InfoCitoyen({ citizenId }) {
         return <div>Aucune fiche citoyen sélectionnée</div>;
     }
 
+    function supprimerCitoyen(citizenId) {
+        // Supprimez le citoyen dans la source de données (fichier JS)
+        supprimerCitoyenParId(citizenId);
+
+        const nouvelleListeCitoyens = listeCitoyenData.filter(
+            (citizen) => citizen.citizenId !== citizenId
+        );
+
+        setCitizenData(null); // Réinitialisez d'abord l'état pour éviter les erreurs visuelles
+        setCitizenData(nouvelleListeCitoyens[0]); // Mettez à jour l'état avec le premier citoyen restant
+
+        // Créez un événement personnalisé 'onDelete' et déclenchez-le
+        const deleteEvent = new Event('onDelete');
+        document.dispatchEvent(deleteEvent);
+    }
+
     return (
         <div className={"citizen-fiche"}>
             <div className={"citizen-fiche__top"}>
-                <form >
+                <form> {/* Ajoutez onSubmit pour gérer la soumission du formulaire */}
                     <div className={"citizen-fiche__info"}>
                         <div>
                             <button className={"submit goodAction"} type='submit'>
@@ -104,9 +120,11 @@ function InfoCitoyen({ citizenId }) {
                                 <small>{citizenData.age} ans - {citizenData.sexe}</small>
                             </div>
                         </div>
-                        <div className={"buttonAction deleteAction"}>
+                        <div className={"buttonAction deleteAction"} onClick={() => supprimerCitoyen(citizenData.citizenId)}>
                             <img style={{ width: "18px" }} src="/assets/icon/trash.svg" alt="Supprimer" />
-                            <span data-modal={"deleteFicheCitizen"} className={'openModal'}>Supprimer la fiche</span>
+                            <span data-modal={"deleteFicheCitizen"} className={'openModal'}>
+                                Supprimer la fiche
+                            </span>
                         </div>
                     </div>
                     <div className={"citizen-fiche__coord"}>
@@ -248,9 +266,9 @@ function InfoCitoyen({ citizenId }) {
                 <RapportGAV reports={filteredGAVReports} />
             </div>
             {/* Afficher les contraventions de la fourrière filtrées */}
-            <Contravention contraventions={filteredFourriereContraventions} />
+            <Contravention type={'fourriere'} contraventions={filteredFourriereContraventions} />
             {/* Afficher les contraventions d'amende filtrées */}
-            <Contravention contraventions={filteredAmendeContraventions} />
+            <Contravention type={'amende'} contraventions={filteredAmendeContraventions} />
         </div>
     );
 }

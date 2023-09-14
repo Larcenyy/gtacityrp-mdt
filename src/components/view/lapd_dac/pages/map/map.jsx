@@ -8,7 +8,7 @@ class PageMap extends Component {
 
         return (
             <>
-                <BoxFiche title="Carte de Los Angeles">
+                <BoxFiche title="Carte de Los Angeles" classSpec={"app__content app__home"}>
                     <div className={"mapFull"} style={{ width: '100%', height: '455px', overflow: "hidden"}}>
                         <MapComponent />
                     </div>

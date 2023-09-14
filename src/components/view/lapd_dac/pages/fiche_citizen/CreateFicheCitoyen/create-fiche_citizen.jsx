@@ -10,7 +10,7 @@ class CreateFicheCitizen extends Component {
     render() {
         return (
             <>
-                <BoxFiche title="Créer une fiche citoyen">
+                <BoxFiche title="Créer une fiche citoyen" classSpec={"app__content app__home"}>
                     <div className="citizenContainer">
                         <div className="citizen-left">
                             <div style={{ zIndex: "1", filter: 'blur(3px)', height: '100%'}}>

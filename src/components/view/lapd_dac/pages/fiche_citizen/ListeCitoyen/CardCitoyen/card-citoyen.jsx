@@ -1,6 +1,19 @@
-import React from 'react';
-function CardCitoyen({ title, dateBirthday, modalDelete, isActive, onClick, citizenId }) {
+import React, {useState} from 'react';
+function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDelete }) {
     const cardClassName = `card-citizen ${isActive ? 'cardActive' : ''}`;
+
+    // État local pour gérer la visibilité du modèle de confirmation
+    const [isConfirmationModalVisible, setConfirmationModalVisible] = useState(false);
+
+    // Fonction pour afficher le modèle de confirmation
+    function showConfirmationModal() {
+        setConfirmationModalVisible(true);
+    }
+
+    // Fonction pour masquer le modèle de confirmation
+    function hideConfirmationModal() {
+        setConfirmationModalVisible(false);
+    }
 
     return (
         <div className={cardClassName} onClick={onClick} data-id={citizenId}>
@@ -12,9 +25,17 @@ function CardCitoyen({ title, dateBirthday, modalDelete, isActive, onClick, citi
                 </div>
             </div>
             <hr/>
-            <span data-modal={modalDelete} className="openModal">
-                <img style={{ width: "18px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+            <span onClick={showConfirmationModal} className={"openModal"}>
+                <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
             </span>
+            {/* Modèle de confirmation (affiché conditionnellement) */}
+            {isConfirmationModalVisible && (
+                <div className="confirmation-modal">
+                    <p>Confirmer l'action ?</p>
+                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Valider" /></button>
+                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                </div>
+            )}
         </div>
     );
 }

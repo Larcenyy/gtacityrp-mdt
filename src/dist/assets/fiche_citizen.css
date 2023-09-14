@@ -98,6 +98,7 @@
     padding: 15px 12px;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     cursor: pointer;
 }
 
@@ -140,6 +141,9 @@
     margin-top: 7px;
     width: 80%;
     text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
     cursor: pointer;
     transition: 300ms ease-in;
 }
@@ -320,7 +324,7 @@
 .blocked{
     z-index: 88;
     position: absolute;
-    height: 59%;
+    height: 65%;
     width: 22%;
     display: flex;
     align-items: center;
@@ -427,10 +431,11 @@
     padding: 10px 10px;
     font-weight: 700;
     gap: 14px;
-    width: 42%;
+    width: 43%;
     background-color: #202A38;
     align-items: center;
     border-radius: 8px;
+    position: relative;
 }
 
 .add-card {
@@ -443,6 +448,7 @@
     border-radius: 50%;
     transition: 300ms ease-in-out;
     cursor: pointer;
+    z-index: 0;
 }
 
 .add-card:hover {
@@ -450,7 +456,7 @@
 }
 
 .civil-card h4 {
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .civil-card ul {
@@ -473,7 +479,7 @@
 }
 
 .civil-card p {
-    font-size: 12px;
+    font-size: 10px;
     opacity: 0.7;
 }
 
@@ -533,7 +539,9 @@
     background-color: #202A38;
     align-items: center;
     border-radius: 8px;
+    position: relative;
     justify-content: space-between;
+    z-index: 99;
 }
 
 .card-contrat p {

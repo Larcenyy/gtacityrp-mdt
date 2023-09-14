@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class BoxFiche extends Component {
     render() {
         return (
-            <div className="app__content app__home">
+            <div className={this.props.classSpec} style={{marginTop: this.props.myStyle}}>
                 <div className="box-container">
                     <div className="box-content">
                         <div>

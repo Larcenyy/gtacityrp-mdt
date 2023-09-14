@@ -104,15 +104,6 @@
     outline: none;
 }
 
-.search-container .search-icon {
-    width: 20px;
-    height: 19px;
-    margin-right: 10px;
-    background-color: #fff;
-    -webkit-mask-image: url('../../../public/assets/lapd_dac/search.svg');
-    mask-image: url('../../../public/assets/lapd_dac/search.svg');
-    cursor: pointer;
-}
 
 .modal-content .buttons {
     display: flex;

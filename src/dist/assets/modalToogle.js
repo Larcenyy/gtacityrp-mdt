@@ -1,4 +1,5 @@
 // modalUtils.js
+
 export function openModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.style.display = "block";
@@ -19,6 +20,7 @@ export function attachModalListeners() {
             openModal(modalId);
         });
     });
+
 
     closeModalBtns.forEach(btn => {
         btn.addEventListener("click", (event) => {

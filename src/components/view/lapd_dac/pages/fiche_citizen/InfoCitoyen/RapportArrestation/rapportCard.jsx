@@ -1,5 +1,24 @@
-import React from 'react';
-function RapportGAVCard({title, date, modalDelete, modalSee, modalEdit}) {
+import React, {useState} from 'react';
+import {openModal} from "../../../../../../../dist/assets/modalToogle";
+function RapportGAVCard({title, date, modalDelete, modalEdit, onDelete}) {
+    function handleCitizenCardClick(event) {
+        const modalId = event.currentTarget.getAttribute("data-modal");
+        openModal(modalId);
+    }
+
+    // État local pour gérer la visibilité du modèle de confirmation
+    const [isConfirmationModalVisible, setConfirmationModalVisible] = useState(false);
+
+    // Fonction pour afficher le modèle de confirmation
+    function showConfirmationModal() {
+        setConfirmationModalVisible(true);
+    }
+
+    // Fonction pour masquer le modèle de confirmation
+    function hideConfirmationModal() {
+        setConfirmationModalVisible(false);
+    }
+
     return (
         <div className={`civil-card`}>
             <div className={"civil-card__info"}>
@@ -17,16 +36,24 @@ function RapportGAVCard({title, date, modalDelete, modalSee, modalEdit}) {
                 </div>
                 <ul>
                     <li>
-                        <span data-modal={modalSee} className={'openModal'}><img style={{ width: "15px" }} src="/assets/icon/eyes.svg" alt="Voir" /></span>
+                        <span><img style={{ width: "15px" }} src="/assets/icon/eyes.svg" alt="Voir" /></span>
                     </li>
                     <li>
-                        <span data-modal={modalEdit} className={'openModal'}><img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" /></span>
+                        <span onClick={handleCitizenCardClick} data-modal={modalEdit} className={'openModal'}><img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" /></span>
                     </li>
-                    <li>
-                        <span data-modal={modalDelete} className={'openModal'}><img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" /></span>
-                    </li>
+                    <span onClick={showConfirmationModal} className={"openModal"}>
+                        <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                    </span>
                 </ul>
             </div>
+            {/* Modèle de confirmation (affiché conditionnellement) */}
+            {isConfirmationModalVisible && (
+                <div className="confirmation-modal">
+                    <p>Confirmer l'action ?</p>
+                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Valider" /></button>
+                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                </div>
+            )}
         </div>
     );
 }

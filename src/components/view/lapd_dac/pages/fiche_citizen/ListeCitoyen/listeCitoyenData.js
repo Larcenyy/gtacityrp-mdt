@@ -1,7 +1,6 @@
 export let listeCitoyenData = [
     {
         citizenId: 1, // ID du citoyen
-        modalDelete: "deleteFicheCitizen",
         title: "BIDULE FOUFOU",
         dateBirthday: "01/01/1999",
         sexe: "Homme",
@@ -27,7 +26,6 @@ export let listeCitoyenData = [
     },
     {
         citizenId: 2, // ID du citoyen
-        modalDelete: "deleteFicheCitizen",
         title: "JHON LAWNY",
         dateBirthday: "15/12/2009",
         sexe: "Femme",
@@ -40,15 +38,42 @@ export let listeCitoyenData = [
         nationalite: "Russe",
         vehicule: "AUDI Q8",
         phone: "654-854",
-
         permisVehicle: true,
-        permisAir: false,
-        permisBoat: false,
+        permisAir: true,
+        permisBoat: true,
 
-        permisPistol: false,
+        permisPistol: true,
         permisSmg: false,
         permisShotgun: false,
-        permisRifle: false,
+        permisRifle: true,
+        permisSnip: true,
+    },
+    {
+        citizenId: 3, // ID du citoyen
+        title: "MARIO PABLO",
+        dateBirthday: "15/12/2009",
+        sexe: "Femme",
+        age: "28",
+        adresse: "6 rue de JeSaisPas",
+        profession: "LSPD",
+        naissance: "San Fierro",
+        taille: 165,
+        masse: 55,
+        nationalite: "Russe",
+        vehicule: "AUDI Q8",
+        phone: "654-854",
+        permisVehicle: true,
+        permisAir: true,
+        permisBoat: true,
+
+        permisPistol: true,
+        permisSmg: false,
+        permisShotgun: false,
+        permisRifle: true,
         permisSnip: true,
     }
 ];
+export function supprimerCitoyenParId(citizenId) {
+    // Utilisez la méthode filter pour créer un nouveau tableau sans le citoyen
+    listeCitoyenData = listeCitoyenData.filter(citizen => citizen.citizenId !== citizenId);
+}

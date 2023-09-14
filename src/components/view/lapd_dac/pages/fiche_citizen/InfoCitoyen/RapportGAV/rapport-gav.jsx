@@ -1,5 +1,7 @@
 import React from 'react';
 import RapportCard from "../RapportArrestation/rapportCard";
+import {openModal} from "../../../../../../../dist/assets/modalToogle";
+import {Link} from "react-router-dom";
 
 function RapportGAV({ reports }) {
     return (
@@ -10,15 +12,15 @@ function RapportGAV({ reports }) {
                     <RapportCard
                         key={index}
                         title={dispatch.title}
-                        date={dispatch.dateBirthday}
+                        date={dispatch.date}
                         modalDelete={dispatch.modalDelete}
                         modalEdit={dispatch.modalEdit}
                         modalSee={dispatch.modalSee}
                     />
                 ))}
-                <div className={"add-card"}>
-                    <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt="Permis Sniper" />
-                </div>
+                <Link to="/page/rapport-gav" className={"add-card"}>
+                    <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt={"Ajouter"} />
+                </Link>
             </div>
         </div>
     );

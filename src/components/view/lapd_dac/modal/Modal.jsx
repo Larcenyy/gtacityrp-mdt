@@ -1,7 +1,7 @@
 import React from "react";
 import MapComponent from "../leaflet-map/leaflet-map";
 
-const Modal = ({children, textBouton, classButton, titlePlaceHolder, title, descrip, enableAgentCard, enableButtons, enableMap, enableSearchBar }) => {
+const Modal = ({children, textBouton, classButton, titlePlaceHolder, title, descrip, enableAgentCard, enableButtons, enableMap, enableSearchBar, handleDelete }) => {
 
 
     return (
@@ -42,7 +42,7 @@ const Modal = ({children, textBouton, classButton, titlePlaceHolder, title, desc
             )}
             {enableButtons && (
                 <div className="buttons">
-                    <button className={classButton ? classButton : "button modify"}>{textBouton ? textBouton : "Ajouter"}</button>
+                    <button onClick={handleDelete} className={classButton ? classButton : "button modify"}>{textBouton ? textBouton : "Ajouter"}</button>
                     <button className="button cancel closeModal">Annuler</button>
                 </div>
             )}

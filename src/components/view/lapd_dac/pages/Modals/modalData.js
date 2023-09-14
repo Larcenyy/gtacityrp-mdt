@@ -52,28 +52,43 @@ export const modalData = [
         enableAgentCard: false
     },
     {
-        id: "add_fiche_citizen",
-        title: "Ajouter une fiche citoyen",
-        descrip: "Souhaitez vous créer une nouvelle fiche citoyen ?",
-        enableButtons: true,
-        enableMap: false,
-        enableAgentCard: false
-    },
-    {
         id: "editRapportArrest",
-        title: "Editer une fiche citoyen",
+        title: "Editer une Arrestation",
         descrip: "",
         enableButtons: true,
         enableMap: false,
-        enableAgentCard: false
+        enableAgentCard: false,
+        textBouton: "Editer une Arrestation",
     },
     {
-        id: "deleteFicheCitizen",
-        title: "Supprimer une fiche citoyen",
+        id: "deleteRapportArrest",
+        title: "Supprimer une Arrestation",
         descrip: "",
         enableButtons: true,
         enableMap: false,
-        enableAgentCard: false
+        enableAgentCard: false,
+        textBouton: "Supprimer une Arrestation",
+        classButton: "button delete"
+    },
+
+    {
+        id: "editRapportGAV",
+        title: "Editer une GAV",
+        descrip: "",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false,
+        textBouton: "Editer une GAV",
+    },
+    {
+        id: "deleteRapportGAV",
+        title: "Supprimer une GAV",
+        descrip: "",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false,
+        textBouton: "Supprimer une GAV",
+        classButton: "button delete"
     },
     {
         id: "deleteAmende",
@@ -81,7 +96,9 @@ export const modalData = [
         descrip: "",
         enableButtons: true,
         enableMap: false,
-        enableAgentCard: false
+        enableAgentCard: false,
+        textBouton: "Supprimer une amende",
+        classButton: "button delete"
     },
     {
         id: "deleteIntervention",
@@ -89,6 +106,20 @@ export const modalData = [
         descrip: "",
         enableButtons: true,
         enableMap: false,
-        enableAgentCard: false
-    }
+        enableAgentCard: false,
+        textBouton: "Supprimer une intervention",
+        classButton: "button delete"
+    },
+
+
+    {
+        id: "deleteFicheCitizen",
+        title: "Supprimer une fiche citoyen",
+        descrip: "",
+        enableButtons: true,
+        enableMap: false,
+        enableAgentCard: false,
+        textBouton: "Supprimer une fiche citoyen",
+        classButton: "button delete"
+    },
 ];

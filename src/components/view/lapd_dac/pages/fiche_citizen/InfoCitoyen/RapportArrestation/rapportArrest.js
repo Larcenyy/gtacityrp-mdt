@@ -1,7 +1,7 @@
 export const rapportArrest = [
     {
         title: "Rapport #xxxxx",
-        date: "Date",
+        date: "01/05/2023",
         modalDelete: "deleteRapportArrest",
         modalEdit: "editRapportArrest",
         modalSee: "seeRapportArrest",
@@ -9,7 +9,7 @@ export const rapportArrest = [
     },
     {
         title: "Rapport #xxxxx",
-        date: "Date",
+        date: "19/02/2022",
         modalDelete: "deleteRapportArrest",
         modalEdit: "editRapportArrest",
         modalSee: "seeRapportArrest",
@@ -18,7 +18,7 @@ export const rapportArrest = [
     },
     {
         title: "Rapport #xxxxx",
-        date: "Date",
+        date: "19/02/2022",
         modalDelete: "deleteRapportArrest",
         modalEdit: "editRapportArrest",
         modalSee: "seeRapportArrest",

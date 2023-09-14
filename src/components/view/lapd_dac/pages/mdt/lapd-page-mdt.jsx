@@ -3,7 +3,6 @@ import 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {attachModalListeners} from "../../../../../dist/assets/modalToogle";
 import LapdAlert from "../home/lapd-alert";
-import ModalManager from "./Modals/ModalMap";
 import TableHeader from "./Tables/TableHeader";
 import TableRow from "./Tables/TableRow";
 import {rowsData} from "./Tables/tableData";
@@ -102,10 +101,6 @@ const PageMDT = () => {
                         <ContainerCom/>
                     </div>
                 </div>
-
-
-                {/* Modal POUR AJOUTER UN OFFICIER DU ROOTER */}
-                <ModalManager/>
             </div>
         </>
     )
