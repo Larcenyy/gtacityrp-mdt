@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import CardContravention from "./Amende/card-contravention";
 import CardFourriere from "./Fourrière/card-fourriere";
 
-function Contravention({ contraventions, type }) {
+function Contravention({ contraventions, type, citizenId }) {
 
     const [contraventionList, setContraventionList] = useState(contraventions);
+
+    useEffect(() => {
+        setContraventionList(contraventions);
+    }, [citizenId, contraventions]);
 
 
     // Fonction de suppression

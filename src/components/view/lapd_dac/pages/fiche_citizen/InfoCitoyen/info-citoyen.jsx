@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import RapportArrest from "./RapportArrestation/rapport-arrest";
-import RapportGAV from "./RapportGAV/rapport-gav";
 import Contravention from "./Contravention/contravention-container";
-import {rapportArrest} from "./RapportArrestation/rapportArrest";
-import {rapportGAV} from "./RapportGAV/rapportGAV";
+import {rapportGAV} from "./Rapport/RapportGAV/rapportGAV";
 import {amendeData} from "./Contravention/Amende/amendeData";
 import {fourriereData} from "./Contravention/Fourrière/fourriereData";
 import {listeCitoyenData, supprimerCitoyenParId} from "../ListeCitoyen/listeCitoyenData";
+import Rapport from "./Rapport/rapport-container";
+import {rapportArrest} from "./Rapport/RapportArrest/rapportArrest";
+import PermisCitoyen from "./Permis/permis-citoyen";
 
-function InfoCitoyen({ citizenId }) {
+function InfoCitoyen({ citizenId, citizenDataProp }) {
 
+    const [citizenName, setCitizenName] = useState(''); // État local pour stocker le nom du citoyen
     const [citizenData, setCitizenData] = useState(null);
     const [taille, setTaille] = useState('');
     const [masse, setMasse] = useState('');
@@ -20,16 +21,7 @@ function InfoCitoyen({ citizenId }) {
     const [nationalite, setNationalite] = useState('');
     const [vehicule, setVehicule] = useState('');
     const [phone, setPhone] = useState('');
-    const [permisActifs, setPermisActifs] = useState({
-        vehicle: false,
-        air: false,
-        boat: false,
-        pistol: false,
-        smg: false,
-        pompe: false,
-        assaut: false,
-        sniper: false,
-    });
+
 
     // Filtrer les contraventions de la fourrière par citizenId
     const filteredFourriereContraventions = fourriereData.filter((contravention) => contravention.citizenId === citizenId);
@@ -38,25 +30,15 @@ function InfoCitoyen({ citizenId }) {
     const filteredAmendeContraventions = amendeData.filter((contravention) => contravention.citizenId === citizenId);
 
     // Filtrer les rapports d'arrestation par citizenId
-    const filteredArrestReports = rapportArrest.filter((report) => report.citizenId === citizenId);
+    const filteredArrestReports = rapportArrest.filter((rapport) => rapport.citizenId === citizenId);
 
     // Filtrer les rapports de GAV par citizenId
-    const filteredGAVReports = rapportGAV.filter((report) => report.citizenId === citizenId);
+    const filteredGAVReports = rapportGAV.filter((rapport) => rapport.citizenId === citizenId);
 
-
-    const togglePermis = (data) => {
-        setPermisActifs((prevPermisActifs) => ({
-            ...prevPermisActifs,
-            [data]: !prevPermisActifs[data],
-        }));
-    };
 
     useEffect(() => {
-
         // Recherchez les données du citoyen en fonction de l'ID
         const data = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
-
-        // Mettez à jour les données du citoyen dans l'état
         setCitizenData(data);
 
         // Si les données du citoyen sont disponibles, initialisez les valeurs du formaulaiures
@@ -70,6 +52,7 @@ function InfoCitoyen({ citizenId }) {
             setNationalite(data.nationalite);
             setVehicule(data.vehicule);
             setPhone(data.phone);
+            setCitizenName(data.title); // Mettez à jour le nom du citoyen
         }
 
     }, [citizenId]);
@@ -116,7 +99,6 @@ function InfoCitoyen({ citizenId }) {
                             </div>
                             <div>
                                 <h4>{citizenData.title}</h4>
-                                <small>id : {citizenData.citizenId}</small>
                                 <small>{citizenData.age} ans - {citizenData.sexe}</small>
                             </div>
                         </div>
@@ -171,40 +153,7 @@ function InfoCitoyen({ citizenId }) {
                                     />
                                 </div>
                             </div>
-                            <div>
-                                <h4>Permis de conduire : </h4>
-                                <ul>
-                                    <li className={permisActifs.vehicle ? 'allowed' : ''} onClick={() => togglePermis('vehicle')}>
-                                        <img style={{ width: "20px" }} src="/assets/icon/citizen/car.png" alt="permis voiture" />
-                                    </li>
-                                    <li className={permisActifs.air ? 'allowed' : ''} onClick={() => togglePermis('air')}>
-                                        <img style={{ width: "20px" }} src="/assets/icon/citizen/plane.png" alt="permis avion" />
-                                    </li>
-                                    <li className={permisActifs.boat ? 'allowed' : ''} onClick={() => togglePermis('boat')}>
-                                        <img style={{ width: "20px" }} src="/assets/icon/citizen/bateau.png" alt="permis bateau" />
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Permis d'arme : </h4>
-                                <ul>
-                                    <li className={permisActifs.pistol ? 'allowed' : ''} onClick={() => togglePermis('pistol')}>
-                                        <img style={{ width: '20px' }} src="/assets/icon/citizen/pistol.png" alt="Permis pistolet" />
-                                    </li>
-                                    <li className={permisActifs.smg ? 'allowed' : ''} onClick={() => togglePermis('smg')}>
-                                        <img style={{ width: '20px' }} src="/assets/icon/citizen/smg.png" alt="Permis SMG" />
-                                    </li>
-                                    <li className={permisActifs.pompe ? 'allowed' : ''} onClick={() => togglePermis('pompe')}>
-                                        <img style={{ width: '20px' }} src="/assets/icon/citizen/pompe.png" alt="Permis pompe" />
-                                    </li>
-                                    <li className={permisActifs.assaut ? 'allowed' : ''} onClick={() => togglePermis('assaut')}>
-                                        <img style={{ width: '20px' }} src="/assets/icon/citizen/rifle.png" alt="Permis Assaut" />
-                                    </li>
-                                    <li className={permisActifs.sniper ? 'allowed' : ''} onClick={() => togglePermis('sniper')}>
-                                        <img style={{ width: '20px' }} src="/assets/icon/citizen/snip.png" alt="Permis Sniper" />
-                                    </li>
-                                </ul>
-                            </div>
+                            <PermisCitoyen citizenId={citizenData.citizenId}/>
                         </div>
                         <div className={"citizen-fiche__coord__right"}>
                             <div>
@@ -262,8 +211,8 @@ function InfoCitoyen({ citizenId }) {
                 </form>
             </div>
             <div className={"citizen-fiche__down"}>
-                <RapportArrest reports={filteredArrestReports} />
-                <RapportGAV reports={filteredGAVReports} />
+                <Rapport type={'Arrest'} rapport={filteredArrestReports} citizenName={citizenName}/>
+                <Rapport type={'GAV'} rapport={filteredGAVReports} citizenName={citizenName} />
             </div>
             {/* Afficher les contraventions de la fourrière filtrées */}
             <Contravention type={'fourriere'} contraventions={filteredFourriereContraventions} />

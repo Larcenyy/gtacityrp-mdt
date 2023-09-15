@@ -1,6 +1,12 @@
 import React from 'react';
+import {useLocation} from "react-router-dom";
 
 function RapportGAV() {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const name = searchParams.get('name') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
+
+
     return (
         <>
             <form action="">
@@ -11,9 +17,11 @@ function RapportGAV() {
                             className="search-bar"
                             type="text"
                             required={true}
+                            value={name}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
-                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />                    </div>
+                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                    </div>
                 </div>
                 <div>
                     <p>Lier un officier en charge :</p>

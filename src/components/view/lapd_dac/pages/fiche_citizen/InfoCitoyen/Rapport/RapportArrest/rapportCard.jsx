@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {openModal} from "../../../../../../../dist/assets/modalToogle";
-function RapportGAVCard({title, date, modalDelete, modalEdit, onDelete}) {
+import {openModal} from "../../../../../../../../dist/assets/modalToogle";
+function RapportArrestCard({title, date, modalEdit, onDelete}) {
     function handleCitizenCardClick(event) {
         const modalId = event.currentTarget.getAttribute("data-modal");
         openModal(modalId);
@@ -58,4 +58,4 @@ function RapportGAVCard({title, date, modalDelete, modalEdit, onDelete}) {
     );
 }
 
-export default RapportGAVCard;
+export default RapportArrestCard;

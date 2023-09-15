@@ -5,6 +5,7 @@ import './dist/assets/loading.css';
 import './dist/assets/mdt_dispatch.css';
 import './dist/assets/fiche_citizen.css';
 import './dist/assets/page-rapport.css';
+import './dist/assets/page-search.css';
 
 import {Routes, Route} from "react-router-dom";
 
