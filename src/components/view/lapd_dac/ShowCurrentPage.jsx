@@ -5,6 +5,7 @@ import PageFicheCitizen from "./pages/fiche_citizen/lapd-page-fiche_citizen";
 import PageMap from "./pages/map/map";
 import CreateFicheCitizen from "./pages/fiche_citizen/CreateFicheCitoyen/create-fiche_citizen";
 import PageRapport from "./pages/rapport/lapd-page-rapport";
+import SearchHome from "./pages/search/search-home";
 
 
 const ShowCurrentPage = ({ currentPage }) => {
@@ -18,6 +19,7 @@ const ShowCurrentPage = ({ currentPage }) => {
             {currentPage === "rapports" ? <PageRapport /> : null}
             {currentPage === "rapport-arrest" ? <PageRapport type={"RapportArrest"} /> : null}
             {currentPage === "rapport-gav" ? <PageRapport type={"RapportGAV"} /> : null}
+            {currentPage === "recherches" ? <SearchHome /> : null}
         </div>
     );
 };

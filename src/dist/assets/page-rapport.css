@@ -65,10 +65,14 @@
 .rapport-form form div{
     display: flex;
     width: 100%;
-    gap: 15px;
     justify-content: space-around;
     padding: 0 10px;
     align-items: center;
+}
+
+.saisieContent{
+    border-right: 1px solid #757575;
+    height: 16px;
 }
 
 .area{
@@ -122,7 +126,6 @@
 .container-saisie{
     display: flex;
     justify-content: flex-start!important;
-    background: red;
     width: 100%;
     padding: 5px 15px!important;
     position: relative;
@@ -131,7 +134,9 @@
 .container-saisie ul{
     list-style: none;
     display: flex;
+    width: 85%;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .container-saisie ul li div{
@@ -147,15 +152,16 @@
 
 #addElement{
     position: absolute;
-    width: 30%;
+    width: 25%;
     right: 0;
 }
 
 #addElement input{
     font-size: 10px;
     width: 100%;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 5px;
+    text-align: end;
 }
 
 .confirmation-modal{
