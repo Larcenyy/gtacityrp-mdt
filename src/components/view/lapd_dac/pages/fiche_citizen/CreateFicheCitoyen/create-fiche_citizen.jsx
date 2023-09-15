@@ -6,6 +6,34 @@ import {Link} from "react-router-dom";
 
 
 class CreateFicheCitizen extends Component {
+    constructor(props) {
+        super(props);
+
+        // Initialisez les états pour les permis ici
+        this.state = {
+            citoyenPermis: {
+                vehicle: false,
+                air: false,
+                boat: false,
+                pistol: false,
+                smg: false,
+                pompe: false,
+                assaut: false,
+                sniper: false,
+            },
+        };
+    }
+
+    togglePermis = (type) => {
+        // Copiez l'objet des permis depuis l'état
+        const updatedPermis = { ...this.state.citoyenPermis };
+
+        // Inversez la valeur du permis spécifique
+        updatedPermis[type] = !updatedPermis[type];
+
+        // Mettez à jour l'état des permis
+        this.setState({ citoyenPermis: updatedPermis });
+    };
 
     render() {
         return (
@@ -68,7 +96,40 @@ class CreateFicheCitizen extends Component {
                                                         <input type="text"  required={true} placeholder={"Masse du citoyen"}/>
                                                     </div>
                                                 </div>
-                                            <PermisCitoyen/>
+                                                <div>
+                                                    <h4>Permis de conduire : </h4>
+                                                    <ul>
+                                                        <li className={this.state.citoyenPermis.vehicle ? 'allowed' : ''} onClick={() => this.togglePermis('vehicle')}>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/citizen/car.svg" alt="permis voiture" />
+                                                        </li>
+                                                        <li className={this.state.citoyenPermis.air ? 'allowed' : ''} onClick={() => this.togglePermis('air')}>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/citizen/air.svg" alt="permis avion" />
+                                                        </li>
+                                                        <li className={this.state.citoyenPermis.boat ? 'allowed' : ''} onClick={() => this.togglePermis('boat')}>
+                                                            <img style={{ width: "20px" }} src="/assets/icon/citizen/boat.svg" alt="permis bateau" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h4>Permis d'arme : </h4>
+                                                    <ul>
+                                                        <li className={this.state.citoyenPermis.pistol ? 'allowed' : ''} onClick={() => this.togglePermis('pistol')}>
+                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/pistol.svg" alt="Permis pistolet" />
+                                                        </li>
+                                                        <li className={this.state.citoyenPermis.smg ? 'allowed' : ''} onClick={() => this.togglePermis('smg')}>
+                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/smg.svg" alt="Permis SMG" />
+                                                        </li>
+                                                        <li className={this.state.citoyenPermis.pompe ? 'allowed' : ''} onClick={() => this.togglePermis('pompe')}>
+                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/shotgun.svg" alt="Permis pompe" />
+                                                        </li>
+                                                        <li className={this.state.citoyenPermis.assaut ? 'allowed' : ''} onClick={() => this.togglePermis('assaut')}>
+                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/rifle.svg" alt="Permis Assaut" />
+                                                        </li>
+                                                        <li className={this.state.citoyenPermis.sniper ? 'allowed' : ''} onClick={() => this.togglePermis('sniper')}>
+                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/snip.svg" alt="Permis Sniper" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                             <div className={"citizen-fiche__coord__right"}>
                                                 <div>

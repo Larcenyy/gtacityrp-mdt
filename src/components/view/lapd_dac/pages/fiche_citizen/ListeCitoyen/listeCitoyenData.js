@@ -19,10 +19,10 @@ export let listeCitoyenData = [
         permisBoat: true,
 
         permisPistol: true,
-        permisSmg: false,
-        permisShotgun: false,
+        permisSmg: true,
+        permisShotgun: true,
         permisRifle: true,
-        permisSnip: true,
+        permisSnip: false,
     },
     {
         citizenId: 2, // ID du citoyen
@@ -38,13 +38,13 @@ export let listeCitoyenData = [
         nationalite: "Russe",
         vehicule: "AUDI Q8",
         phone: "654-854",
-        permisVehicle: true,
-        permisAir: true,
-        permisBoat: true,
+        permisVehicle: false,
+        permisAir: false,
+        permisBoat: false,
 
         permisPistol: true,
-        permisSmg: false,
-        permisShotgun: false,
+        permisSmg: true,
+        permisShotgun: true,
         permisRifle: true,
         permisSnip: true,
     },
@@ -63,14 +63,14 @@ export let listeCitoyenData = [
         vehicule: "AUDI Q8",
         phone: "654-854",
         permisVehicle: true,
-        permisAir: true,
-        permisBoat: true,
+        permisAir: false,
+        permisBoat: false,
 
-        permisPistol: true,
+        permisPistol: false,
         permisSmg: false,
         permisShotgun: false,
-        permisRifle: true,
-        permisSnip: true,
+        permisRifle: false,
+        permisSnip: false,
     }
 ];
 export function supprimerCitoyenParId(citizenId) {

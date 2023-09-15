@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function CardContravention({ title, date, modalDelete, isGood, onDelete}) {
+function CardContravention({ title, date, isGood, onDelete}) {
     const textClass = isGood ? 'textGood' : 'textBad';
     const iconSrc = isGood ? '/assets/icon/valid.svg' : '/assets/icon/invalide.svg';
     const paymentStatus = isGood ? 'Payé' : 'Impayé';
@@ -17,6 +17,7 @@ function CardContravention({ title, date, modalDelete, isGood, onDelete}) {
     function hideConfirmationModal() {
         setConfirmationModalVisible(false);
     }
+
 
 
     return (
@@ -42,7 +43,6 @@ function CardContravention({ title, date, modalDelete, isGood, onDelete}) {
                         <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
                       </span>
                 </div>
-
             </div>
             {/* Modèle de confirmation (affiché conditionnellement) */}
             {isConfirmationModalVisible && (

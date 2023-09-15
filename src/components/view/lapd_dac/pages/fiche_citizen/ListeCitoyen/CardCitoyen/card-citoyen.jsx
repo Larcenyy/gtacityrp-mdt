@@ -25,7 +25,7 @@ function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDele
                 </div>
             </div>
             <hr/>
-            <span onClick={showConfirmationModal} className={"openModal"}>
+            <span onClick={showConfirmationModal}>
                 <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
             </span>
             {/* Modèle de confirmation (affiché conditionnellement) */}

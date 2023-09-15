@@ -3,6 +3,7 @@ import BoxFiche from "../../boxFiche/boxFiche";
 import ListeCitoyen from "./ListeCitoyen/liste-citoyen";
 import InfoCitoyen from "./InfoCitoyen/info-citoyen";
 import {attachModalListeners} from "../../../../../dist/assets/modalToogle";
+import {listeCitoyenData} from "./ListeCitoyen/listeCitoyenData";
 
 class PageFicheCitizen extends Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class PageFicheCitizen extends Component {
                             {this.state.selectedCitizenId !== null ? (
                                 <InfoCitoyen
                                     citizenId={this.state.selectedCitizenId}
+                                    citizenDataProp={listeCitoyenData.find(citizen => citizen.citizenId === this.state.selectedCitizenId)}
                                 />
                             ) : (
                                 <div className={"notOpened"}>

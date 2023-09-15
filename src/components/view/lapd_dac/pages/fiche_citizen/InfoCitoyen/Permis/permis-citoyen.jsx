@@ -1,23 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import {listeCitoyenData} from "../../ListeCitoyen/listeCitoyenData";
 
-function PermisCitoyen() {
+function PermisCitoyen({citizenId}) {
 
-    const [permis, setPermis] = useState({
-        pistol: false,
-        smg: false,
-        pompe: false,
-        assaut: false,
-        sniper: false,
+    // Utilisez les données du citoyen pour initialiser les permis
+    const citoyenData = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
 
-        vehicle: false,
-        air: false,
-        boat: false,
-    });
+    // Mettez à jour les permis en fonction des données du citoyen
+    const defaultPermis = {
+        pistol: citoyenData.permisPistol,
+        smg: citoyenData.permisSmg,
+        pompe: citoyenData.permisShotgun,
+        assaut: citoyenData.permisRifle,
+        sniper: citoyenData.permisSnip,
+
+        vehicle: citoyenData.permisVehicle,
+        air: citoyenData.permisAir,
+        boat: citoyenData.permisBoat,
+    };
+
+    const [citoyenPermis, setCitoyenPermis] = useState(defaultPermis);
+
+    useEffect(() => {
+        const citoyenData = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
+        const updatedPermis = {
+            pistol: citoyenData.permisPistol,
+            smg: citoyenData.permisSmg,
+            pompe: citoyenData.permisShotgun,
+            assaut: citoyenData.permisRifle,
+            sniper: citoyenData.permisSnip,
+
+            vehicle: citoyenData.permisVehicle,
+            air: citoyenData.permisAir,
+            boat: citoyenData.permisBoat,
+        };
+        setCitoyenPermis(updatedPermis);
+    }, [citizenId]);
 
     const togglePermis = (data) => {
-        setPermis({
-            ...permis,
-            [data]: !permis[data],
+        setCitoyenPermis({
+            ...citoyenPermis,
+            [data]: !citoyenPermis[data],
         });
     };
 
@@ -26,34 +49,34 @@ function PermisCitoyen() {
             <div>
                 <h4>Permis de conduire : </h4>
                 <ul>
-                    <li className={permis.vehicle ? 'allowed' : ''} onClick={() => togglePermis('vehicle')}>
-                        <img style={{ width: "20px" }} src="/assets/icon/citizen/car.png" alt="permis voiture" />
+                    <li className={citoyenPermis.vehicle ? 'allowed' : ''} onClick={() => togglePermis('vehicle')}>
+                        <img style={{ width: "20px" }} src="/assets/icon/citizen/car.svg" alt="permis voiture" />
                     </li>
-                    <li className={permis.air ? 'allowed' : ''} onClick={() => togglePermis('air')}>
-                        <img style={{ width: "20px" }} src="/assets/icon/citizen/plane.png" alt="permis voiture" />
+                    <li className={citoyenPermis.air ? 'allowed' : ''} onClick={() => togglePermis('air')}>
+                        <img style={{ width: "20px" }} src="/assets/icon/citizen/air.svg" alt="permis avion" />
                     </li>
-                    <li className={permis.boat ? 'allowed' : ''} onClick={() => togglePermis('boat')}>
-                        <img style={{ width: "20px" }} src="/assets/icon/citizen/bateau.png" alt="permis voiture" />
+                    <li className={citoyenPermis.boat ? 'allowed' : ''} onClick={() => togglePermis('boat')}>
+                        <img style={{ width: "20px" }} src="/assets/icon/citizen/boat.svg" alt="permis bateau" />
                     </li>
                 </ul>
             </div>
             <div>
                 <h4>Permis d'arme : </h4>
                 <ul>
-                    <li className={permis.pistol ? 'allowed' : ''} onClick={() => togglePermis('pistol')}>
-                        <img style={{ width: '20px' }} src="/assets/icon/citizen/pistol.png" alt="Permis pistolet" />
+                    <li className={citoyenPermis.pistol ? 'allowed' : ''} onClick={() => togglePermis('pistol')}>
+                        <img style={{ width: '20px' }} src="/assets/icon/citizen/pistol.svg" alt="Permis pistolet" />
                     </li>
-                    <li className={permis.smg ? 'allowed' : ''} onClick={() => togglePermis('smg')}>
-                        <img style={{ width: '20px' }} src="/assets/icon/citizen/smg.png" alt="Permis SMG" />
+                    <li className={citoyenPermis.smg ? 'allowed' : ''} onClick={() => togglePermis('smg')}>
+                        <img style={{ width: '20px' }} src="/assets/icon/citizen/smg.svg" alt="Permis SMG" />
                     </li>
-                    <li className={permis.pompe ? 'allowed' : ''} onClick={() => togglePermis('pompe')}>
-                        <img style={{ width: '20px' }} src="/assets/icon/citizen/pompe.png" alt="Permis pompe" />
+                    <li className={citoyenPermis.pompe ? 'allowed' : ''} onClick={() => togglePermis('pompe')}>
+                        <img style={{ width: '20px' }} src="/assets/icon/citizen/shotgun.svg" alt="Permis pompe" />
                     </li>
-                    <li className={permis.assaut ? 'allowed' : ''} onClick={() => togglePermis('assaut')}>
-                        <img style={{ width: '20px' }} src="/assets/icon/citizen/rifle.png" alt="Permis Assaut" />
+                    <li className={citoyenPermis.assaut ? 'allowed' : ''} onClick={() => togglePermis('assaut')}>
+                        <img style={{ width: '20px' }} src="/assets/icon/citizen/rifle.svg" alt="Permis Assaut" />
                     </li>
-                    <li className={permis.sniper ? 'allowed' : ''} onClick={() => togglePermis('sniper')}>
-                        <img style={{ width: '20px' }} src="/assets/icon/citizen/snip.png" alt="Permis Sniper" />
+                    <li className={citoyenPermis.sniper ? 'allowed' : ''} onClick={() => togglePermis('sniper')}>
+                        <img style={{ width: '20px' }} src="/assets/icon/citizen/snip.svg" alt="Permis Sniper" />
                     </li>
                 </ul>
             </div>

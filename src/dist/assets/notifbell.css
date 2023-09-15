@@ -30,6 +30,7 @@
     right: calc(100% - 46px);
     align-items: center;
     justify-content: center;
+    z-index: 30;
 }
 
 .notificationBox{

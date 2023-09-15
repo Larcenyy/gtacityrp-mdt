@@ -18,7 +18,6 @@ function ListeCitoyen({onCitizenSelect}) {
         } else {
             setActiveCardIndex(index);
             onCitizenSelect(listeCitoyenData[index].citizenId); // Transmettez l'ID du citoyen
-            console.log("Card ID CLIQUER :", listeCitoyenData[index].citizenId);
         }
     };
 
