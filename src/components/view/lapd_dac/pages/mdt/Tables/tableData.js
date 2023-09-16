@@ -28,4 +28,19 @@ export const rowsData = [
         availability: "Disponible",
         status: "10-01",
     },
+    {
+        unitRank: "adam",
+        unitType: "adam",
+        officers: [
+            {name: "John Doe", id: '1'},
+            {name: "Jane Doe", id: "2"},
+        ],
+        vehicles: [
+            {name: "Ford", id: "1"},
+        ],
+        location: "Mission Row",
+        availability: "Disponible",
+        status: "10-01",
+    },
+
 ];

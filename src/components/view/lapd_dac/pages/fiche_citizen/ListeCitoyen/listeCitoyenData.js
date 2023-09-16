@@ -1,7 +1,7 @@
 export let listeCitoyenData = [
     {
         citizenId: 1, // ID du citoyen
-        title: "BIDULE FOUFOU",
+        title: "Bidule Foufou",
         dateBirthday: "01/01/1999",
         sexe: "Homme",
         age: "18",
@@ -50,7 +50,7 @@ export let listeCitoyenData = [
     },
     {
         citizenId: 3, // ID du citoyen
-        title: "MARIO PABLO",
+        title: "John Golberg",
         dateBirthday: "15/12/2009",
         sexe: "Femme",
         age: "28",

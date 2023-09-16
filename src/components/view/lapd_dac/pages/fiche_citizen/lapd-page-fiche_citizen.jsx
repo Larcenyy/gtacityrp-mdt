@@ -1,55 +1,53 @@
-import React, {Component} from "react";
+import React, {Component, useEffect, useState} from "react";
 import BoxFiche from "../../boxFiche/boxFiche";
 import ListeCitoyen from "./ListeCitoyen/liste-citoyen";
 import InfoCitoyen from "./InfoCitoyen/info-citoyen";
-import {attachModalListeners} from "../../../../../dist/assets/modalToogle";
-import {listeCitoyenData} from "./ListeCitoyen/listeCitoyenData";
+import { attachModalListeners } from "../../../../../dist/assets/modalToogle";
+import { listeCitoyenData } from "./ListeCitoyen/listeCitoyenData";
+import { useLocation } from "react-router-dom";
 
-class PageFicheCitizen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedCitizenId: null,
-        };
-    }
-    handleCitizenSelect = (citizenId) => {
-        this.setState({ selectedCitizenId: citizenId });
+const PageFicheCitizen = () => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const idURL = searchParams.get('id') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
+
+    const [selectedCitizenId, setSelectedCitizenId] = useState(idURL ? parseInt(idURL) : null);
+
+    const handleCitizenSelect = (citizenId) => {
+        setSelectedCitizenId(citizenId);
     };
 
-    componentDidMount() {
+    useEffect(() => {
         attachModalListeners();
         document.addEventListener('onDelete', () => {
-            this.setState({ selectedCitizenId: null });
+            setSelectedCitizenId(null);
         });
-    }
+    }, []);
 
-    render() {
-        return (
-            <>
-                <BoxFiche title="Fiche Citoyens" classSpec={"app__content app__home"}>
-                    <div className="citizenContainer">
-                        <div className="citizen-left">
-                            <ListeCitoyen onCitizenSelect={this.handleCitizenSelect} />
-                        </div>
-                        <div className="citizen-right">
-                            {this.state.selectedCitizenId !== null ? (
-                                <InfoCitoyen
-                                    citizenId={this.state.selectedCitizenId}
-                                    citizenDataProp={listeCitoyenData.find(citizen => citizen.citizenId === this.state.selectedCitizenId)}
-                                />
-                            ) : (
-                                <div className={"notOpened"}>
-                                    <h4>Aucune fiche citoyen sélectionnée</h4>
-                                </div>
-                            )}
-                        </div>
+
+    return (
+        <>
+            <BoxFiche title="Fiche Citoyens" classSpec={"app__content app__home"}>
+                <div className="citizenContainer">
+                    <div className="citizen-left">
+                        <ListeCitoyen onCitizenSelect={handleCitizenSelect} />
                     </div>
-                </BoxFiche>
-
-            </>
-        );
-    }
-}
-
+                    <div className="citizen-right">
+                        {selectedCitizenId !== null ? (
+                            <InfoCitoyen
+                                citizenId={selectedCitizenId}
+                                citizenDataProp={listeCitoyenData.find(citizen => citizen.citizenId === selectedCitizenId)}
+                            />
+                        ) : (
+                            <div className={"notOpened"}>
+                                <h4>Aucune fiche citoyen sélectionnée</h4>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </BoxFiche>
+        </>
+    );
+};
 
 export default PageFicheCitizen;

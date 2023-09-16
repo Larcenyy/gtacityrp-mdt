@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from "react-router-dom";
 function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDelete }) {
     const cardClassName = `card-citizen ${isActive ? 'cardActive' : ''}`;
 
@@ -16,11 +17,11 @@ function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDele
     }
 
     return (
-        <div className={cardClassName} onClick={onClick} data-id={citizenId}>
+        <Link onClick={onClick} data-id={citizenId} className={cardClassName} to={`/page/fiches-citoyens?id=${citizenId}`}>
             <div className={"card-citizen__info"}>
                 <img style={{ width: "30px" }} src="/assets/icon/avatarCitizen.png" alt="Citoyen" />
                 <div className={"card-citizen__name"}>
-                    <h4>{title}</h4>
+                    <h4>{title.toUpperCase()}</h4>
                     <p>{dateBirthday} </p>
                 </div>
             </div>
@@ -36,7 +37,8 @@ function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDele
                     <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
                 </div>
             )}
-        </div>
+
+        </Link>
     );
 }
 

@@ -89,7 +89,21 @@
     align-items: center;
     padding: 0;
     overflow-x: auto;
+}
 
+.card-container .card-citizen{
+    display: flex;
+    border-radius: 7px;
+    background-color: rgb(32, 42, 56);
+    width: 85%;
+    padding: 15px 12px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    text-decoration: none;
+    color: white;
 }
 
 .card-citizen {
@@ -97,7 +111,6 @@
     border-radius: 7px;
     background-color: rgb(32, 42, 56);
     width: 85%;
-    padding: 15px 12px;
     align-items: center;
     justify-content: space-between;
     position: relative;

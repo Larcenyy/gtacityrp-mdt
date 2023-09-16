@@ -38,8 +38,14 @@ function InfoCitoyen({ citizenId, citizenDataProp }) {
 
     useEffect(() => {
         // Recherchez les données du citoyen en fonction de l'ID
+        console.log("citizenId:", citizenId);
+        console.log("listeCitoyenData:", listeCitoyenData);
+
+        // Recherchez les données du citoyen en fonction de l'ID
         const data = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
         setCitizenData(data);
+
+        console.log("Data: " + data)
 
         // Si les données du citoyen sont disponibles, initialisez les valeurs du formaulaiures
         if (data) {

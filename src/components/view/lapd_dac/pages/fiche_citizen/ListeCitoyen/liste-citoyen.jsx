@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import CardCitoyen from "./CardCitoyen/card-citoyen";
 import { listeCitoyenData, supprimerCitoyenParId } from "./listeCitoyenData"; // Importez supprimerCitoyenParId
 
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 function ListeCitoyen({onCitizenSelect}) {
     const [activeCardIndex, setActiveCardIndex] = useState(-1);
     const [searchValue, setSearchValue] = useState("");
     const [citizenList, setCitzenList] = useState(listeCitoyenData);
+
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const idURL = searchParams.get('id') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
 
 
     const handleCardClick = (index) => {
@@ -20,6 +24,21 @@ function ListeCitoyen({onCitizenSelect}) {
             onCitizenSelect(listeCitoyenData[index].citizenId); // Transmettez l'ID du citoyen
         }
     };
+
+    // Utilisez useEffect pour activer la carte correspondant à l'ID de l'URL
+    useEffect(() => {
+        if (idURL) {
+            const index = listeCitoyenData.findIndex((citizen) => citizen.citizenId === parseInt(idURL));
+            if (index !== -1) {
+                setActiveCardIndex(index);
+                onCitizenSelect(parseInt(idURL));
+            } else {
+                // Si l'ID dans l'URL ne correspond à aucun citoyen, désélectionnez la carte active
+                setActiveCardIndex(-1);
+                onCitizenSelect(null);
+            }
+        }
+    }, [idURL, onCitizenSelect]);
 
     // Fonction de suppression
     const handleDelete = (index) => {
