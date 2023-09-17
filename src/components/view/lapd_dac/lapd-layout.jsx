@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import quitButton from '../../assets/mdt.png';
 import MenuContent from "./lapd-content";
-import ModalManager from "./pages/Modals/ModalMap";
+import ModalManager from "./pages/mdt/Modals/ModalMap";
 
 class TabletLayout  extends Component {
     render() {

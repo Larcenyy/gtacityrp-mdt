@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import { modalData } from './modalData';
-import Modal from "../../modal/Modal";
+import Modal from "../../../modal/Modal";
 
-function ModalManager() {
+function ModalManager({ method }) {
+
+
     return (
         <>
             {modalData.map((modal, index) => (
@@ -13,10 +15,12 @@ function ModalManager() {
                         enableButtons={modal.enableButtons}
                         enableSearchBar={modal.enableSearchBar}
                         enableAgentCard={modal.enableAgentCard}
+                        enableVehicleCard={modal.enableVehicleCard}
                         enableMap={modal.enableMap}
                         titlePlaceHolder={modal.titlePlaceHolder}
                         textBouton={modal.textBouton}
                         classButton={modal.classButton}
+                        method={method}
                     >
                     </Modal>
                 </div>

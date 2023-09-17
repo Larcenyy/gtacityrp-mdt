@@ -15,32 +15,21 @@ export const unitStatuses = [
 
 export const rowsData = [
     {
+        id: 1,
         unitRank: "adam",
         unitType: "adam",
         officers: [
-            {name: "John Doe", id: '1'},
-            {name: "Jane Doe", id: "2"},
+            {officierID: 1},
         ],
         vehicles: [
-            {name: "Ford", id: "1"},
+            {carID: 1},
+            {carID: 2},
         ],
         location: "Mission Row",
         availability: "Disponible",
         status: "10-01",
     },
-    {
-        unitRank: "adam",
-        unitType: "adam",
-        officers: [
-            {name: "John Doe", id: '1'},
-            {name: "Jane Doe", id: "2"},
-        ],
-        vehicles: [
-            {name: "Ford", id: "1"},
-        ],
-        location: "Mission Row",
-        availability: "Disponible",
-        status: "10-01",
-    },
-
 ];
+
+
+

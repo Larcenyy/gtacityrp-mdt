@@ -9,7 +9,22 @@ export const modalData = [
         enableMap: false,
         titlePlaceHolder: "Rechercher un officier",
         textBouton: "Ajouter",
+        classButton: "button modify addOfficier"
     },
+    {
+        id: "add__vehicle__mdt",
+        title: "Ajouter un véhiculer au rooter",
+        descrip: "",
+        enableButtons: true,
+        enableSearchBar: true,
+        enableAgentCard: false,
+        enableVehicleCard: true,
+        enableMap: false,
+    },
+
+
+
+
     {
         id: "call_verif",
         title: "Répondre à un appel 911",
@@ -33,15 +48,6 @@ export const modalData = [
         descrip: "",
         enableButtons: false,
         enableMap: true,
-    },
-    {
-        id: "add__vehicle__mdt",
-        title: "Ajouter un véhiculer au rooter",
-        descrip: "",
-        enableButtons: true,
-        enableSearchBar: true,
-        enableAgentCard: true,
-        enableMap: false,
     },
     {
         id: "view__location__patrouille",

@@ -1,6 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function CardDispatch({ badgeId, badgeCode, title, time, location, modalVerif, modalDelete, modalLocalisation }) {
+function CardDispatch({ badgeId, badgeCode, title, time, location, modalVerif, modalLocalisation, onDelete }) {
+
+    // État local pour gérer la visibilité du modèle de confirmation
+    const [isConfirmationModalVisible, setConfirmationModalVisible] = useState(false);
+
+    // Fonction pour afficher le modèle de confirmation
+    function showConfirmationModal() {
+        setConfirmationModalVisible(true);
+    }
+
+    // Fonction pour masquer le modèle de confirmation
+    function hideConfirmationModal() {
+        setConfirmationModalVisible(false);
+    }
+
     return (
         <div className={'cardDispatch'}>
             <div className={'cardDispatch__left'}>
@@ -19,14 +33,21 @@ function CardDispatch({ badgeId, badgeCode, title, time, location, modalVerif, m
             </div>
             <div className={'cardDispatch__right'}>
                 <div className={"cardDispatch__right__icon"}>
-                    <span data-modal={modalDelete} className={"openModal"}>
-                       <img style={{width: "17px", fill: "#ED1B22", cursor: "pointer"}} src="/assets/icon/trashCall.png" alt="Supprimer"/>
-                    </span>
+                        <span onClick={showConfirmationModal}>
+                        <img style={{ width: "17px", fill: "#ED1B22", cursor: "pointer" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                      </span>
                     <span data-modal={modalLocalisation} className={"openModal"}>
                         <img style={{width: "12px", cursor: "pointer"}} src="/assets/icon/localisation.svg" alt="Localisation"/>
                     </span>
                 </div>
             </div>
+            {isConfirmationModalVisible && (
+                <div className="confirmation-modal">
+                    <p>Confirmer l'action ?</p>
+                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Valider" /></button>
+                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                </div>
+            )}
         </div>
     );
 }

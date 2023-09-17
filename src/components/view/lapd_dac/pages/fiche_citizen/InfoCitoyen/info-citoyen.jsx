@@ -8,7 +8,8 @@ import Rapport from "./Rapport/rapport-container";
 import {rapportArrest} from "./Rapport/RapportArrest/rapportArrest";
 import PermisCitoyen from "./Permis/permis-citoyen";
 
-function InfoCitoyen({ citizenId, citizenDataProp }) {
+function InfoCitoyen({ citizenId }) {
+    const [citoyenPermis, setCitoyenPermis] = useState({}); // État local pour les permis
 
     const [citizenName, setCitizenName] = useState(''); // État local pour stocker le nom du citoyen
     const [citizenData, setCitizenData] = useState(null);
@@ -21,6 +22,51 @@ function InfoCitoyen({ citizenId, citizenDataProp }) {
     const [nationalite, setNationalite] = useState('');
     const [vehicule, setVehicule] = useState('');
     const [phone, setPhone] = useState('');
+
+    // Gestionnaire d'événements pour la soumission du formulaire
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Empêcher le comportement par défaut du formulaire
+
+        // Créez un objet contenant les nouvelles données, y compris les informations de permis
+        const newData = {
+            adresse: adresse,
+            dateDeNaissance: birhday,
+            taille: taille,
+            masse: masse,
+            profession: profession,
+            lieuDeNaissance: lieunaissance,
+            nationalite: nationalite,
+            vehicule: vehicule,
+            phone: phone,
+
+            permisVehicle: citoyenPermis.vehicle,
+            permisAir: citoyenPermis.air,
+            permisBoat: citoyenPermis.boat,
+
+            permisPistol: citoyenPermis.pistol,
+            permisSmg: citoyenPermis.smg,
+            permisShotgun: citoyenPermis.pompe,
+            permisRifle: citoyenPermis.assaut,
+            permisSnip: citoyenPermis.sniper,
+        };
+
+        // Appelez la fonction saveData pour sauvegarder les nouvelles données
+        saveData(citizenId, newData); // Assurez-vous de l'implémenter dans votre code
+    };
+
+
+    // Fonction de gestion des permis pour mettre à jour l'état local
+    const handlePermisChange = (permisData) => {
+        setCitoyenPermis(permisData);
+    };
+
+    // Fonction pour sauvegarder les nouvelles données
+    const saveData = (citizenId, newData) => {
+        // Mettez en œuvre la logique pour sauvegarder les nouvelles données
+        // Vous pouvez utiliser une requête API, mettre à jour un état global, ou tout autre mécanisme de stockage de données.
+        // Assurez-vous de gérer correctement la sauvegarde des données selon votre application.
+        console.log('Nouvelles données sauvegardées :', newData);
+    };
 
 
     // Filtrer les contraventions de la fourrière par citizenId
@@ -94,7 +140,7 @@ function InfoCitoyen({ citizenId, citizenDataProp }) {
                 <form> {/* Ajoutez onSubmit pour gérer la soumission du formulaire */}
                     <div className={"citizen-fiche__info"}>
                         <div>
-                            <button className={"submit goodAction"} type='submit'>
+                            <button onClick={handleSubmit} className={"submit goodAction"} type='submit'>
                                 <img style={{ width: "18px" }} src="/assets/icon/edit.svg" alt="Supprimer" />
                                 Editer la fiche
                             </button>
@@ -159,7 +205,10 @@ function InfoCitoyen({ citizenId, citizenDataProp }) {
                                     />
                                 </div>
                             </div>
-                            <PermisCitoyen citizenId={citizenData.citizenId}/>
+                            <PermisCitoyen
+                                citizenId={citizenId}
+                                onPermisChange={handlePermisChange} // Passez la fonction de gestion des permis
+                            />
                         </div>
                         <div className={"citizen-fiche__coord__right"}>
                             <div>

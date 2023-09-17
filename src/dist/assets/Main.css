@@ -662,6 +662,11 @@ body {
 }
 }
 
+
+.officer__name{
+    font-size: 10px!important;
+}
+
 .deleteIcon{
     display: inline-block;
     width: 10px;
@@ -697,6 +702,20 @@ body {
 
 .officer__card.selected {
     border: var(--yellow) solid 2px;
+}
+
+.cards-clickable{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.officer__list__table{
+    gap: 6px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cards-clickable .officer__card {
@@ -794,4 +813,16 @@ body {
     height: 100%;
     width: 457px;
     background: rgba(255, 255, 255, 0.58);
+}
+
+#mdtTable{
+    background: red;
+}
+
+#mdtTable td:nth-child(3){
+    width: 25% !important;
+}
+
+#mdtTable td:nth-child(4){
+    width: 25% !important;
 }

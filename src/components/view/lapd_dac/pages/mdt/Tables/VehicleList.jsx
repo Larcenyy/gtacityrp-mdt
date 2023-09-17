@@ -2,12 +2,12 @@ import React from 'react';
 
 function VehicleList({ vehicles }) {
     return (
-        <div className="vehicle__list__table">
+        <div className="officer__list__table">
             {vehicles.map((vehicle, index) => (
-                <span className="vehicle" data-id-vehicle={vehicle.id} key={index}>
-          <span className="vehicle__name">{vehicle.name}</span>
-                    {vehicle.id && <span className="vehicle__delete" data-delete-id={vehicle.id}></span>}
-        </span>
+                <span className="officer" data-id-officer={vehicle.carID} key={index}>
+                    <span className="officer__name">{vehicle.name}</span>
+                    {vehicle.carID && <span className="officer__delete" data-delete-id={vehicle.carID}></span>}
+                </span>
             ))}
             <div className="add__vehicle openModal" data-modal="add__vehicle__mdt"></div>
         </div>
@@ -15,3 +15,4 @@ function VehicleList({ vehicles }) {
 }
 
 export default VehicleList;
+

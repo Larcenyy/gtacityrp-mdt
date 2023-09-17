@@ -23,6 +23,7 @@
 
 .cardDispatch{
     display: flex;
+    position: relative;
     flex-direction: row;
     gap: 5px;
     height: 50%;

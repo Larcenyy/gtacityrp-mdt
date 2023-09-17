@@ -38,10 +38,10 @@ export let listeCitoyenData = [
         nationalite: "Russe",
         vehicule: "AUDI Q8",
         phone: "654-854",
+
         permisVehicle: false,
         permisAir: false,
         permisBoat: false,
-
         permisPistol: true,
         permisSmg: true,
         permisShotgun: true,
@@ -50,7 +50,7 @@ export let listeCitoyenData = [
     },
     {
         citizenId: 3, // ID du citoyen
-        title: "John Golberg",
+        title: "John dddd",
         dateBirthday: "15/12/2009",
         sexe: "Femme",
         age: "28",

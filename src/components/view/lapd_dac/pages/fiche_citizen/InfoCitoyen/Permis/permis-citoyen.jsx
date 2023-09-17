@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {listeCitoyenData} from "../../ListeCitoyen/listeCitoyenData";
 
-function PermisCitoyen({citizenId}) {
+function PermisCitoyen({ citizenId, onPermisChange }) {
 
     // Utilisez les données du citoyen pour initialiser les permis
     const citoyenData = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
@@ -21,6 +21,18 @@ function PermisCitoyen({citizenId}) {
 
     const [citoyenPermis, setCitoyenPermis] = useState(defaultPermis);
 
+    const togglePermis = (data) => {
+        const updatedCitoyenPermis = {
+            ...citoyenPermis,
+            [data]: !citoyenPermis[data],
+        };
+
+        setCitoyenPermis(updatedCitoyenPermis);
+
+        // Appelez la fonction de gestion des permis avec les données mises à jour
+        onPermisChange(updatedCitoyenPermis);
+    }
+
     useEffect(() => {
         const citoyenData = listeCitoyenData.find(citizen => citizen.citizenId === citizenId);
         const updatedPermis = {
@@ -37,12 +49,6 @@ function PermisCitoyen({citizenId}) {
         setCitoyenPermis(updatedPermis);
     }, [citizenId]);
 
-    const togglePermis = (data) => {
-        setCitoyenPermis({
-            ...citoyenPermis,
-            [data]: !citoyenPermis[data],
-        });
-    };
 
     return (
         <>
