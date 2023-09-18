@@ -24,7 +24,7 @@ function RapportArrestCard({title, date, modalEdit, onDelete}) {
             <div className={"civil-card__info"}>
                 <div className={"civil-card__info__left"}>
                     <div className={"civil-card__info__left__img"}>
-                        <img style={{ width: "15px" }} src="/assets/icon/fiche.png" alt="Fiche" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/fiche.png" alt="Fiche" />
                     </div>
                     <div>
                         <h4>{title}</h4>
@@ -36,13 +36,13 @@ function RapportArrestCard({title, date, modalEdit, onDelete}) {
                 </div>
                 <ul>
                     <li>
-                        <span><img style={{ width: "15px" }} src="/assets/icon/eyes.svg" alt="Voir" /></span>
+                        <span><img style={{ width: "15px" }} src="/assets/images/icon/eyes.svg" alt="Voir" /></span>
                     </li>
                     <li>
-                        <span onClick={handleCitizenCardClick} data-modal={modalEdit} className={'openModal'}><img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" /></span>
+                        <span onClick={handleCitizenCardClick} data-modal={modalEdit} className={'openModal'}><img style={{ width: "15px" }} src="/assets/images/icon/edit.svg" alt="Editer" /></span>
                     </li>
                     <span onClick={showConfirmationModal} className={"openModal"}>
-                        <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/trashCall.png" alt="Supprimer" />
                     </span>
                 </ul>
             </div>
@@ -50,8 +50,8 @@ function RapportArrestCard({title, date, modalEdit, onDelete}) {
             {isConfirmationModalVisible && (
                 <div className="confirmation-modal">
                     <p>Confirmer l'action ?</p>
-                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Valider" /></button>
-                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Valider" /></button>
+                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Supprimer" /></button>
                 </div>
             )}
         </div>

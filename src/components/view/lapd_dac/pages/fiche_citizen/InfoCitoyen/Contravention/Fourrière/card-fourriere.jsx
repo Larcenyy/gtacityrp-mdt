@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 function CardFourriere({ title, date, modalDelete, isGood, onDelete}) {
     const textClass = isGood ? 'textGood' : 'textBad';
-    const iconSrc = isGood ? '/assets/icon/valid.svg' : '/assets/icon/invalide.svg';
+    const iconSrc = isGood ? '/assets/images/icon/valid.svg' : '/assets/images/icon/invalide.svg';
     const paymentStatus = isGood ? 'Libéré' : 'Fourrière';
 
     // État local pour gérer la visibilité du modèle de confirmation
@@ -22,7 +22,7 @@ function CardFourriere({ title, date, modalDelete, isGood, onDelete}) {
         <div className={"card-contrat"}>
             <div className={"card-contrat__info"}>
                 <div className={"card-contrat__info__img"}>
-                    <img style={{ width: "20px" }} src="/assets/icon/radarScan.svg" alt="Photo" />
+                    <img style={{ width: "20px" }} src="/assets/images/icon/radarScan.svg" alt="Photo" />
                 </div>
                 <div>
                     <h4>{title}</h4>
@@ -38,7 +38,7 @@ function CardFourriere({ title, date, modalDelete, isGood, onDelete}) {
                 </div>
                 <div>
                      <span onClick={showConfirmationModal} className={"openModal"}>
-                        <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/trashCall.png" alt="Supprimer" />
                       </span>
                 </div>
             </div>
@@ -47,8 +47,8 @@ function CardFourriere({ title, date, modalDelete, isGood, onDelete}) {
             {isConfirmationModalVisible && (
                 <div className="confirmation-modal">
                     <p>Confirmer l'action ?</p>
-                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Supprimer" /></button>
-                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Supprimer" /></button>
+                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Supprimer" /></button>
                 </div>
             )}
         </div>

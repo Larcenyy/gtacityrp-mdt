@@ -54,7 +54,7 @@ const PagePPA = () => {
                             return (
                                 <div className={"card-ppa"}>
                                         <div className={"card-ppa__left"}>
-                                            <img style={{ width: "40px  " }} src="/assets/icon/avatarCitizen.png" alt="Avatar" />
+                                            <img style={{ width: "40px  " }} src="/assets/images/icon/avatarCitizen.png" alt="Avatar" />
                                             <div>
                                                 <h4>{ppaCard.name.toUpperCase()}</h4>
                                                 <p>{ppaCard.date}</p>
@@ -64,19 +64,19 @@ const PagePPA = () => {
                                                     <h4>Permis souhaité :</h4>
                                                     <ul>
                                                         <li className={ppaCard.permisPending.permisPistol ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/pistol.svg" alt="Permis pistolet" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/pistol.svg" alt="Permis pistolet" />
                                                         </li>
                                                         <li className={ppaCard.permisPending.permisSMG ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/smg.svg" alt="Permis SMG" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/smg.svg" alt="Permis SMG" />
                                                         </li>
                                                         <li className={ppaCard.permisPending.permisShotgun ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/shotgun.svg" alt="Permis pompe" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/shotgun.svg" alt="Permis pompe" />
                                                         </li>
                                                         <li className={ppaCard.permisPending.permisRifle ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/rifle.svg" alt="Permis Assaut" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/rifle.svg" alt="Permis Assaut" />
                                                         </li>
                                                         <li className={ppaCard.permisPending.permisSnip ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/snip.svg" alt="Permis Sniper" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/snip.svg" alt="Permis Sniper" />
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -84,19 +84,19 @@ const PagePPA = () => {
                                                     <h4>Permis déjà possédé :</h4>
                                                     <ul>
                                                         <li className={ppaCard.permisAllowed.permisPistol ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/pistol.svg" alt="Permis pistolet" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/pistol.svg" alt="Permis pistolet" />
                                                         </li>
                                                         <li className={ppaCard.permisAllowed.permisSMG ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/smg.svg" alt="Permis SMG" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/smg.svg" alt="Permis SMG" />
                                                         </li>
                                                         <li className={ppaCard.permisAllowed.permisShotgun ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/shotgun.svg" alt="Permis pompe" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/shotgun.svg" alt="Permis pompe" />
                                                         </li>
                                                         <li className={ppaCard.permisAllowed.permisRifle ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/rifle.svg" alt="Permis Assaut" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/rifle.svg" alt="Permis Assaut" />
                                                         </li>
                                                         <li className={ppaCard.permisAllowed.permisSnip ? "allowed" : ""}>
-                                                            <img style={{ width: '15px' }} src="/assets/icon/citizen/snip.svg" alt="Permis Sniper" />
+                                                            <img style={{ width: '15px' }} src="/assets/images/icon/citizen/snip.svg" alt="Permis Sniper" />
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -109,13 +109,13 @@ const PagePPA = () => {
                                             </div>
                                             <hr/>
                                             <div className={"card-ppa__right__button"}>
-                                                <img style={{ width: "25px" }} src="/assets/icon/ppa/valid.svg" alt="Valider" />
+                                                <img style={{ width: "25px" }} src="/assets/images/icon/ppa/valid.svg" alt="Valider" />
                                                 <span onClick={() => showConfirmationModal(index)}>
-                                                    <img style={{ width: "25px" }} src="/assets/icon/ppa/invalide.svg" alt="Supprimer" />
+                                                    <img style={{ width: "25px" }} src="/assets/images/icon/ppa/invalide.svg" alt="Supprimer" />
                                                 </span>
                                                 {citoyen &&
                                                     <Link to={citizenLink}>
-                                                        <img style={{ width: "25px" }} src="/assets/icon/ppa/person.svg" alt="Avatar" />
+                                                        <img style={{ width: "25px" }} src="/assets/images/icon/ppa/person.svg" alt="Avatar" />
                                                     </Link>
                                                 }
                                             </div>
@@ -126,14 +126,14 @@ const PagePPA = () => {
                                                 <button onClick={handleDelete}>
                                                     <img
                                                         style={{ width: "15px" }}
-                                                        src="/assets/icon/valid.svg"
+                                                        src="/assets/images/icon/valid.svg"
                                                         alt="Valider"
                                                     />
                                                 </button>
                                                 <button onClick={hideConfirmationModal}>
                                                     <img
                                                         style={{ width: "15px" }}
-                                                        src="/assets/icon/invalide.svg"
+                                                        src="/assets/images/icon/invalide.svg"
                                                         alt="Supprimer"
                                                     />
                                                 </button>

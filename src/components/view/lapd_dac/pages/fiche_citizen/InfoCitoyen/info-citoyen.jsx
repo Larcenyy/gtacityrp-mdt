@@ -141,13 +141,13 @@ function InfoCitoyen({ citizenId }) {
                     <div className={"citizen-fiche__info"}>
                         <div>
                             <button onClick={handleSubmit} className={"submit goodAction"} type='submit'>
-                                <img style={{ width: "18px" }} src="/assets/icon/edit.svg" alt="Supprimer" />
+                                <img style={{ width: "18px" }} src="/assets/images/icon/edit.svg" alt="Supprimer" />
                                 Editer la fiche
                             </button>
                         </div>
                         <div className={"citizenName"}>
                             <div className={"citizenAvatar"}>
-                                <img style={{ width: "80px" }} src="/assets/icon/avatarCitizen.png" alt="Supprimer" />
+                                <img style={{ width: "80px" }} src="/assets/images/icon/avatarCitizen.png" alt="Supprimer" />
                             </div>
                             <div>
                                 <h4>{citizenData.title}</h4>
@@ -155,7 +155,7 @@ function InfoCitoyen({ citizenId }) {
                             </div>
                         </div>
                         <div className={"buttonAction deleteAction"} onClick={() => supprimerCitoyen(citizenData.citizenId)}>
-                            <img style={{ width: "18px" }} src="/assets/icon/trash.svg" alt="Supprimer" />
+                            <img style={{ width: "18px" }} src="/assets/images/icon/trash.svg" alt="Supprimer" />
                             <span data-modal={"deleteFicheCitizen"} className={'openModal'}>
                                 Supprimer la fiche
                             </span>

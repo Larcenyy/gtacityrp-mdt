@@ -15,7 +15,7 @@ const ContainerCom = () => {
             <div className={"sendMessageContainer"}>
                 <input type="text"
                        placeholder={"Communiquer un message aux unités en patrouilles"}/>
-                <img style={{width: "15px", cursor: "pointer"}} src="/assets/icon/send.svg"
+                <img style={{width: "15px", cursor: "pointer"}} src="/assets/images/icon/send.svg"
                      alt="Soumettre"/>
             </div>
         </div>

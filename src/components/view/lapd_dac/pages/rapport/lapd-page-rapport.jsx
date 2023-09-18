@@ -30,7 +30,7 @@ const PageRapport = ({type}) => {
             <div className={"container-rapport"}>
                 <div className={"container-rapport__content"}>
                     <div className={"container-rapport__content__top"}>
-                        <img style={{ width: "18px" }} src="/assets/icon/fiche.png" alt="Supprimer" />
+                        <img style={{ width: "18px" }} src="/assets/images/icon/fiche.png" alt="Supprimer" />
                         <h4>Choisir le type de rapport</h4>
                     </div>
                     {rowsData.map((data, index) => (

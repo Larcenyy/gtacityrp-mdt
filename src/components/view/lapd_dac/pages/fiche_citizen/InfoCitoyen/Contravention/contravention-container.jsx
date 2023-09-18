@@ -54,7 +54,7 @@ function Contravention({ contraventions, type, citizenId }) {
                                     )
                                 ))}
                                 <div className={"buttonAddContrat"}>
-                                    <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt="Permis Sniper" />
+                                    <img style={{ width: "15px" }} src="/assets/images/icon/plus.svg" alt="Permis Sniper" />
                                 </div>
                             </div>
                         )}

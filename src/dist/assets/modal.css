@@ -59,8 +59,8 @@
         width: 19px;
         height: 18px;
         background-color: var(--red);
-        -webkit-mask-image: url('../../../public/assets/lapd_dac/cross.svg');
-        mask-image: url('../../../public/assets/lapd_dac/cross.svg');
+        -webkit-mask-image: url('../../../public/assets/images/lapd_dac/cross.svg');
+        mask-image: url('../../../public/assets/images/lapd_dac/cross.svg');
         cursor: pointer;
     }
 }

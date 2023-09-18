@@ -20,7 +20,7 @@ function RapportGAV() {
                             value={name}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
-                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                     </div>
                 </div>
                 <div>
@@ -32,7 +32,7 @@ function RapportGAV() {
                             required={true}
                             placeholder={"Pour lier un officier en charge"}
                         />
-                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                     </div>
                 </div>
                 <div id={"dateGAV"}>
@@ -45,7 +45,7 @@ function RapportGAV() {
                                 required={true}
                                 placeholder={"Date"}
                             />
-                            <img style={{ width: "15px" }} src="/assets/icon/calendar.svg" alt="Date" />
+                            <img style={{ width: "15px" }} src="/assets/images/icon/calendar.svg" alt="Date" />
                         </div>
                         <div className={"search-container"}>
                             <input
@@ -54,14 +54,14 @@ function RapportGAV() {
                                 required={true}
                                 placeholder={"Heure"}
                             />
-                            <img style={{ width: "15px" }} src="/assets/icon/clock.svg" alt="Date" />
+                            <img style={{ width: "15px" }} src="/assets/images/icon/clock.svg" alt="Date" />
                         </div>
                     </div>
                 </div>
                 <div>
                     <p>Photo de l'individu:</p>
                     <div className={"search-container"}>
-                        <img style={{ width: "25px" }} src="/assets/icon/camera.svg" alt="Rechercher" />
+                        <img style={{ width: "25px" }} src="/assets/images/icon/camera.svg" alt="Rechercher" />
                         <input
                                 className="search-bar"
                                 type="text"
@@ -79,7 +79,7 @@ function RapportGAV() {
                             required={true}
                             placeholder={"Pour lier un officier en charge"}
                         />
-                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                     </div>
                 </div>
                 <div>

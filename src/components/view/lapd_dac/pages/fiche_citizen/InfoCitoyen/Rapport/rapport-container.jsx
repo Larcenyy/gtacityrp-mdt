@@ -52,7 +52,7 @@ function Rapport({ rapport, type, citizenName, citizenId }) {
                             )
                         ))}
                         <Link to={type === "Arrest" ? `/page/rapport-arrest?name=${citizenName}` : `/page/rapport-gav?name=${citizenName}`} className={"add-card"}>
-                            <img style={{ width: "15px" }} src="/assets/icon/plus.svg" alt={"Ajouter"} />
+                            <img style={{ width: "15px" }} src="/assets/images/icon/plus.svg" alt={"Ajouter"} />
                         </Link>
                     </div>
                 </>

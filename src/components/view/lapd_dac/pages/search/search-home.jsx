@@ -104,7 +104,7 @@ const PageRapport = () => {
             <div className={"container-search"}>
                 <div className={"container-search__content"}>
                     <div className={"container-search__content__top"}>
-                        <img style={{ width: "18px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                        <img style={{ width: "18px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                         <h4>Rechercher</h4>
                     </div>
                     <div className={'input-filter'}>
@@ -118,7 +118,7 @@ const PageRapport = () => {
                                 onChange={(e) => setRecherche(e.target.value)}
                             />
                             <span onClick={handleAddElement}>
-                                    <img style={{ width: "18px", marginRight: '15px' }} src="/assets/icon/search.svg" alt="Rechercher" />
+                                    <img style={{ width: "18px", marginRight: '15px' }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                             </span>
                         </div>
                         <div
@@ -128,8 +128,8 @@ const PageRapport = () => {
                                 style={{ width: "18px" }}
                                 src={
                                     isNotFilter
-                                        ? "/assets/icon/light.svg"
-                                        : "/assets/icon/lightActive.svg"
+                                        ? "/assets/images/icon/light.svg"
+                                        : "/assets/images/icon/lightActive.svg"
                                 }
                                 alt="Rechercher"
                             />
@@ -162,14 +162,14 @@ const PageRapport = () => {
                     )}
                     <div className={"container-history"}>
                         <div className={"history"}>
-                            <img style={{ width: "15px" }} src="/assets/icon/clock.svg" alt="Date" />
+                            <img style={{ width: "15px" }} src="/assets/images/icon/clock.svg" alt="Date" />
                             <p style={{fontWeight: '800'}}>Votre historique de recherche</p>
                         </div>
                         {searchData.slice(0, 5).map((data, index) => (
                             <div className={"card-search"} key={index}>
                                 <div className={"card-search__left"}>
                                     <div className={"card-search__left__icon"}>
-                                        <img style={{ width: "18px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                                        <img style={{ width: "18px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                                     </div>
                                     <div>
                                         <h4>{data.title}</h4>
@@ -179,18 +179,18 @@ const PageRapport = () => {
                                 <hr style={{ width: "2px", border: "none", height: "30px", background: "gray" }} />
                                 <div className={"card-search__right"}>
                                    <span>
-                                        <img style={{ width: "18px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                                        <img style={{ width: "18px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                                    </span>
                                    <span onClick={() => showConfirmationModal(index)}>
-                                        <img style={{ width: "18px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                                        <img style={{ width: "18px" }} src="/assets/images/icon/trashCall.png" alt="Supprimer" />
                                   </span>
                                 </div>
                                 {/* Modèle de confirmation (affiché conditionnellement) */}
                                 {itemToDeleteIndex === index && isConfirmationModalVisible && (
                                     <div className="confirmation-modal">
                                         <p>Confirmer l'action ?</p>
-                                        <button onClick={() => { handleDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Supprimer" /></button>
-                                        <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                                        <button onClick={() => { handleDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Supprimer" /></button>
+                                        <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Supprimer" /></button>
                                     </div>
                                 )}
                             </div>

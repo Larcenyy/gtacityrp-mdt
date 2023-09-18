@@ -42,7 +42,7 @@ function RapportSaisie() {
                             value={name}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
-                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                     </div>
                 </div>
                 <div>
@@ -54,7 +54,7 @@ function RapportSaisie() {
                             required={true}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
-                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                     </div>
                 </div>
                 <div>
@@ -93,7 +93,7 @@ function RapportSaisie() {
                                 <span onClick={handleAddElement} type={"submit"}>
                                     <img
                                         style={{ width: "15px", cursor: "pointer" }}
-                                        src="/assets/icon/plusYellow.svg"
+                                        src="/assets/images/icon/plusYellow.svg"
                                         alt={"Ajouter un élément"}
                                     />
                                 </span>

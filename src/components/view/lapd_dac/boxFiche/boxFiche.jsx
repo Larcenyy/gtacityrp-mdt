@@ -10,7 +10,7 @@ class BoxFiche extends Component {
                     <div className="box-content">
                         <div>
                             <h5>
-                                <img style={{ width: "20px" }} src={`/assets/icon/${icon}`} alt=" Icon" />
+                                <img style={{ width: "20px" }} src={`/assets/images/icon/${icon}`} alt=" Icon" />
                                 {this.props.title}
                             </h5>
                         </div>

@@ -45,7 +45,7 @@ class CreateFicheCitizen extends Component {
                                 <ListeCitoyen/>
                             </div>
                             <div className={"blocked"}>
-                                <img style={{ width: "50px" }} src="/assets/icon/secure.svg"/>
+                                <img style={{ width: "50px" }} src="/assets/images/icon/secure.svg"/>
                                 <p>Création d'un fiche <br/>
                                 citoyen en cours...</p>
                             </div>
@@ -57,13 +57,13 @@ class CreateFicheCitizen extends Component {
                                         <div className={"citizen-fiche__info"}>
                                             <div>
                                                 <button className={"submit goodAction"} type='submit'>
-                                                    <img style={{ width: "18px" }} src="/assets/icon/valid_circle.svg" alt="Créer" />
+                                                    <img style={{ width: "18px" }} src="/assets/images/icon/valid_circle.svg" alt="Créer" />
                                                     Créer la fiche
                                                 </button>
                                             </div>
                                             <div className={"citizenName"}>
                                                 <div className={"citizenAvatar"}>
-                                                    <img style={{ width: "50px" }} src="/assets/icon/camera.svg" alt="photo" />
+                                                    <img style={{ width: "50px" }} src="/assets/images/icon/camera.svg" alt="photo" />
                                                 </div>
                                                 <div>
                                                     <h4>NOM Prénom</h4>
@@ -72,7 +72,7 @@ class CreateFicheCitizen extends Component {
                                             </div>
                                             <div className={""}>
                                                 <Link style={{textDecoration: "none"}} to={"/page/fiches-citoyens"}>
-                                                    <button className={"submit  deleteAction"}><img style={{ width: "18px" }} src="/assets/icon/invalide_cercle.svg" alt="Supprimer" />Annuler</button>
+                                                    <button className={"submit  deleteAction"}><img style={{ width: "18px" }} src="/assets/images/icon/invalide_cercle.svg" alt="Supprimer" />Annuler</button>
                                                 </Link>
                                             </div>
                                         </div>
@@ -100,13 +100,13 @@ class CreateFicheCitizen extends Component {
                                                     <h4>Permis de conduire : </h4>
                                                     <ul>
                                                         <li className={this.state.citoyenPermis.vehicle ? 'allowed' : ''} onClick={() => this.togglePermis('vehicle')}>
-                                                            <img style={{ width: "20px" }} src="/assets/icon/citizen/car.svg" alt="permis voiture" />
+                                                            <img style={{ width: "20px" }} src="/assets/images/icon/citizen/car.svg" alt="permis voiture" />
                                                         </li>
                                                         <li className={this.state.citoyenPermis.air ? 'allowed' : ''} onClick={() => this.togglePermis('air')}>
-                                                            <img style={{ width: "20px" }} src="/assets/icon/citizen/air.svg" alt="permis avion" />
+                                                            <img style={{ width: "20px" }} src="/assets/images/icon/citizen/air.svg" alt="permis avion" />
                                                         </li>
                                                         <li className={this.state.citoyenPermis.boat ? 'allowed' : ''} onClick={() => this.togglePermis('boat')}>
-                                                            <img style={{ width: "20px" }} src="/assets/icon/citizen/boat.svg" alt="permis bateau" />
+                                                            <img style={{ width: "20px" }} src="/assets/images/icon/citizen/boat.svg" alt="permis bateau" />
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -114,19 +114,19 @@ class CreateFicheCitizen extends Component {
                                                     <h4>Permis d'arme : </h4>
                                                     <ul>
                                                         <li className={this.state.citoyenPermis.pistol ? 'allowed' : ''} onClick={() => this.togglePermis('pistol')}>
-                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/pistol.svg" alt="Permis pistolet" />
+                                                            <img style={{ width: '20px' }} src="/assets/images/icon/citizen/pistol.svg" alt="Permis pistolet" />
                                                         </li>
                                                         <li className={this.state.citoyenPermis.smg ? 'allowed' : ''} onClick={() => this.togglePermis('smg')}>
-                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/smg.svg" alt="Permis SMG" />
+                                                            <img style={{ width: '20px' }} src="/assets/images/icon/citizen/smg.svg" alt="Permis SMG" />
                                                         </li>
                                                         <li className={this.state.citoyenPermis.pompe ? 'allowed' : ''} onClick={() => this.togglePermis('pompe')}>
-                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/shotgun.svg" alt="Permis pompe" />
+                                                            <img style={{ width: '20px' }} src="/assets/images/icon/citizen/shotgun.svg" alt="Permis pompe" />
                                                         </li>
                                                         <li className={this.state.citoyenPermis.assaut ? 'allowed' : ''} onClick={() => this.togglePermis('assaut')}>
-                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/rifle.svg" alt="Permis Assaut" />
+                                                            <img style={{ width: '20px' }} src="/assets/images/icon/citizen/rifle.svg" alt="Permis Assaut" />
                                                         </li>
                                                         <li className={this.state.citoyenPermis.sniper ? 'allowed' : ''} onClick={() => this.togglePermis('sniper')}>
-                                                            <img style={{ width: '20px' }} src="/assets/icon/citizen/snip.svg" alt="Permis Sniper" />
+                                                            <img style={{ width: '20px' }} src="/assets/images/icon/citizen/snip.svg" alt="Permis Sniper" />
                                                         </li>
                                                     </ul>
                                                 </div>

@@ -53,7 +53,7 @@ const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, des
                                         {officer.matricule}
                                     </div>
                                 </div>
-                                <div className="officer__rank rank__off1"></div>
+                                <img style={{ width: "30px"}} src={`/assets/images/icon/ranks/${officer.rank}.png`} alt="Rank" />
                             </div>
                         ))}
                 </div>
@@ -64,7 +64,7 @@ const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, des
                         .filter((vehicle) => vehicle.name.toLowerCase().includes(searchValue.toLowerCase()))
                         .map((vehicle, index) => (
                             <div className="officer__card" data-id={vehicle.carID}  key={index}>
-                                <img style={{ width: "30px" }} src="/assets/icon/citizen/car.svg" alt="Supprimer" />
+                                <img style={{ width: "30px" }} src="/assets/images/icon/citizen/car.svg" alt="Supprimer" />
                                 <div className="officer__informations">
                                     <div className="name">
                                         {vehicle.name}

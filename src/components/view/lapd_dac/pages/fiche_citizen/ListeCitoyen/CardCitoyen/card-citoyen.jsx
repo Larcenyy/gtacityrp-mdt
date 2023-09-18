@@ -19,7 +19,7 @@ function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDele
     return (
         <Link onClick={onClick} data-id={citizenId} className={cardClassName} to={`/page/fiches-citoyens?id=${citizenId}`}>
             <div className={"card-citizen__info"}>
-                <img style={{ width: "30px" }} src="/assets/icon/avatarCitizen.png" alt="Citoyen" />
+                <img style={{ width: "30px" }} src="/assets/images/icon/avatarCitizen.png" alt="Citoyen" />
                 <div className={"card-citizen__name"}>
                     <h4>{title.toUpperCase()}</h4>
                     <p>{dateBirthday} </p>
@@ -27,14 +27,14 @@ function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDele
             </div>
             <hr/>
             <span onClick={showConfirmationModal}>
-                <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                <img style={{ width: "15px" }} src="/assets/images/icon/trashCall.png" alt="Supprimer" />
             </span>
             {/* Modèle de confirmation (affiché conditionnellement) */}
             {isConfirmationModalVisible && (
                 <div className="confirmation-modal">
                     <p>Confirmer l'action ?</p>
-                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Valider" /></button>
-                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Valider" /></button>
+                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Supprimer" /></button>
                 </div>
             )}
 

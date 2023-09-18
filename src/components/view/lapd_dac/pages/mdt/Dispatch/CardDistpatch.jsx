@@ -25,8 +25,8 @@ function CardDispatch({ badgeId, badgeCode, title, time, location, modalVerif, m
                         <h5>{title}</h5>
                     </div>
                     <div className={"cardDispatch__left__top__info"}>
-                        <p><img style={{width: "12px"}} src="/assets/icon/clock.svg" alt="Heures"/>{time}</p>
-                        <p><img style={{width: "12px"}} src="/assets/icon/localisation.svg" alt="Localisation"/>{location}</p>
+                        <p><img style={{width: "12px"}} src="/assets/images/icon/clock.svg" alt="Heures"/>{time}</p>
+                        <p><img style={{width: "12px"}} src="/assets/images/icon/localisation.svg" alt="Localisation"/>{location}</p>
                     </div>
                     <span data-modal={modalVerif} className="claim openModal">Prendre l'appel</span>
                 </div>
@@ -34,18 +34,18 @@ function CardDispatch({ badgeId, badgeCode, title, time, location, modalVerif, m
             <div className={'cardDispatch__right'}>
                 <div className={"cardDispatch__right__icon"}>
                         <span onClick={showConfirmationModal}>
-                        <img style={{ width: "17px", fill: "#ED1B22", cursor: "pointer" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                        <img style={{ width: "17px", fill: "#ED1B22", cursor: "pointer" }} src="/assets/images/icon/trashCall.png" alt="Supprimer" />
                       </span>
                     <span data-modal={modalLocalisation} className={"openModal"}>
-                        <img style={{width: "12px", cursor: "pointer"}} src="/assets/icon/localisation.svg" alt="Localisation"/>
+                        <img style={{width: "12px", cursor: "pointer"}} src="/assets/images/icon/localisation.svg" alt="Localisation"/>
                     </span>
                 </div>
             </div>
             {isConfirmationModalVisible && (
                 <div className="confirmation-modal">
                     <p>Confirmer l'action ?</p>
-                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/icon/valid.svg" alt="Valider" /></button>
-                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/icon/invalide.svg" alt="Supprimer" /></button>
+                    <button onClick={() => { onDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Valider" /></button>
+                    <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Supprimer" /></button>
                 </div>
             )}
         </div>

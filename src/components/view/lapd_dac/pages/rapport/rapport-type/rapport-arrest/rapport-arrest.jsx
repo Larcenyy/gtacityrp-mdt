@@ -21,7 +21,7 @@ function RapportArrest() {
                             value={name}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
-                        <img style={{ width: "15px" }} src="/assets/icon/search.svg" alt="Rechercher" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                     </div>
                 </div>
                 <div>
