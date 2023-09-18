@@ -3,10 +3,12 @@
     display: flex;
     font-size: 12px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 25px 10px;
     gap: 1rem;
+    overflow-x: auto;
+    height: 100vh;
+    max-height: 30vh;
 }
 
 .card-ppa{

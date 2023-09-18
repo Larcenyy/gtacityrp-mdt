@@ -826,3 +826,91 @@ body {
 #mdtTable td:nth-child(4){
     width: 25% !important;
 }
+
+
+
+@media screen and (max-width: 1555px) {
+    .app__content{
+        height: 100vh;
+        max-height: 50vh;
+    }
+    .app__content.app__home .alert__box{
+        left: 7rem!important;
+        font-size: 10px!important;
+        top: 80px;
+    }
+    .header{
+        padding: 0 20px 0 20px;
+    }
+    .header .nav ul{
+        margin: 0!important;
+    }
+    .header .logo{
+        margin-bottom: -35px;
+        height: 70px;
+        width: 70px;
+    }
+    .badgeCode{
+        padding: 6px 6px!important;
+        font-size: 9px!important;
+    }
+    .cardDispatch__left__top__code h5{
+        font-size: 9px!important;
+        width: 70% !important;
+    }
+    .box-content{
+        max-height: 335px!important;
+        overflow-x: auto!important;
+    }
+    .newFiche {
+        padding: 9px 17px;
+        margin-top: 0;
+        width: 65%;
+        font-size: 10px;
+        bottom: 20px!important;
+    }
+    .card-citizen__name h4{
+        font-size: 9px!important;
+    }
+    .card-container .card-citizen{
+        width: 80% !important;
+        padding: 10px 12px!important;
+    }
+    .app__content .content-rooter .title-content{
+        width: 70vw!important;
+    }
+    td{
+        font-size: 10px;
+    }
+    select{
+        font-size: 10px;
+    }
+    .message div h5{
+        font-size: 11px!important;
+    }
+    .message div span{
+        font-size: 9px!important;
+    }
+    .rapport-form form div p{
+        font-size: 10px!important;
+    }
+    .card-ppa__left h4{
+        font-size: 9px;
+    }
+    .card-ppa__right__date p{font-size: 9px!important;}
+    .card-ppa__right__button img{
+        width: 15px!important;
+    }
+    .container-permis ul li{
+        width: 10px!important;
+        height: 10px!important;
+    }
+    .container-permis ul li img{
+        width: 10px!important;
+        height: 10px!important;
+    }
+    .card-ppa__left img{
+        width: 30px!important;
+    }
+    .card-ppa__left p{font-size: 9px!important;}
+}

@@ -101,6 +101,7 @@ function RapportSaisie() {
                         </ul>
                     </div>
                 </div>
+                <button className={"claim send"} type='submit'>ENREGISTRER</button>
             </form>
         </>
     );
