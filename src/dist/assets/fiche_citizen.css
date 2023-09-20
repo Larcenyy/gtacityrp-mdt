@@ -646,3 +646,36 @@
 input[type="checkbox"]:checked + .checkbox-custom::after {
     opacity: 1;
 }
+
+.inputCivilInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.inputCivilInfo small{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-evenly;
+}
+
+.inputCivilInfo input{
+    width: 30%;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 2px 4px;
+    font-weight: 600;
+    font-size: 12px;
+    background-color: rgba(33, 28, 28, 0.35);
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.inputCivilInfo input:nth-child(1){
+    width: 100%;
+    text-align: center;
+}

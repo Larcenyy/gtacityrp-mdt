@@ -65,9 +65,15 @@ class CreateFicheCitizen extends Component {
                                                 <div className={"citizenAvatar"}>
                                                     <img style={{ width: "50px" }} src="/assets/images/icon/camera.svg" alt="photo" />
                                                 </div>
-                                                <div>
-                                                    <h4>NOM Prénom</h4>
-                                                    <small>xx ans - sexe</small>
+                                                <div className={"inputCivilInfo"}>
+                                                    <input type="text" name={"name"} required={true} placeholder={"NOM PRENOM"}/>
+                                                    <small>
+                                                        <div>
+                                                            18 ans
+                                                        </div>
+                                                        -
+                                                        <input type="text" name={"sexe"} required={true} placeholder={"Homme/Femme"}/>
+                                                    </small>
                                                 </div>
                                             </div>
                                             <div className={""}>
@@ -80,20 +86,20 @@ class CreateFicheCitizen extends Component {
                                             <div className={"citizen-fiche__coord__left"}>
                                                 <div>
                                                     <h4>Adresse: </h4>
-                                                    <input type="text" required={true} placeholder={"Adresse de résidence du citoyen"}/>
+                                                    <input name={"adresse"} type="text" required={true} placeholder={"Adresse de résidence du citoyen"}/>
                                                 </div>
                                                 <div>
                                                     <h4>Date de naissance : </h4>
-                                                    <input type="text"  required={true} placeholder={"Profession du citoyen"}/>
+                                                    <input name={"date"} type="text"  required={true} placeholder={"Date de naissance"}/>
                                                 </div>
                                                 <div>
                                                     <div>
                                                         <h4>Taille : </h4>
-                                                        <input type="text"  required={true} placeholder={"Taille du citoyen"}/>
+                                                        <input type="text" name={"taille"} required={true} placeholder={"Taille du citoyen"}/>
                                                     </div>
                                                     <div>
                                                         <h4>Masse : </h4>
-                                                        <input type="text"  required={true} placeholder={"Masse du citoyen"}/>
+                                                        <input type="text" name={"masse"} required={true} placeholder={"Masse du citoyen"}/>
                                                     </div>
                                                 </div>
                                                 <div>
@@ -134,23 +140,23 @@ class CreateFicheCitizen extends Component {
                                             <div className={"citizen-fiche__coord__right"}>
                                                 <div>
                                                     <h4>Profession : </h4>
-                                                    <input type="text" required={true} placeholder={"Profession du citoyen"}/>
+                                                    <input name={"profession"} type="text" required={true} placeholder={"Profession du citoyen"}/>
                                                 </div>
                                                 <div>
                                                     <h4>Lieu de naissance : </h4>
-                                                    <input type="text" required={true} placeholder={"Lieu de naissance du citoyen"}/>
+                                                    <input name={"naissance"} type="text" required={true} placeholder={"Lieu de naissance du citoyen"}/>
                                                 </div>
                                                 <div>
                                                     <h4>Nationalité : </h4>
-                                                    <input type="text" required={true} placeholder={"Nationalité du citoyen"}/>
+                                                    <input name={"nationalite"} type="text" required={true} placeholder={"Nationalité du citoyen"}/>
                                                 </div>
                                                 <div>
                                                     <h4>Véhicule : </h4>
-                                                    <input type="text" required={true} placeholder={"Véhicule principal du citoyen"}/>
+                                                    <input name={"vehicle"} type="text" required={true} placeholder={"Véhicule principal du citoyen"}/>
                                                 </div>
                                                 <div>
                                                     <h4>N° de téléphone : </h4>
-                                                    <input type="text" required={true} placeholder={"N° de téléphone du citoyen"}/>
+                                                    <input name={"phone"} type="text" required={true} placeholder={"N° de téléphone du citoyen"}/>
                                                 </div>
                                             </div>
                                         </div>

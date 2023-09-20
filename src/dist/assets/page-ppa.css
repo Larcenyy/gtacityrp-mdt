@@ -8,7 +8,7 @@
     gap: 1rem;
     overflow-x: auto;
     height: 100vh;
-    max-height: 30vh;
+    max-height: 40vh;
 }
 
 .card-ppa{
@@ -53,6 +53,7 @@
 .card-ppa__right__button{
     display: flex;
     gap: 10px;
+    z-index: 0;
     align-items: center;
 }
 

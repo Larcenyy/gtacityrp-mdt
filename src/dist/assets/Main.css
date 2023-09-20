@@ -828,8 +828,55 @@ body {
 }
 
 
+/* RESPONSIVE FORMAT */
+
+@media screen and (max-width: 1750px) {
+    .container-search__content{
+        height: 80% !important;
+    }
+    .civil-card{
+        width: 42%!important;
+    }
+    .newFiche{
+        padding: 14px 17px!important;
+        font-size: 14px!important;
+        bottom: 10px!important;
+    }
+    .box-container{
+        height: 50vh;
+    }
+    .card-container{max-height: 70% !important}
+    .container-ppa{max-height: 40vh!important;}
+}
+
+@media screen and (max-width: 1650px) {
+    #addElement{
+        width: 30%!important;
+    }
+    .box-container{
+        justify-content: flex-start!important;
+    }
+    .container-search__content{
+        height: 85% !important;
+    }
+    .container-history{
+        max-height: 70% !important;
+    }
+    .card-container{max-height: 65% !important}
+}
+
 
 @media screen and (max-width: 1555px) {
+    .container-ppa{max-height: 30vh!important;}
+    #addElement{width: 35%!important;}
+    .confirmation-modal{font-size: 12px!important;}
+    .card-container{max-height: 60% !important}
+    .civil-card{
+        width: 40% !important;
+    }
+    .container-history{
+        max-height: 60% !important;
+    }
     .app__content{
         height: 100vh;
         max-height: 50vh;
@@ -861,10 +908,10 @@ body {
         overflow-x: auto!important;
     }
     .newFiche {
-        padding: 9px 17px;
+        padding: 9px 17px!important;
         margin-top: 0;
-        width: 65%;
-        font-size: 10px;
+        width: 65%!important;
+        font-size: 10px!important;
         bottom: 20px!important;
     }
     .card-citizen__name h4{font-size: 9px!important;}
@@ -892,15 +939,56 @@ body {
     .card-ppa__left img{width: 30px!important;}
     .card-ppa__left p{font-size: 9px!important;}
     .modal-content{width: 80% !important;}
-    .app__content{margin-top: 70px!important;}
+    /*.app__content{margin-top: 70px!important;}*/
 }
 
+@media screen and (max-width: 1510px) {
+    .container-search__content{
+        height: 85% !important;
+    }
+    .citizen-fiche__coord{
+        flex-direction: column!important;
+        align-items: center!important;
+        height: max-content!important;
+        padding: 10px 15px!important;
+    }
+    .citizen-fiche__down_left{
+        width: 100%!important;
+        max-width: 100%!important;
+        border-bottom: 1px solid var(--yellow)!important;
+        flex-direction: column!important;
+        border-right: none!important;
+    }
+    .citizen-fiche__down{flex-direction: column!important;}
+    .citizen-fiche__down__right{
+        width: 100%!important;
+        max-width: 100%!important;
+        flex-direction: column!important;
+    }
+    .citizen-fiche__top{height: 50%!important}
+    .civil-card__info{width: 100%}
+}
+
+
 @media screen and (max-width: 1440px) {
+    .card-container{max-height: 60% !important}
     .app__content {max-height: 45vh;}
 }
 
 @media screen and (max-width: 1350px) {
-    .app__content{margin-top: 65px!important;}
+    #addElement{width: 40%!important;}
+    .confirmation-modal{font-size: 10px!important;}
+    .newFiche {
+        padding: 12px 15px!important;
+        margin-top: 0;
+        width: 65%!important;
+        font-size: 9px!important;
+        bottom: 20px!important;
+    }
+    .container-history{
+        max-height: 55% !important;
+    }
+    /*.app__content{margin-top: 65px!important;}*/
     .app__content.app__home .alert__box {
         left: 5rem!important;
         font-size: 10px!important;
@@ -945,27 +1033,6 @@ body {
         font-size: 9px!important;
     }
     .confirmation-modal{font-size: 10px}
-    .citizen-fiche__coord{
-        flex-direction: column!important;
-        align-items: center!important;
-        height: max-content!important;
-        padding: 10px 15px!important;
-    }
-    .citizen-fiche__down_left{
-        width: 100%!important;
-        max-width: 100%!important;
-        border-bottom: 1px solid var(--yellow)!important;
-        flex-direction: column!important;
-        border-right: none!important;
-    }
-    .citizen-fiche__down{flex-direction: column!important;}
-    .citizen-fiche__down__right{
-        width: 100%!important;
-        max-width: 100%!important;
-        flex-direction: column!important;
-    }
-    .citizen-fiche__top{height: 50%!important}
-    .civil-card__info{width: 100%}
     .civil-card{width: 30%}
     .card-contrat__info{
         font-size: 11px!important;
@@ -975,7 +1042,19 @@ body {
     .buttonAddContrat img{width: 10px!important;}
 }
 
-@media screen and (max-width: 1210px) {
+@media screen and (max-width: 1250px) {
+    .card-ppa__left{flex-direction: column!important;gap: 4px}
+    #addElement{width: 40%!important;}
+    .card-container{max-height: 45% !important}
+    .container-ppa{
+        max-height: 20vh!important;
+    }
+    .box-content{
+        max-height: 250px!important;
+    }
+    .container-history{
+        max-height: 45% !important;
+    }
     .message div h5{font-size: 9px!important;}
     .app__content {max-height: 35vh!important;}
     .cardDispatch{width: 100% !important}
@@ -988,10 +1067,19 @@ body {
         width: 70% !important;
     }
     .app__content.app__home .alert__box{font-size: 9px!important;}
-    .newFiche{
-        width: 60%!important;
-        padding: 4px 17px!important;
-        font-size: 10px!important;
+    .newFiche {
+        width: 70%!important;
+        padding: 8px 17px!important;
+        font-size: 9px!important;
+        bottom: 35px!important;
     }
     .card-citizen__name h4{font-size: 7px!important;}
 }
+
+@media screen and (max-width: 1200px) {
+    #addElement{width: 40%!important;}
+    .container-history{
+        max-height: 25% !important;
+    }
+}
+

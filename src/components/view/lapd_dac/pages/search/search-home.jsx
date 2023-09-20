@@ -165,36 +165,38 @@ const PageRapport = () => {
                             <img style={{ width: "15px" }} src="/assets/images/icon/clock.svg" alt="Date" />
                             <p style={{fontWeight: '800'}}>Votre historique de recherche</p>
                         </div>
-                        {searchData.slice(0, 5).map((data, index) => (
-                            <div className={"card-search"} key={index}>
-                                <div className={"card-search__left"}>
-                                    <div className={"card-search__left__icon"}>
-                                        <img style={{ width: "18px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
+                        <section className={"search-card-container"}>
+                            {searchData.slice(0, 5).map((data, index) => (
+                                <div className={"card-search"} key={index}>
+                                    <div className={"card-search__left"}>
+                                        <div className={"card-search__left__icon"}>
+                                            <img style={{ width: "18px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
+                                        </div>
+                                        <div>
+                                            <h4>{data.title}</h4>
+                                            <span>{data.date} - [{data.filtre}]</span>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4>{data.title}</h4>
-                                        <span>{data.date} - [{data.filtre}]</span>
-                                    </div>
-                                </div>
-                                <hr style={{ width: "2px", border: "none", height: "30px", background: "gray" }} />
-                                <div className={"card-search__right"}>
+                                    <hr style={{ width: "2px", border: "none", height: "30px", background: "gray" }} />
+                                    <div className={"card-search__right"}>
                                    <span>
                                         <img style={{ width: "18px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                                    </span>
-                                   <span onClick={() => showConfirmationModal(index)}>
+                                        <span onClick={() => showConfirmationModal(index)}>
                                         <img style={{ width: "18px" }} src="/assets/images/icon/trashCall.png" alt="Supprimer" />
                                   </span>
-                                </div>
-                                {/* Modèle de confirmation (affiché conditionnellement) */}
-                                {itemToDeleteIndex === index && isConfirmationModalVisible && (
-                                    <div className="confirmation-modal">
-                                        <p>Confirmer l'action ?</p>
-                                        <button onClick={() => { handleDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Supprimer" /></button>
-                                        <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Supprimer" /></button>
                                     </div>
-                                )}
-                            </div>
-                        ))}
+                                    {/* Modèle de confirmation (affiché conditionnellement) */}
+                                    {itemToDeleteIndex === index && isConfirmationModalVisible && (
+                                        <div className="confirmation-modal">
+                                            <p>Confirmer l'action ?</p>
+                                            <button onClick={() => { handleDelete(); hideConfirmationModal(); }}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Supprimer" /></button>
+                                            <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Supprimer" /></button>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </section>
                         <small>Uniquement vos 5 dernière recherches vous sont fournis.</small>
                     </div>
                 </div>

@@ -71,6 +71,30 @@ export let listeCitoyenData = [
         permisShotgun: false,
         permisRifle: false,
         permisSnip: false,
+    },
+    {
+        citizenId: 3, // ID du citoyen
+        title: "John dddd",
+        dateBirthday: "15/12/2009",
+        sexe: "Femme",
+        age: "28",
+        adresse: "6 rue de JeSaisPas",
+        profession: "LSPD",
+        naissance: "San Fierro",
+        taille: 165,
+        masse: 55,
+        nationalite: "Russe",
+        vehicule: "AUDI Q8",
+        phone: "654-854",
+        permisVehicle: true,
+        permisAir: false,
+        permisBoat: false,
+
+        permisPistol: false,
+        permisSmg: false,
+        permisShotgun: false,
+        permisRifle: false,
+        permisSnip: false,
     }
 ];
 export function supprimerCitoyenParId(citizenId) {
