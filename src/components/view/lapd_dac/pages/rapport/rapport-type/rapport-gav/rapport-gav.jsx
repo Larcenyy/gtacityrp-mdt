@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useLocation} from "react-router-dom";
+import {officierData} from "../../../mdt/Tables/officierData";
+import SelectOption from "../../../mdt/Tables/SelectOption";
 
 function RapportGAV() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const name = searchParams.get('name') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
 
+
+    const [selectedOfficier, setSelectedOfficier] = useState('');
+    const handleOfficierChange = (event) => {
+        setSelectedOfficier(event.target.value);
+    };
+
+    const [valueName, setValueName] = useState(name);
+
+    const handleInputChange = (event) => {
+        setValueName(event.target.value);
+    };
 
     return (
         <>
@@ -17,7 +30,8 @@ function RapportGAV() {
                             className="search-bar"
                             type="text"
                             required={true}
-                            value={name}
+                            value={valueName}
+                            onChange={handleInputChange}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
                         <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
@@ -25,14 +39,14 @@ function RapportGAV() {
                 </div>
                 <div>
                     <p>Lier un officier en charge :</p>
-                    <div className={"search-container"}>
-                        <input
-                            className="search-bar"
-                            type="text"
-                            required={true}
-                            placeholder={"Pour lier un officier en charge"}
+                    <div className={""}>
+                        <SelectOption
+                            name="officier"
+                            id="officier"
+                            options={officierData.map(officier => ({ value: officier.officierID, label: officier.name }))}
+                            selectedValue={selectedOfficier}
+                            onChange={handleOfficierChange}
                         />
-                        <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
                     </div>
                 </div>
                 <div id={"dateGAV"}>

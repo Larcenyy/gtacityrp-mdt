@@ -1,4 +1,4 @@
-export const messages = [
+export const messageData = [
     {
         type: "receiver",
         name: "DOE Jhon",

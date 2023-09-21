@@ -29,6 +29,12 @@ function RapportSaisie() {
         }
     };
 
+    const [valueName, setValueName] = useState(name);
+
+    const handleInputChange = (event) => {
+        setValueName(event.target.value);
+    };
+
     return (
         <>
             <form action="">
@@ -39,7 +45,8 @@ function RapportSaisie() {
                             className="search-bar"
                             type="text"
                             required={true}
-                            value={name}
+                            value={valueName}
+                            onChange={handleInputChange}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
                         <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />

@@ -1,6 +1,6 @@
 import MessageContainer from "./MessageContainer";
-import {messages} from "./DataTest";
 import React from "react";
+import {messageData} from "./messageData";
 
 const ContainerCom = () => {
     return (
@@ -10,7 +10,7 @@ const ContainerCom = () => {
             </div>
 
             {/* Message Container de la communication interne */}
-            <MessageContainer messages={messages}/>
+            <MessageContainer messages={messageData}/>
 
             <div className={"sendMessageContainer"}>
                 <input type="text"

@@ -9,6 +9,9 @@ function ListeCitoyen({onCitizenSelect}) {
     const [searchValue, setSearchValue] = useState("");
     const [citizenList, setCitzenList] = useState(listeCitoyenData);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(10); // Nombre d'éléments par page
+
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const idURL = searchParams.get('id') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
@@ -52,6 +55,12 @@ function ListeCitoyen({onCitizenSelect}) {
         setCitzenList(updatedCitizenList);
     }
 
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentCitizenList = citizenList.slice(indexOfFirstItem, indexOfLastItem);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+
     return (
         <div className={"citizen-list"}>
             <div className={"search-container"}>
@@ -65,17 +74,26 @@ function ListeCitoyen({onCitizenSelect}) {
                 <div className={"search-icon"}></div>
             </div>
             <div className={'card-container'}>
-                {listeCitoyenData.filter(card => card.title.toLowerCase().includes(searchValue.toLowerCase())).map((card, index) => (
-                    <CardCitoyen
-                        key={index}
-                        title={card.title}
-                        dateBirthday={card.dateBirthday}
-                        isActive={index === activeCardIndex}
-                        onClick={() => handleCardClick(index)}
-                        onDelete={() => handleDelete(index)}
-                        citizenId={card.citizenId}
+                {currentCitizenList
+                    .filter(card => card.title.toLowerCase().includes(searchValue.toLowerCase()))
+                    .map((card, index) => (
+                        <CardCitoyen
+                            key={index}
+                            title={card.title}
+                            dateBirthday={card.dateBirthday}
+                            isActive={index === activeCardIndex}
+                            onClick={() => handleCardClick(index)}
+                            onDelete={() => handleDelete(index)}
+                            citizenId={card.citizenId}
                     />
                 ))}
+                <ul className="pagination">
+                    {Array.from({ length: Math.ceil(citizenList.length / itemsPerPage) }, (_, index) => (
+                        <li key={index} className={currentPage === index + 1 ? "active" : ""}>
+                            <button onClick={() => paginate(index + 1)}>{index + 1}</button>
+                        </li>
+                    ))}
+                </ul>
             </div>
             <Link to="/page/create-citoyens" className="newFiche submit__field">
                 <span>+ Créer une fiche citoyen</span>

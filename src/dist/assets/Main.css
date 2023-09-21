@@ -827,6 +827,28 @@ body {
     width: 25% !important;
 }
 
+.pagination{
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    border-radius: 4px;
+    justify-content: center;
+}
+
+.pagination .active button{
+    background: rgb(30, 30, 30);
+    border: 2px solid white;
+}
+
+.pagination button{
+    cursor: pointer;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    background: rgba(30, 30, 30, 0.65);
+}
 
 /* RESPONSIVE FORMAT */
 

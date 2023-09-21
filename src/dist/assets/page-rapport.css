@@ -120,6 +120,7 @@
 
 .rapport-form .search-container{
     margin: 0!important;
+    overflow: inherit!important;
 }
 
 

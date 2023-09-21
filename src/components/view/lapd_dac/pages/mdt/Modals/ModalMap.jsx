@@ -3,8 +3,6 @@ import { modalData } from './modalData';
 import Modal from "../../../modal/Modal";
 
 function ModalManager({ method }) {
-
-
     return (
         <>
             {modalData.map((modal, index) => (

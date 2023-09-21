@@ -73,8 +73,8 @@ export let listeCitoyenData = [
         permisSnip: false,
     },
     {
-        citizenId: 3, // ID du citoyen
-        title: "John dddd",
+        citizenId: 4, // ID du citoyen
+        title: "Lugi Warr",
         dateBirthday: "15/12/2009",
         sexe: "Femme",
         age: "28",

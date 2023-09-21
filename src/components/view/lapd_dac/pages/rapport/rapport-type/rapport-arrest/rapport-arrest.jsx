@@ -7,6 +7,11 @@ function RapportArrest() {
     const searchParams = new URLSearchParams(location.search);
     const name = searchParams.get('name') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
 
+    const [valueName, setValueName] = useState(name);
+
+    const handleInputChange = (event) => {
+        setValueName(event.target.value);
+    };
 
     return (
         <>
@@ -18,7 +23,8 @@ function RapportArrest() {
                             className="search-bar"
                             type="text"
                             required={true}
-                            value={name}
+                            value={valueName}
+                            onChange={handleInputChange}
                             placeholder={"Pour lier un citoyen à cette fiche"}
                         />
                         <img style={{ width: "15px" }} src="/assets/images/icon/search.svg" alt="Rechercher" />
