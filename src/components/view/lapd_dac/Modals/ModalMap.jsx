@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { modalData } from './modalData';
-import Modal from "../../../modal/Modal";
+import Modal from "../../modal/Modal";
 
 function ModalManager({ method }) {
     return (

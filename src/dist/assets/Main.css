@@ -9,6 +9,7 @@
     --red: #ED1B22;
     --green: #24958F;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
     padding: 0;
 }
 
@@ -872,6 +873,9 @@ body {
 }
 
 @media screen and (max-width: 1650px) {
+    .viewpage-container{font-size: 12px!important;}
+    .viewpage-container__down{font-size: 12px!important;}
+    .viewpage-container__down div p{font-size: 12px!important;}
     #addElement{
         width: 30%!important;
     }

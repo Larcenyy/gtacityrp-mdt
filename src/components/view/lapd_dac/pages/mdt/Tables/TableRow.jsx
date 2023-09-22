@@ -5,7 +5,7 @@ import OfficerList from './OfficerList';
 import VehicleList from './VehicleList';
 import {officierData} from "./officierData";
 import {vehicleData} from "./vehicleData";
-import ModalManager from "../Modals/ModalMap";
+import ModalManager from "../../../Modals/ModalMap";
 
 function TableRow({ data }) {
     const officers = officierData.filter((officer) => data.officers.some((o) => o.officierID === officer.officierID));

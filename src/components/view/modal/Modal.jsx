@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import MapComponent from "../leaflet-map/leaflet-map";
-import {officierData} from "../pages/mdt/Tables/officierData";
-import {vehicleData} from "../pages/mdt/Tables/vehicleData";
+import MapComponent from "../lapd_dac/leaflet-map/leaflet-map";
+import {officierData} from "../lapd_dac/pages/mdt/Tables/officierData";
+import {vehicleData} from "../lapd_dac/pages/mdt/Tables/vehicleData";
 
 const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, descrip,
    enableAgentCard, enableButtons, enableMap, enableSearchBar, method, enableVehicleCard }) => {

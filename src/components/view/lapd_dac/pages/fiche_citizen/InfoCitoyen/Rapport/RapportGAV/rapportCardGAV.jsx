@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {openModal} from "../../../../../../../../dist/assets/modalToogle";
-function RapportGAVCard({title, date, modalEdit, onDelete}) {
+import {Link} from "react-router-dom";
+function RapportGAVCard({title, date, linkView, linkEdit, onDelete}) {
     function handleCitizenCardClick(event) {
         const modalId = event.currentTarget.getAttribute("data-modal");
         openModal(modalId);
@@ -35,14 +36,14 @@ function RapportGAVCard({title, date, modalEdit, onDelete}) {
                     <hr/>
                 </div>
                 <ul>
-                    <li>
-                        <span><img style={{ width: "15px" }} src="/assets/icon/eyes.svg" alt="Voir" /></span>
-                    </li>
-                    <li>
-                        <span onClick={handleCitizenCardClick} data-modal={modalEdit} className={'openModal'}><img style={{ width: "15px" }} src="/assets/icon/edit.svg" alt="Editer" /></span>
-                    </li>
+                    <Link to={linkView}>
+                        <span><img style={{ width: "15px" }} src="/assets/images/icon/eyes.svg" alt="Voir" /></span>
+                    </Link>
+                    <Link to={linkEdit}>
+                        <span><img style={{ width: "15px" }} src="/assets/images/icon/edit.svg" alt="Editer" /></span>
+                    </Link>
                     <span onClick={showConfirmationModal} className={"openModal"}>
-                        <img style={{ width: "15px" }} src="/assets/icon/trashCall.png" alt="Supprimer" />
+                        <img style={{ width: "15px" }} src="/assets/images/icon/trashCall.png" alt="Supprimer" />
                     </span>
                 </ul>
             </div>

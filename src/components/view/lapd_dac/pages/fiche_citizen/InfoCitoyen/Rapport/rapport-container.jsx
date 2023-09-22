@@ -34,19 +34,25 @@ function Rapport({ rapport, type, citizenName, citizenId }) {
                             type === "Arrest" ? (
                                 <RapportArrestCard
                                     key={index}
+                                    rapportID={dispatch.id}
                                     title={dispatch.title}
                                     date={dispatch.date}
                                     modalDelete={dispatch.modalDelete}
                                     isGood={dispatch.isGood}
+                                    linkView={`/page/view-rapportArrest?id=${dispatch.id}`}
+                                    linkEdit={`/page/view-editArrest?id=${dispatch.id}`}
                                     onDelete={() => handleDelete(index)}
                                 />
                             ) : (
                                 <RapportGAVCard
                                     key={index}
+                                    rapportID={dispatch.id}
                                     title={dispatch.title}
                                     date={dispatch.date}
                                     modalDelete={dispatch.modalDelete}
                                     isGood={dispatch.isGood}
+                                    linkView={`/page/view-rapportGAV?id=${dispatch.id}`}
+                                    linkEdit={`/page/view-editGAV?id=${dispatch.id}`}
                                     onDelete={() => handleDelete(index)}
                                 />
                             )

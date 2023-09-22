@@ -4,7 +4,7 @@ import LapdAgenda from "./lapd-agenda";
 import LapdAgentList from "./lapd-agentlist";
 
 import modalToogle, {attachModalListeners} from "../../../../../dist/assets/modalToogle";
-import Modal from "../../modal/Modal"; // Chemin vers votre fichier utils.js
+import Modal from "../../../modal/Modal"; // Chemin vers votre fichier utils.js
 
 class PageHome extends Component {
 

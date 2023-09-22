@@ -18,8 +18,6 @@ function CardContravention({ title, date, isGood, onDelete}) {
         setConfirmationModalVisible(false);
     }
 
-
-
     return (
         <div className={"card-contrat"}>
             <div className={"card-contrat__info"}>

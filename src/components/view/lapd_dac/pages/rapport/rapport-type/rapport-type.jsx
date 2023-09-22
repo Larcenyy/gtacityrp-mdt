@@ -10,7 +10,6 @@ function RapportType({ data, onSelect }) { // Ajoutez onSelect en tant que prop
     const handleSelectChange = (event) => {
         const newValue = event.target.value;
         setSelectedValue(newValue);
-        console.log("Selected Value in RapportType:", newValue);
         onSelect(newValue); // Appeler la fonction onSelect pour transmettre la valeur au parent
     };
 

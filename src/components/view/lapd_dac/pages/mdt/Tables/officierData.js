@@ -2,7 +2,7 @@ export let officierData = [
     {
         officierID: 1, // ID du citoyen
         name: "John Matraque",
-        matricule: "Matricule",
+        matricule: "X-109",
         rank: 4
     },
     {

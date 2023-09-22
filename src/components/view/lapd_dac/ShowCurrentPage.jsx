@@ -7,6 +7,9 @@ import CreateFicheCitizen from "./pages/fiche_citizen/CreateFicheCitoyen/create-
 import PageRapport from "./pages/rapport/lapd-page-rapport";
 import SearchHome from "./pages/search/search-home";
 import PagePPA from "./pages/ppa/lapd-page-ppa";
+import ShowRapportArrest from "./pages/rapport/show-rapport/page-show-rapport";
+import ShowEditRapport from "./pages/rapport/edit-rapport/page-edit-rapport";
+
 
 
 const ShowCurrentPage = ({ currentPage }) => {
@@ -22,6 +25,12 @@ const ShowCurrentPage = ({ currentPage }) => {
             {currentPage === "rapport-gav" ? <PageRapport type={"RapportGAV"} /> : null}
             {currentPage === "recherches" ? <SearchHome /> : null}
             {currentPage === "port-d'arme" ? <PagePPA /> : null}
+
+            {currentPage === "view-rapportArrest" ? <ShowRapportArrest type={"ARREST"} /> : null}
+            {currentPage === "view-rapportGAV" ? <ShowRapportArrest type={"GAV"} /> : null}
+
+            {currentPage === "view-editArrest" ? <ShowEditRapport type={"ARREST"} /> : null}
+            {currentPage === "view-editGAV" ? <ShowEditRapport type={"GAV"} /> : null}
         </div>
     );
 };
