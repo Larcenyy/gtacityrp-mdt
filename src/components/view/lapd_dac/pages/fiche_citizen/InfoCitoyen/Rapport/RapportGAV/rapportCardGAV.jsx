@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {openModal} from "../../../../../../../../dist/assets/modalToogle";
+import {openModal} from "../../../../../../../../dist/js/modalToogle";
 import {Link} from "react-router-dom";
 function RapportGAVCard({title, date, linkView, linkEdit, onDelete}) {
     function handleCitizenCardClick(event) {

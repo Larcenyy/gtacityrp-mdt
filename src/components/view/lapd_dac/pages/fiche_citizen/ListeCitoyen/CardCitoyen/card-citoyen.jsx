@@ -16,8 +16,11 @@ function CardCitoyen({ title, dateBirthday, isActive, onClick, citizenId, onDele
         setConfirmationModalVisible(false);
     }
 
+    const getUrl = window.location.href;
+    const isLafd = getUrl.includes("lafd");
+
     return (
-        <Link onClick={onClick} data-id={citizenId} className={cardClassName} to={`/page/fiches-citoyens?id=${citizenId}`}>
+        <Link onClick={onClick} data-id={citizenId} className={cardClassName} to={isLafd ? `/lafd/page/fiches-citoyens?id=${citizenId}` : `/lapd/page/fiches-citoyens?id=${citizenId}` }>
             <div className={"card-citizen__info"}>
                 <img style={{ width: "30px" }} src="/assets/images/icon/avatarCitizen.png" alt="Citoyen" />
                 <div className={"card-citizen__name"}>

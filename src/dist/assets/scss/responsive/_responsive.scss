@@ -1,0 +1,260 @@
+/* RESPONSIVE FORMAT */
+
+@media screen and (max-width: 1750px) {
+  .container-search__content{
+    height: 80% !important;
+  }
+  .civil-card{
+    width: 42%!important;
+  }
+  .newFiche{
+    padding: 14px 17px!important;
+    font-size: 14px!important;
+    bottom: 10px!important;
+  }
+  .box-container{
+    height: 50vh;
+  }
+  .card-container{max-height: 70% !important}
+  .container-ppa{max-height: 40vh!important;}
+}
+
+@media screen and (max-width: 1650px) {
+  .viewpage-container{font-size: 12px!important;}
+  .viewpage-container__down{font-size: 12px!important;}
+  .viewpage-container__down div p{font-size: 12px!important;}
+  #addElement{
+    width: 30%!important;
+  }
+  .box-container{
+    justify-content: flex-start!important;
+  }
+  .container-search__content{
+    height: 85% !important;
+  }
+  .container-history{
+    max-height: 70% !important;
+  }
+  .card-container{max-height: 65% !important}
+}
+
+
+@media screen and (max-width: 1555px) {
+  .container-ppa{max-height: 30vh!important;}
+  #addElement{width: 35%!important;}
+  .confirmation-modal{font-size: 12px!important;}
+  .card-container{max-height: 60% !important}
+  .civil-card{
+    width: 40% !important;
+  }
+  .container-history{
+    max-height: 60% !important;
+  }
+  .app__content{
+    height: 100vh;
+    max-height: 50vh;
+  }
+  .app__content.app__home .alert__box{
+    left: 7rem!important;
+    font-size: 10px!important;
+    top: 80px;
+  }
+  .header{padding: 0 20px 0 20px;}
+  .header .nav ul{
+    margin: 0!important;
+  }
+  .header .logo{
+    margin-bottom: -35px;
+    height: 70px;
+    width: 70px;
+  }
+  .badgeCode{
+    padding: 6px 6px!important;
+    font-size: 9px!important;
+  }
+  .cardDispatch__left__top__code h5{
+    font-size: 9px!important;
+    width: 70% !important;
+  }
+  .box-content{
+    max-height: 335px!important;
+    overflow-x: auto!important;
+  }
+  .newFiche {
+    padding: 9px 17px!important;
+    margin-top: 0;
+    width: 65%!important;
+    font-size: 10px!important;
+    bottom: 20px!important;
+  }
+  .card-citizen__name h4{font-size: 9px!important;}
+  .card-container .card-citizen{
+    width: 80% !important;
+    padding: 10px 12px!important;
+  }
+  .app__content .content-rooter .title-content{width: 70vw!important;}
+  td{font-size: 10px;}
+  select{font-size: 10px;}
+  .message div h5{font-size: 11px!important;}
+  .message div span{font-size: 9px!important;}
+  .rapport-form form div p{font-size: 10px!important;}
+  .card-ppa__left h4{font-size: 9px;}
+  .card-ppa__right__date p{font-size: 9px!important;}
+  .card-ppa__right__button img{width: 15px!important;}
+  .container-permis ul li{
+    width: 10px!important;
+    height: 10px!important;
+  }
+  .container-permis ul li img{
+    width: 10px!important;
+    height: 10px!important;
+  }
+  .card-ppa__left img{width: 30px!important;}
+  .card-ppa__left p{font-size: 9px!important;}
+  .modal-content{width: 80% !important;}
+  /*.app__content{margin-top: 70px!important;}*/
+}
+
+@media screen and (max-width: 1510px) {
+  .container-search__content{
+    height: 85% !important;
+  }
+  .citizen-fiche__coord{
+    flex-direction: column!important;
+    align-items: center!important;
+    height: max-content!important;
+    padding: 10px 15px!important;
+  }
+  .citizen-fiche__down_left{
+    width: 100%!important;
+    max-width: 100%!important;
+    border-bottom: 1px solid var(--yellow)!important;
+    flex-direction: column!important;
+    border-right: none!important;
+  }
+  .citizen-fiche__down{flex-direction: column!important;}
+  .citizen-fiche__down__right{
+    width: 100%!important;
+    max-width: 100%!important;
+    flex-direction: column!important;
+  }
+  .citizen-fiche__top{height: 50%!important}
+  .civil-card__info{width: 100%}
+}
+
+
+@media screen and (max-width: 1440px) {
+  .card-container{max-height: 60% !important}
+  .app__content {max-height: 45vh;}
+  .tablet-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  #addElement{width: 40%!important;}
+  .confirmation-modal{font-size: 10px!important;}
+  .newFiche {
+    padding: 12px 15px!important;
+    margin-top: 0;
+    width: 65%!important;
+    font-size: 9px!important;
+    bottom: 20px!important;
+  }
+  .container-history{
+    max-height: 55% !important;
+  }
+  /*.app__content{margin-top: 65px!important;}*/
+  .app__content.app__home .alert__box {
+    left: 5rem!important;
+    font-size: 10px!important;
+    top: 75px;
+  }
+  .app__content .app__home{margin-top: 0!important;}
+  .container-rapport{gap: 0!important;}
+  .header .title{font-size: 0.6em;}
+  .header .nav ul li{
+    font-size: 11px;
+  }
+  .app__content{
+    max-height: 40vh!important;
+  }
+  .header .logo {
+    margin-bottom: -25px;
+    height: 60px;
+    width: 60px;
+  }
+  .container-search{overflow-x: auto}
+  .app__content.app__home .alert__box .alert__icon{
+    height: 20px;
+    width: 20px;
+  }
+  .w-rooter p{font-size: 12px}
+  .cardDispatch__left__top__info{font-size: 9px}
+  tr th{
+    font-size: 9px;
+  }
+  .cardDispatch__left__top {
+    gap: 4px;
+    padding: 9px 8px;
+  }
+  .cardDispatch__right{width: 5%}
+  .cardDispatch__right__icon span img{width: 14px!important;}
+  .submit{
+    padding: 10px 10px!important;
+    font-size: 9px!important;
+  }
+  .citizen-fiche__info .buttonAction{
+    padding: 10px 10px!important;
+    font-size: 9px!important;
+  }
+  .confirmation-modal{font-size: 10px}
+  .civil-card{width: 30%}
+  .card-contrat__info{
+    font-size: 11px!important;
+  }
+  .card-contrat p{font-size: 10px!important;}
+  .buttonAddContrat{padding: 5px 5px!important;}
+  .buttonAddContrat img{width: 10px!important;}
+}
+
+@media screen and (max-width: 1250px) {
+  .card-ppa__left{flex-direction: column!important;gap: 4px}
+  #addElement{width: 40%!important;}
+  .card-container{max-height: 45% !important}
+  .container-ppa{
+    max-height: 20vh!important;
+  }
+  .box-content{
+    max-height: 250px!important;
+  }
+  .container-history{
+    max-height: 45% !important;
+  }
+  .message div h5{font-size: 9px!important;}
+  .app__content {max-height: 35vh!important;}
+  .cardDispatch{width: 100% !important}
+  .badgeCode{
+    padding: 6px 6px!important;
+    font-size: 12px!important;
+  }
+  .cardDispatch__left__top__code h5 {
+    font-size: 12px!important;
+    width: 70% !important;
+  }
+  .app__content.app__home .alert__box{font-size: 9px!important;}
+  .newFiche {
+    width: 70%!important;
+    padding: 8px 17px!important;
+    font-size: 9px!important;
+    bottom: 35px!important;
+  }
+  .card-citizen__name h4{font-size: 7px!important;}
+}
+
+@media screen and (max-width: 1200px) {
+  #addElement{width: 40%!important;}
+  .container-history{
+    max-height: 25% !important;
+  }
+}

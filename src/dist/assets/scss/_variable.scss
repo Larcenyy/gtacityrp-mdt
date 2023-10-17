@@ -1,0 +1,48 @@
+$black: black;
+$white: white;
+$grey: grey;
+
+$green: #39C6BD;
+$red: #ED1B22;
+$yellow: #FFCB04;
+
+$bg-white: rgba(255, 255, 255, 0.7);
+$bg-black: #000;
+
+[data-theme="lafd"] {
+  --bg-table-th: #6a3333;
+  --background-color_3: rgb(32, 42, 56);
+  --background-color_8: rgba(33, 33, 33, 0.12);
+  --background-color_11: rgba(33, 28, 28, 0.35);
+  --bg-card: #382020;
+  --bg-tablette-content: #471f1f;
+  --bg-home-content: #4A2727;
+  --bg-notifBell: #982929;
+  --bg-notifBell-content: #982929;
+  --bg-containerDispatch: #321414;
+  --bg-lapd: #321414;
+  --dark-bg-image: #1E1E1E;
+  --scrollBar: #321414;
+  --sender: rgba(217, 55, 55, 0.4);
+  --linear: linear-gradient(90deg, rgb(105, 51, 51) 20%, rgb(105, 51, 51) 60%, rgb(77, 26, 26) 100%);
+  --logoHeader: url('../../../../public/assets/images/lafd_dac/lafd_logo.svg');
+}
+
+
+[data-theme="lapd"] {
+  --bg-table-th: #334C6A;
+  --background-color_3: rgb(32, 42, 56);
+  --background-color_8: rgba(33, 33, 33, 0.12);
+  --background-color_11: rgba(33, 28, 28, 0.35);
+  --bg-card: #202A38;
+  --bg-tablette-content: #1F3147;
+  --bg-home-content: #273B4A;
+  --bg-notifBell: #299891;
+  --bg-containerDispatch: #142132;
+  --bg-lapd: #142132;
+  --dark-bg-image: #1E1E1E;
+  --scrollBar: #142132;
+  --sender: rgba(55, 217, 208, 0.4);
+  --linear: linear-gradient(90deg, rgba(51, 74, 105, 1) 20%, rgba(51, 74, 105, 1) 60%, rgba(26, 47, 77, 1) 100%);
+  --logoHeader: url('../../../../public/assets/images/lapd_dac/logo_lapd.png');
+}

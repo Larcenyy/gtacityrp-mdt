@@ -1,79 +1,59 @@
-import React, {Component} from "react";
+import React, { useState } from "react";
 
-class LapdAgenda extends Component {
-    render() {
-        return (
-            <>
-                <div className="agenda content-item">
-                    <div className="title-content">
-                        <div className="icon icon__agenda-title"></div>
-                        Ordre du jour
-                    </div>
-                    <div className="content__agenda__list">
-                        <div className="agenda__content">
-                            <div className="top">
-                                <div className="title">Ordre du jour #1 (24 août 2023 - 00:00)</div>
-                                <div className="options">
-                                    <div className="edit openModal" data-modal="edit__agenda__id"></div>
-                                    <div className="delete openModal" data-modal="delete__agenda__id"></div>
-                                </div>
-                            </div>
-                            <div className="text">
-                                Lorem ipsum dolor sit amet consectetur. Varius sed purus tincidunt vulputate risus. Arcu
-                                elementum consequat et felis ultricies elementum senectus. Consectetur ridiculus turpis
-                                amet eu. Id sollicitudin massa interdum purus risus convallis. Quam elementum neque arcu
-                                risus viverra enim arcu.
-                            </div>
-                        </div>
-                        <div className="agenda__content">
-                            <div className="top">
-                                <div className="title">Ordre du jour #1 (24 août 2023 - 00:00)</div>
-                                <div className="options">
-                                    <div className="edit"></div>
-                                    <div className="delete"></div>
-                                </div>
-                            </div>
-                            <div className="text">
-                                Lorem ipsum dolor sit amet consectetur. Varius sed purus tincidunt vulputate risus. Arcu
-                                elementum consequat et felis ultricies elementum senectus. Consectetur ridiculus turpis
-                                amet eu. Id sollicitudin massa interdum purus risus convallis. Quam elementum neque arcu
-                                risus viverra enim arcu.
-                            </div>
-                        </div>
-                        <div className="agenda__content">
-                            <div className="top">
-                                <div className="title">Ordre du jour #1 (24 août 2023 - 00:00)</div>
-                                <div className="options">
-                                    <div className="edit"></div>
-                                    <div className="delete"></div>
-                                </div>
-                            </div>
-                            <div className="text">
-                                Lorem ipsum dolor sit amet consectetur. Varius sed purus tincidunt vulputate risus. Arcu
-                                elementum consequat et felis ultricies elementum senectus. Consectetur ridiculus turpis
-                                amet eu. Id sollicitudin massa interdum purus risus convallis. Quam elementum neque arcu
-                                risus viverra enim arcu.
-                            </div>
-                        </div>
-                        <div className="agenda__content">
-                            <div className="top">
-                                <div className="title">Ordre du jour #1 (24 août 2023 - 00:00)</div>
-                                <div className="options">
-                                    <div className="edit"></div>
-                                    <div className="delete"></div>
-                                </div>
-                            </div>
-                            <div className="text">
-                                Lorem ipsum dolor sit amet consectetur. Varius sed purus tincidunt vulputate risus. Arcu
-                                elementum consequat et felis ultricies elementum senectus. Consectetur ridiculus turpis
-                                amet eu. Id sollicitudin massa interdum purus risus convallis. Quam elementum neque arcu
-                                risus viverra enim arcu.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </>
-        );
+function LapdAgendaList({ agendaData, setAgendaData }) {
+    const [confirmationModalVisible, setConfirmationModalVisible] = useState(null);
+
+    function showConfirmationModal(index) {
+        setConfirmationModalVisible(index);
     }
+
+    function hideConfirmationModal() {
+        setConfirmationModalVisible(null);
+    }
+
+    function deleteAgendaItem(index) {
+        // Créez une copie du tableau agendaData avec l'élément supprimé
+        const updatedAgendaData = [...agendaData];
+        updatedAgendaData.splice(index, 1);
+
+        // Mettez à jour l'état du tableau agendaData
+        setAgendaData(updatedAgendaData);
+
+        // Cachez la fenêtre modale de confirmation
+        hideConfirmationModal();
+    }
+
+    return (
+        <div className="agenda content-item">
+            <div className="title-content">
+                <div className="icon icon__agenda-title"></div>
+                Ordre du jour
+            </div>
+            <div className="content__agenda__list">
+                {agendaData.map((agenda, index) => (
+                    <div className="agenda__content" key={agenda.id}>
+                        <div className="top">
+                            <div className="title">Ordre du jour #{agenda.id} ({agenda.date} - {agenda.hours})</div>
+                            <div className="options">
+                                <div className="edit openModal" data-modal="edit__agenda__id"></div>
+                                <div onClick={() => showConfirmationModal(index)} className="delete openModal" data-modal="delete__agenda__id"></div>
+                            </div>
+                        </div>
+                        <div className="text">
+                            {agenda.content}
+                        </div>
+                        {confirmationModalVisible === index && (
+                            <div className="confirmation-modal">
+                                <p>Confirmer l'action ?</p>
+                                <button onClick={() => deleteAgendaItem(index)}><img style={{ width: "15px" }} src="/assets/images/icon/valid.svg" alt="Supprimer" /></button>
+                                <button onClick={hideConfirmationModal}><img style={{ width: "15px" }} src="/assets/images/icon/invalide.svg" alt="Annuler" /></button>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
-export default LapdAgenda;
+
+export default LapdAgendaList;

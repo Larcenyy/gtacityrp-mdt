@@ -1,3 +1,4 @@
+
 .box-container {
     display: flex;
     flex-direction: column;
@@ -5,38 +6,35 @@
     justify-content: center;
     align-items: center;
 }
-
 .box-content {
-    border: 2px solid var(--yellow);
+    border: 2px solid $yellow;
     border-radius: 20px;
     width: 90%;
     max-width: 90%;
     height: 500px;
     max-height: 500px;
     overflow: hidden;
-
+    div {
+        h5 {
+            text-align: center;
+            font-weight: 900;
+            display: flex;
+            gap: 15px;
+            font-size: 17px;
+            color: $black;
+            margin: 0;
+            padding: 10px 0;
+            background-color: $yellow;
+            justify-content: center;
+        }
+    }
 }
-
-.box-content div h5 {
-    text-align: center;
-    font-weight: 900;
-    display: flex;
-    gap: 15px;
-    font-size: 17px;
-    color: black;
-    margin: 0;
-    padding: 10px 0;
-    background-color: var(--yellow);
-    justify-content: center;
-}
-
-.submit{
+.submit {
     font-weight: 800;
     background: none;
-    color: white;
+    color: $white;
     cursor: pointer;
     font-size: 12px;
-
     display: flex;
     align-items: center;
     gap: 10px;
@@ -45,32 +43,27 @@
     border-radius: 7px;
     border: 2px solid rgba(255, 255, 255, 0.5);
     transition: 300ms ease-in-out;
+    &:hover {
+        opacity: 0.5;
+    }
 }
-.submit:hover{
-    opacity: 0.5;
-}
-
 .citizenContainer {
     display: flex;
     width: 100%;
     height: 100%;
 }
-
 .citizen-left {
     display: flex;
     flex-direction: column;
     width: 35%;
     height: 100%;
-    background-color: #334C6A;
+    background-color: var(--bg-table-th);
 }
-
-
 .card-avatar {
     display: flex;
 }
-
 .citizen-list {
-    background-color: #334C6A;
+    background-color: var(--bg-table-th);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -78,8 +71,15 @@
     align-items: center;
     padding: 10px 0;
     position: relative;
+    .search-container {
+        padding: 3px 3px !important;
+        margin-bottom: 0 !important;
+        width: 90% !important;
+        .search-icon {
+            height: 16px !important;
+        }
+    }
 }
-
 .card-container {
     margin-top: 1rem;
     width: 100%;
@@ -89,67 +89,58 @@
     align-items: center;
     padding: 0;
     overflow-x: auto;
+    .card-citizen {
+        display: flex;
+        border-radius: 7px;
+        background-color: var(--background-color_3);
+        width: 85%;
+        padding: 15px 12px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        cursor: pointer;
+        height: 100%;
+        text-decoration: none;
+        color: $white;
+    }
 }
-
-.card-container .card-citizen{
-    display: flex;
-    border-radius: 7px;
-    background-color: rgb(32, 42, 56);
-    width: 85%;
-    padding: 15px 12px;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    cursor: pointer;
-    height: 100%;
-    text-decoration: none;
-    color: white;
-}
-
 .card-citizen {
     display: flex;
     border-radius: 7px;
-    background-color: rgb(32, 42, 56);
+    background-color: var(--background-color_3);
     width: 85%;
     align-items: center;
     justify-content: space-between;
     position: relative;
     cursor: pointer;
     height: 100%;
+    hr {
+        width: 2px;
+        border: none;
+        height: 25px;
+        border-radius: 15px;
+        background-color: $grey;
+    }
 }
-
 .cardActive {
-    border: 2px solid var(--yellow);
+    border: 2px solid $yellow;
 }
-
-.card-citizen hr {
-    width: 2px;
-    border: none;
-    height: 25px;
-    border-radius: 15px;
-    background-color: grey;
-}
-
 .card-citizen__info {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .card-citizen__name {
     display: flex;
     flex-direction: column;
+    h4 {
+        font-size: 12px;
+    }
+    p {
+        font-size: 10px;
+        opacity: 0.8;
+    }
 }
-
-.card-citizen__name h4 {
-    font-size: 12px;
-}
-
-.card-citizen__name p {
-    font-size: 10px;
-    opacity: 0.8;
-}
-
 .newFiche {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
@@ -158,188 +149,173 @@
     width: 80%;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: $white;
     font-weight: 500;
     cursor: pointer;
     transition: 300ms ease-in;
     position: absolute;
     bottom: 0;
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        color: $white;
+        font-weight: 600;
+    }
+    &:hover {
+        transform: translateY(-4px);
+    }
 }
-
-.newFiche a{
-    text-decoration: none;
-    font-size: 14px;
-    color: white;
-    font-weight: 600;
-}
-
-.newFiche:hover {
-    transform: translateY(-4px);
-}
-
 .inputDesign {
     height: 40px;
     padding: 0 10px;
-    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #fff;
+    color: $white;
     border: transparent;
     border-radius: 10px;
     background: rgba(33, 28, 28, 0.35);
     transition: all .2s ease-in-out;
     outline: rgba(255, 255, 255, 0.192) solid 0;
 }
-
-.citizen-list .search-container {
-    padding: 3px 3px !important;
-    margin-bottom: 0 !important;
-    width: 90% !important;
-}
-
-.citizen-list .search-container .search-icon {
-    height: 16px !important;
-}
-
-/* ----- SECTION DROITE  */
 .citizen-right {
     width: 100%;
     height: 100%;
     overflow-x: auto;
 }
-
 .citizen-fiche {
     padding: 80px 10px;
-    background-color: #1F3147;
+    background-color: var(--bg-tablette-content);
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-
 .citizen-fiche__top {
     display: flex;
     flex-direction: column;
     border-radius: 12px;
-    background-color: #142132;
+    background-color: var(--bg-lapd);
     height: 300px;
 }
-
 .citizen-fiche__info {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(33, 33, 33, 0.12);
+    background-color: var(--bg-lapd);
     padding: 15px 0;
+    .buttonAction {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 30px;
+        border-radius: 7px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        font-weight: 800;
+        font-size: 12px;
+        cursor: pointer;
+        transition: 300ms ease-in-out;
+    }
 }
-
 .citizenName {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 5px;
+    img {
+        background-color: var(--bg-lapd);
+        border-radius: 50%;
+        margin-top: -3rem;
+        padding: 5px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        h4 {
+            font-weight: 800;
+        }
+        small {
+            font-weight: 700;
+            opacity: 0.7;
+        }
+    }
 }
-
-.citizenName img {
-    background-color: #142132;
-    border-radius: 50%;
-    margin-top: -3rem;
-    padding: 5px;
+.buttonAction {
+    span {
+        color: $white;
+        text-decoration: none;
+    }
+    &:hover {
+        opacity: 0.5;
+    }
 }
-
-.citizenName div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.citizenName div h4 {
-    font-weight: 800;
-}
-
-.citizenName div small {
-    font-weight: 700;
-    opacity: 0.7;
-}
-
-.citizen-fiche__info .buttonAction {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    padding: 10px 30px;
-    border-radius: 7px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    font-weight: 800;
-    font-size: 12px;
-    cursor: pointer;
-    transition: 300ms ease-in-out;
-}
-
-.buttonAction span{
-    color: white;
-    text-decoration: none;
-}
-
-.buttonAction:hover {
-    opacity: 0.5;
-}
-
 .goodAction {
-    background-color: #24958F;
+    background-color: $green;
 }
-
 .deleteAction {
-    background-color: #ED1B22;
+    background-color: $red;
 }
-
 .citizen-fiche__coord {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #142132;
+    background-color: var(--bg-lapd);
     max-width: 100%;
     padding: 10px 15px;
     height: max-content;
     gap: 1rem;
+    div {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+        padding: 0 8px;
+        height: max-content;
+        align-items: center;
+        justify-content: flex-start;
+        h4 {
+            font-size: 12px;
+            min-width: max-content;
+        }
+        ul {
+            align-items: center;
+            list-style: none;
+            display: flex;
+            gap: 14px;
+            width: 100%;
+            justify-content: space-around;
+            li {
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                height: 18px;
+                padding: 7px 4px;
+                cursor: pointer;
+                border-radius: 7px;
+            }
+        }
+    }
+    input {
+        width: 100%;
+        background-color: var(--background-color_11);
+        padding: 8px 4px;
+        font-size: .75em;
+        font-weight: 600;
+        color: $white;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 7px 29px 0;
+    }
 }
-
 .citizen-fiche__coord__left {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
-
 .citizen-fiche__coord__right {
     display: flex;
     flex-direction: column;
     width: 60%;
 }
-
-.citizen-fiche__coord div {
-    display: flex;
-    gap: 8px;
-    width: 100%;
-    padding: 0 8px;
-    height: max-content;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.citizen-fiche__coord div h4 {
-    font-size: 12px;
-    min-width: max-content;
-}
-
-.citizen-fiche__coord div ul {
-    align-items: center;
-    list-style: none;
-    display: flex;
-    gap: 14px;
-    width: 100%;
-    justify-content: space-around;
-}
-
-.blocked{
+.blocked {
     z-index: 88;
     position: absolute;
     height: 65%;
@@ -351,44 +327,18 @@
     gap: 16px;
     font-weight: 800;
 }
-
-.citizen-fiche__coord div ul li {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    height: 18px;
-    padding: 7px 4px;
-    cursor: pointer;
-    border-radius: 7px;
-}
-
 .allowed {
-    border: 1px solid var(--yellow) !important;
+    border: 1px solid $yellow !important;
 }
-
-.citizen-fiche__coord input {
-    width: 100%;
-    background-color: rgba(33, 28, 28, 0.35);
-    padding: 8px 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: .75em;
-    font-weight: 600;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
-}
-
-
 .citizen-fiche__down {
     border-radius: 12px;
-    background-color: #142132;
+    background-color: var(--bg-lapd);
     height: max-content;
     overflow-x: auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-
 .notOpened {
     display: flex;
     justify-content: center;
@@ -397,7 +347,6 @@
     height: 80%;
     opacity: 0.5;
 }
-
 .citizen-fiche__down_left {
     width: 50%;
     max-width: 50%;
@@ -407,9 +356,12 @@
     gap: 10px;
     align-items: center;
     margin-top: 20px;
-    border-right: 1px solid var(--yellow);
+    border-right: 1px solid $yellow;
+    h3 {
+        font-size: 20px;
+        text-align: center;
+    }
 }
-
 .citizen-fiche__down__right {
     width: 50%;
     max-width: 50%;
@@ -420,17 +372,12 @@
     gap: 10px;
     align-items: center;
 }
-
-.citizen-fiche__down_left h3 {
-    font-size: 20px;
-    text-align: center;
+.citizen-fiche__down_right {
+    h3 {
+        font-size: 20px;
+        text-align: center;
+    }
 }
-
-.citizen-fiche__down_right h3 {
-    font-size: 20px;
-    text-align: center;
-}
-
 .container-civil-card {
     display: flex;
     width: 100%;
@@ -442,7 +389,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .civil-card {
     display: flex;
     z-index: 0;
@@ -450,15 +396,37 @@
     font-weight: 700;
     gap: 14px;
     width: 43%;
-    background-color: #202A38;
+    background-color: var(--bg-card);
     align-items: center;
     border-radius: 8px;
     position: relative;
+    h4 {
+        font-size: 11px;
+    }
+    ul {
+        display: flex;
+        padding: 0 10px;
+        justify-content: space-between;
+        list-style-type: none;
+        align-items: center;
+        margin-top: 5px;
+        li {
+            font-size: 10px;
+            cursor: pointer;
+            transition: 300ms ease-in-out;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+    p {
+        font-size: 10px;
+        opacity: 0.7;
+    }
 }
-
 .add-card {
     padding: 10px 10px;
-    background-color: var(--yellow);
+    background-color: $yellow;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -467,108 +435,74 @@
     transition: 300ms ease-in-out;
     cursor: pointer;
     z-index: 0;
+    &:hover {
+        transform: scale(1.05);
+    }
 }
-
-.add-card:hover {
-    transform: scale(1.05);
-}
-
-.civil-card h4 {
-    font-size: 11px;
-}
-
-.civil-card ul {
-    display: flex;
-    padding: 0 10px;
-    justify-content: space-between;
-    list-style-type: none;
-    align-items: center;
-    margin-top: 5px;
-}
-
-.civil-card ul li {
-    font-size: 10px;
-    cursor: pointer;
-    transition: 300ms ease-in-out;
-}
-
-.civil-card ul li:hover {
-    opacity: 0.5;
-}
-
-.civil-card p {
-    font-size: 10px;
-    opacity: 0.7;
-}
-
 .civil-card__info {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-
 .civil-card__info__left {
     display: flex;
     gap: 10px;
     align-items: center;
 }
-
 .civil-card__info__left__img {
-    background-color: #1E1E1E;
+    background-color: var(--dark-bg-image);
     padding: 8px 10px;
     border-radius: 50%;
 }
-
 .contraventions-container {
     padding: 15px 10px;
     border-radius: 12px;
-    background-color: #142132;
+    background-color: var(--bg-lapd);
     height: max-content;
     display: flex;
     justify-content: center;
     gap: 5px;
     position: relative !important;
 }
-
 .contraventions-content {
     width: 100%;
+    h3 {
+        text-align: center;
+    }
 }
-
-.contraventions-content h3 {
-    text-align: center;
-}
-
 .card-contrat-container {
     height: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    /* padding: 1rem; */
     justify-content: center;
     margin-top: 7px;
 }
-
 .card-contrat {
     display: flex;
     padding: 10px 10px;
     font-weight: 700;
     height: max-content;
     width: max-content;
-    background-color: #202A38;
+    background-color: var(--bg-card);
     align-items: center;
     border-radius: 8px;
     position: relative;
     justify-content: space-between;
     z-index: 0;
+    p {
+        font-size: 12px;
+        opacity: 1;
+        display: flex;
+        gap: 4px;
+    }
+    hr {
+        height: 30px;
+        width: 1px;
+        border: none;
+        background-color: $bg-white;
+    }
 }
-
-.card-contrat p {
-    font-size: 12px;
-    opacity: 1;
-    display: flex;
-    gap: 4px;
-}
-
 .card-contrat__info {
     display: flex;
     flex-direction: row;
@@ -577,23 +511,14 @@
     align-items: center;
     z-index: 0;
 }
-
-.card-contrat hr {
-    height: 30px;
-    width: 1px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
 .card-contrat__info__img {
-    background-color: #1E1E1E;
+    background-color: var(--dark-bg-image);
     padding: 9px 8px;
     border-radius: 50%;
 }
-
 .buttonAddContrat {
     padding: 10px 10px;
-    background-color: var(--yellow);
+    background-color: $yellow;
     justify-content: center;
     right: 10px;
     border-radius: 50%;
@@ -602,25 +527,22 @@
     position: absolute;
     bottom: 5px;
     z-index: 0;
+    &:hover {
+        transform: scale(1.05);
+    }
 }
-
-.buttonAddContrat:hover {
-    transform: scale(1.05);
-}
-
 .textGood {
     font-weight: 600;
-    color: #39C6BD;
+    color: $green;
     display: flex;
     gap: 4px;
 }
 .textBad {
     font-weight: 600;
     display: flex;
-    color: #ED1B22!important;
+    color: $red !important;
     gap: 4px;
 }
-
 .checkbox-custom {
     width: 20px;
     height: 20px;
@@ -629,53 +551,54 @@
     vertical-align: middle;
     position: relative;
     margin-right: 5px;
+    &::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background-color: $bg-black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
 }
-
-.checkbox-custom::after {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background-color: #000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+input[type="checkbox"] {
+    &:checked {
+        + {
+            .checkbox-custom {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
-
-input[type="checkbox"]:checked + .checkbox-custom::after {
-    opacity: 1;
-}
-
-.inputCivilInfo{
+.inputCivilInfo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-}
-
-.inputCivilInfo small{
-    display: flex;
-    width: 100%;
-    margin-top: 10px;
-    justify-content: space-evenly;
-}
-
-.inputCivilInfo input{
-    width: 30%;
-    border: none;
-    border-radius: 7px;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    padding: 2px 4px;
-    font-weight: 600;
-    font-size: 12px;
-    background-color: rgba(33, 28, 28, 0.35);
-    outline: none;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
-}
-
-.inputCivilInfo input:nth-child(1){
-    width: 100%;
-    text-align: center;
+    small {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        justify-content: space-evenly;
+    }
+    input {
+        width: 30%;
+        border: none;
+        border-radius: 7px;
+        color: $white;
+        padding: 2px 4px;
+        font-weight: 600;
+        font-size: 12px;
+        background-color: var(--background-color_11);
+        outline: none;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 7px 29px 0;
+        &:nth-child(1) {
+            width: 100%;
+            text-align: center;
+        }
+    }
 }

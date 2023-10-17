@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+@import "variable";
+
+@import "responsive/responsive";
+
+
+@import "main";
+
+@import "layouts/fiche_citizen";
+@import "layouts/mdt_dispatch";
+@import "layouts/page-search";
+@import "layouts/page-ppa";
+@import "layouts/page-rapport";
+
+@import "layouts/notifbell";
+@import "layouts/modal";
+
+@import "auth/loading";
+@import "auth/login";
+
+* {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+}
+
+body, .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollBar);
+  border-radius: 10px;
+}
+
+body {
+  color: $white;
+}
+
+
+.tablet-content {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 88%;
+  background-color: var(--bg-lapd);
+  box-sizing: border-box;
+  z-index: 1;
+  user-select: none;
+  padding: 5px 30px;
+}
+
+.tablet-container {
+  width: 70%;
+  max-width: 3558px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quit__container {
+  width: 100%;
+  height: 7.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.quit__button {
+  width: 80px;
+  height: 27px;
+  background-color: #ff3838;
+  background-image: url('../../../../public/assets/images/auth/shut_down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  border-radius: 7px;
+  -webkit-box-shadow: inset -2px -2px 8px 0 rgba(0,0,0,0.51);
+  box-shadow: inset -2px -2px 8px 0 rgba(0,0,0,0.51);
+  cursor: pointer;
+  z-index: 9999;
+  transition: all .15s ease-in-out;
+
+  &:hover {
+    background-color: #fc1818;
+    background-size: 25%;
+    -webkit-box-shadow: inset 0 0 8px 0 rgba(0,0,0,0.51);
+    box-shadow: inset 0 0 8px 0 rgba(0,0,0,0.51);
+  }
+
+  &:active {
+    background-size: 22%;
+  }
+}
+
+.tablet-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  position: relative;
+  z-index: 2; /* Image devant le contenu */
+  pointer-events: none; /* Permet aux événements de souris de passer à travers l'image */
+}
+
+.gtacityrp__logo {
+  position: relative;
+  margin-bottom: calc(50px - (50px) * 2);
+  width: 100%;
+  height: 100px;
+  background: url('../../../../public/assets/images/auth/logo.svg') no-repeat center center;
+  background-size: contain;
+  z-index: 2;
+}
+
+
+.search-container .search-icon {
+  width: 20px;
+  height: 19px;
+  margin-right: 10px;
+  background: url('../../../../public/assets/images/lapd_dac/search.svg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}

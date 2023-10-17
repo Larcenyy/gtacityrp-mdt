@@ -17,7 +17,10 @@ const ShowCurrentPage = ({ currentPage }) => {
         <div>
             {currentPage === "accueil" ? <PageHome /> : null}
             {currentPage === "mdt" ? <PageMDT /> : null}
+
             {currentPage === "fiches-citoyens" ? <PageFicheCitizen /> : null}
+            {currentPage === "fiches-patients" ? <PageFicheCitizen /> : null}
+
             {currentPage === "create-citoyens" ? <CreateFicheCitizen /> : null}
             {currentPage === "map" ? <PageMap /> : null}
             {currentPage === "rapports" ? <PageRapport /> : null}

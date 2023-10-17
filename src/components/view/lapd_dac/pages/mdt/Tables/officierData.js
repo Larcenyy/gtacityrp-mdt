@@ -8,13 +8,13 @@ export let officierData = [
     {
         officierID: 2, // ID du citoyen
         name: "Marcus Brown",
-        matricule: "Matricule",
+        matricule: "A-111",
         rank: 10
     },
     {
         officierID: 3, // ID du citoyen
         name: "Fred Gruzz",
-        matricule: "Matricule",
+        matricule: "B-505",
         rank: 1
     },
 ];

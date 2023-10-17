@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import {attachModalListeners} from "../../../../../dist/assets/modalToogle";
+import {attachModalListeners} from "../../../../../dist/js/modalToogle";
 import LapdAlert from "../home/lapd-alert";
 import TableHeader from "./Tables/TableHeader";
 import TableRow from "./Tables/TableRow";

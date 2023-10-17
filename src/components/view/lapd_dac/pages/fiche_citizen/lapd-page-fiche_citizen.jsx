@@ -2,7 +2,7 @@ import React, {Component, useEffect, useState} from "react";
 import BoxFiche from "../../boxFiche/boxFiche";
 import ListeCitoyen from "./ListeCitoyen/liste-citoyen";
 import InfoCitoyen from "./InfoCitoyen/info-citoyen";
-import { attachModalListeners } from "../../../../../dist/assets/modalToogle";
+import { attachModalListeners } from "../../../../../dist/js/modalToogle";
 import { listeCitoyenData } from "./ListeCitoyen/listeCitoyenData";
 import { useLocation } from "react-router-dom";
 

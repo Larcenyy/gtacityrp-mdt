@@ -1,13 +1,4 @@
-import './dist/assets/Main.css';
-import './dist/assets/modal.css';
-import './dist/assets/notifbell.css';
-import './dist/assets/loading.css';
-import './dist/assets/mdt_dispatch.css';
-import './dist/assets/fiche_citizen.css';
-import './dist/assets/page-rapport.css';
-import './dist/assets/page-search.css';
-import './dist/assets/page-ppa.css';
-
+import './dist/assets/scss/app.css';
 import {Routes, Route} from "react-router-dom";
 
 import TabletteHome from "./components/view/auth/home/tablette-home";
@@ -18,18 +9,21 @@ import TabletLayout from "./components/view/lapd_dac/lapd-layout";
 import React from "react";
 import TabletteLoad from "./components/view/auth/loading/tablette-load";
 
-function App() {
-    return (
 
-        <div className="App">
+function App() {
+    const getUrl = window.location.href;
+    const isLafd = getUrl.includes("lafd");
+
+    return (
+        <div className="App" data-theme={isLafd ? "lafd" : "lapd"}>
             <Routes>
                 <Route path="/" element={<TabletteHome />} />
                 <Route path="/reset" element={<TabletteReset />} />
                 <Route path="/resetcode" element={<TabletteCodeReset />} />
                 <Route path="/resetpassword" element={<TablettePasswordReset />} />
                 <Route path="/connect" element={<TabletteLoad />} />
-
-                <Route path="/page/:page" element={<TabletLayout />} />
+                <Route path="/lapd/page/:page" element={<TabletLayout />} />
+                <Route path="/lafd/page/:page" element={<TabletLayout />} />
             </Routes>
         </div>
     );

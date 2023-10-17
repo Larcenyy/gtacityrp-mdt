@@ -1,9 +1,7 @@
-import React, {Component} from "react";
-import "../../../../../dist/assets/Main.css";
-import {Link} from "react-router-dom";  // Import du fichier Main.css depuis le dossier styles
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class TabletteHeader extends Component {
-
     constructor(props) {
         super(props);
 
@@ -16,17 +14,27 @@ class TabletteHeader extends Component {
         this.setState({ activeLink: link });
     };
 
-
     render() {
         const links = [
             "Accueil",
             "MDT",
-            "Fiches citoyens",
+            "Fiches Citoyens",
             "Rapports",
             "Recherches",
             "Map",
             "Port d'arme",
         ];
+
+        if (this.props.type === "lafd") {
+            const indexCitoyen = links.indexOf("Fiches Citoyens");
+            if (indexCitoyen !== -1) {
+                links[indexCitoyen] = "Fiches Patients";
+            }
+            const indexPortArme = links.indexOf("Port d'arme");
+            if (indexPortArme !== -1) {
+                links.splice(indexPortArme, 1);
+            }
+        }
 
         return (
             <>
@@ -40,12 +48,11 @@ class TabletteHeader extends Component {
                                     className={this.state.activeLink === link ? "active" : ""}
                                 >
                                     <Link
-                                        to={`/page/${link.toLowerCase().replace(/\s+/g, "-")}`}
+                                        to={`${this.props.type === "lafd" ? "/lafd/" : "/lapd/"}page/${link.toLowerCase().replace(/\s+/g, "-")}`}
                                         onClick={() => this.handleLinkClick(link)}
                                     >
                                         {link}
                                     </Link>
-
                                 </li>
                             ))}
                         </ul>
@@ -59,6 +66,5 @@ class TabletteHeader extends Component {
         );
     }
 }
-
 
 export default TabletteHeader;

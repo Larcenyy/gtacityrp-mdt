@@ -1,0 +1,300 @@
+#test{
+  background: rgba(77, 77, 77, 0.58);
+  position: absolute;
+  z-index: 999!important;
+  width: max-content;
+  padding: 2px 15px;
+  right: 0;
+  bottom: 0;
+  color: white;
+  font-weight: 7000;
+}
+
+.gtacityrp__login-container {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+
+  position: relative;
+  top: calc(50% - 10px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gtacityrp__login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 300px;
+  padding: calc(50px + 10px) 20px 20px 20px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.gtacityrp__login-form .title {
+  text-align: center;
+  color: #fff;
+}
+
+.gtacityrp__login-form .title h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.gtacityrp__login-form .title h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.form .username__field input, .form .password__field input {
+  display: inline-block;
+  width: calc(100% - 20px);
+  height: 40px;
+  padding: 0 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  border: transparent;
+  border-radius: 10px;
+  background: rgba(33, 28, 28, 0.35);
+  transition: all .2s ease-in-out;
+  outline: rgba(255, 255, 255, 0.192) solid 0;
+
+  &:focus {
+    outline: rgba(255, 255, 255, 0.192) solid 4px;
+    transition: all 150ms ease-in-out;
+  }
+}
+
+
+.form .submit__field input {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #000;
+  border: rgba(0, 0, 0, 0.25) solid 0;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    border: rgba(0, 0, 0, 0.25) solid 4px;
+  }
+}
+
+.forgot-pass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  text-align: center;
+  color: #fff;
+  font-size: 0.75em;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.forgot-pass .icon__forgot-pass {
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  margin-right: 5px;
+  background: url('../../../../public/assets/images/auth/forgot-pass.svg') no-repeat center center;
+  background-size: contain;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.form .password__field {
+  display: block;
+}
+
+.form .password__field .show-password {
+  display: inline-block;
+  position: relative;
+  top: -30px;
+  right: 10px;
+  float: right;
+  width: 20px;
+  height: 20px;
+  background: url("../../../../public/assets/auth/eye.svg") no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.cert-advert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  font-size: 0.5em;
+  font-weight: 500;
+  margin-top: 20px;
+  opacity: 0.5;
+  width: 90%;
+}
+
+.text__cert-advert {
+  text-align: center;
+}
+
+.cert-advert .icon__cert-advert {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background: url('../../../../public/assets/images/auth/cert-advert.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.code__field input::-webkit-outer-spin-button, .code__field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.go-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 0.75em;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.cert-advert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  font-size: 0.65em;
+  font-weight: 500;
+  margin-top: 20px;
+  opacity: 0.5;
+  width: 90%;
+}
+
+.text__cert-advert {
+  text-align: center;
+}
+
+.cert-advert .icon__cert-advert {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  background: url('../../../../public/assets/images/auth/cert-advert.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.go-back .icon__go-back {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background: url('../../../../public/assets/images/auth/go-back.svg') no-repeat center center;
+  background-size: contain;
+}
+
+#btnReset{
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85em;
+  font-weight: 800;
+  color: #000;
+  border: rgba(0, 0, 0, 0.25) solid 0;
+  border-radius: 10px;
+  background: #fff;
+  margin-top: 0;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    border: rgba(0, 0, 0, 0.25) solid 4px;
+  }
+}
+
+.code__field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.code__field input {
+  display: inline-block;
+  width: 35px;
+  height: 60px;
+  appearance: textfield;
+  -webkit-appearance: textfield;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  border: transparent;
+  border-radius: 10px;
+  background: rgba(33, 28, 28, 0.35);
+  transition: all .2s ease-in-out;
+  outline: rgba(255, 255, 255, 0.192) solid 0;
+
+  &:focus {
+    outline: rgba(255, 255, 255, 0.192) solid 4px;
+    transition: all 100ms ease-in-out;
+  }
+
+  &::placeholder {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+}

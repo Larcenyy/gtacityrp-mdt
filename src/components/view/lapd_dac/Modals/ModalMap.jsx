@@ -15,6 +15,7 @@ function ModalManager({ method }) {
                         enableAgentCard={modal.enableAgentCard}
                         enableVehicleCard={modal.enableVehicleCard}
                         enableMap={modal.enableMap}
+                        enableTextArea={modal.enableTextArea}
                         titlePlaceHolder={modal.titlePlaceHolder}
                         textBouton={modal.textBouton}
                         classButton={modal.classButton}

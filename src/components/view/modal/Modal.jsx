@@ -4,7 +4,7 @@ import {officierData} from "../lapd_dac/pages/mdt/Tables/officierData";
 import {vehicleData} from "../lapd_dac/pages/mdt/Tables/vehicleData";
 
 const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, descrip,
-   enableAgentCard, enableButtons, enableMap, enableSearchBar, method, enableVehicleCard }) => {
+   enableAgentCard, enableButtons, enableMap, enableTextArea, enableSearchBar, method, enableVehicleCard }) => {
 
     const [searchValue, setSearchValue] = useState(""); // Variable d'état pour la valeur de recherche
 
@@ -36,6 +36,11 @@ const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, des
                            onChange={(e) => setSearchValue(e.target.value)}
                     />
                     <div className="search-icon"></div>
+                </div>
+            )}
+            {enableTextArea && (
+                <div className="search-container">
+                    <textarea name="areaContent" id="areaContent" cols="30" rows="10"></textarea>
                 </div>
             )}
             {enableAgentCard && (

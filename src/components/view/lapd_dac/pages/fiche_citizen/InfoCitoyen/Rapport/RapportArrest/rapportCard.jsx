@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {openModal} from "../../../../../../../../dist/assets/modalToogle";
+import {openModal} from "../../../../../../../../dist/js/modalToogle";
 import {Link} from "react-router-dom";
 function RapportArrestCard({title, date, onDelete, linkView, linkEdit}) {
     function handleCitizenCardClick(event) {

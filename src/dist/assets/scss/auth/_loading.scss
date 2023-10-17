@@ -1,0 +1,127 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loadingContainer {
+    .tablet-content {
+        padding: 0;
+    }
+}
+.loadingContent {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    .title {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 800;
+        }
+    }
+}
+.loadingContent__top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: auto;
+}
+.logoLapd {
+    background-size: cover;
+    background: url('../../../../public/assets/auth/logo.svg') no-repeat center;
+}
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 15px;
+    padding: 25px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    h2 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin: 0;
+    }
+    p {
+        font-size: 10px;
+        margin: 0;
+    }
+    .infoMessage {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        .icon-advert {
+            width: 25px;
+            height: 25px;
+            opacity: 0.5;
+            background: url('../../../../public/assets/auth/cert-advert.svg') no-repeat center center;
+            background-size: contain;
+        }
+        .text-advert {
+            text-align: center;
+            color: $white;
+            font-size: 0.6em;
+            font-weight: 500;
+            opacity: 0.5;
+        }
+    }
+}
+.infoLogin {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.infoLogin__message {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    background: url('../../../../public/assets/auth/spinner/state=2.png') no-repeat center center;
+    background-size: contain;
+    animation: spin 2s linear infinite;
+}
+
+@media screen and (min-height: 1440px) {
+    .tablet-container {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 1670px) {
+    .loadingContent {
+        height: 70vh;
+    }
+}
+@media screen and (max-width: 1345px) {
+    .loadingContent {
+        height: 55vh;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .loadingContent {
+        height: 45vh;
+    }
+}
