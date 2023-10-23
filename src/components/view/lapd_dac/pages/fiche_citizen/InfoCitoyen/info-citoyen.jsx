@@ -10,7 +10,6 @@ import PermisCitoyen from "./Permis/permis-citoyen";
 
 function InfoCitoyen({ citizenId }) {
     const [citoyenPermis, setCitoyenPermis] = useState({}); // État local pour les permis
-
     const [citizenName, setCitizenName] = useState(''); // État local pour stocker le nom du citoyen
     const [citizenData, setCitizenData] = useState(null);
     const [taille, setTaille] = useState('');
@@ -22,6 +21,9 @@ function InfoCitoyen({ citizenId }) {
     const [nationalite, setNationalite] = useState('');
     const [vehicule, setVehicule] = useState('');
     const [phone, setPhone] = useState('');
+
+    const getUrl = window.location.href;
+    const isLafd = getUrl.includes("lafd");
 
     // Gestionnaire d'événements pour la soumission du formulaire
     const handleSubmit = (e) => {
@@ -168,7 +170,7 @@ function InfoCitoyen({ citizenId }) {
                                 <input
                                     type="text"
                                     required={true}
-                                    placeholder={"Adresse de résidence du citoyen"}
+                                    placeholder={isLafd ? "Adresse du patient" : "Adresse du citoyen"}
                                     value={adresse}
                                     onChange={(e) => setAdresse(e.target.value)}
                                 />
@@ -189,7 +191,7 @@ function InfoCitoyen({ citizenId }) {
                                     <input
                                         type="text"
                                         required={true}
-                                        placeholder={"Taille du citoyen"}
+                                        placeholder={isLafd ? "Taille du patient" : "Taille du citoyen"}
                                         value={taille}
                                         onChange={(e) => setTaille(e.target.value)}
                                     />
@@ -199,7 +201,7 @@ function InfoCitoyen({ citizenId }) {
                                     <input
                                         type="text"
                                         required={true}
-                                        placeholder={"Masse du citoyen"}
+                                        placeholder={isLafd ? "Masse du patient" : "Masse du citoyen"}
                                         value={masse}
                                         onChange={(e) => setMasse(e.target.value)}
                                     />
@@ -216,7 +218,7 @@ function InfoCitoyen({ citizenId }) {
                                 <input
                                     type="text"
                                     required={true}
-                                    placeholder={"Profession du citoyen"}
+                                    placeholder={isLafd ? "Profession du patient" : "Profession du citoyen"}
                                     value={profession}
                                     onChange={(e) => setProfession(e.target.value)}
                                 />
@@ -226,7 +228,7 @@ function InfoCitoyen({ citizenId }) {
                                 <input
                                     type="text"
                                     required={true}
-                                    placeholder={"Lieu de naissance du citoyen"}
+                                    placeholder={"Lieu de naissance"}
                                     value={lieunaissance}
                                     onChange={(e) => setLieuNaissance(e.target.value)}
                                 />
@@ -236,7 +238,7 @@ function InfoCitoyen({ citizenId }) {
                                 <input
                                     type="text"
                                     required={true}
-                                    placeholder={"Nationalité du citoyen"}
+                                    placeholder={"Nationalité"}
                                     value={nationalite}
                                     onChange={(e) => setNationalite(e.target.value)}
                                 />
@@ -246,7 +248,7 @@ function InfoCitoyen({ citizenId }) {
                                 <input
                                     type="text"
                                     required={true}
-                                    placeholder={"Véhicule principal du citoyen"}
+                                    placeholder={"Véhicule principal"}
                                     value={vehicule}
                                     onChange={(e) => setVehicule(e.target.value)}
                                 />
@@ -256,7 +258,7 @@ function InfoCitoyen({ citizenId }) {
                                 <input
                                     type="text"
                                     required={true}
-                                    placeholder={"N° de téléphone du citoyen"}
+                                    placeholder={isLafd ? "N° de telephone du patient" : "N° de telephone du citoyen"}
                                     value={phone}
                                     onChange={(e) => setPhone(e.target.value)}
                                 />

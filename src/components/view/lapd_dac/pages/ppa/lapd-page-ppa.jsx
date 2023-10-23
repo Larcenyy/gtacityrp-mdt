@@ -49,7 +49,7 @@ const PagePPA = () => {
                                 (citizen) => citizen.title === ppaCard.name
                             );
                             const citizenLink = citoyen
-                                ? `/page/lapd/fiches-citoyens?id=${citoyen.citizenId}`
+                                ? `/lapd/page/fiches-citoyens?id=${citoyen.citizenId}`
                                 : "";
                             return (
                                 <div className={"card-ppa"}>

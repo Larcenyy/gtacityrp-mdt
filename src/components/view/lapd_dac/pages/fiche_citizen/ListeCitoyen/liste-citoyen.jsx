@@ -16,6 +16,8 @@ function ListeCitoyen({onCitizenSelect}) {
     const searchParams = new URLSearchParams(location.search);
     const idURL = searchParams.get('id') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
 
+    const getUrl = window.location.href;
+    const isLafd = getUrl.includes("lafd");
 
     const handleCardClick = (index) => {
         if (activeCardIndex === index) {
@@ -95,8 +97,8 @@ function ListeCitoyen({onCitizenSelect}) {
                     ))}
                 </ul>
             </div>
-            <Link to="/page/create-citoyens" className="newFiche submit__field">
-                <span>+ Créer une fiche citoyen</span>
+            <Link to={isLafd ? "/lafd/page/create-citoyens" : "/lapd/page/create-citoyens"} className="newFiche submit__field">
+                <span>+ Créer une fiche {isLafd ? "patient" : "citoyen"}</span>
             </Link>
         </div>
     );

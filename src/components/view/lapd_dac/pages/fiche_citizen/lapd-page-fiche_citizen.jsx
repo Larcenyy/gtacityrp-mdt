@@ -10,6 +10,9 @@ const PageFicheCitizen = () => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const idURL = searchParams.get('id') || ''; // Utilisez le nom du citoyen ou une valeur par défaut
+    const getUrl = window.location.href;
+    const isLafd = getUrl.includes("lafd");
+
 
     const [selectedCitizenId, setSelectedCitizenId] = useState(idURL ? parseInt(idURL) : null);
 
@@ -27,7 +30,7 @@ const PageFicheCitizen = () => {
 
     return (
         <>
-            <BoxFiche title="Fiche Citoyens" classSpec={"app__content app__home"}>
+            <BoxFiche title={isLafd ? "Fiches des patients" : "Fiche des citoyens"} classSpec={"app__content app__home"}>
                 <div className="citizenContainer">
                     <div className="citizen-left">
                         <ListeCitoyen onCitizenSelect={handleCitizenSelect} />
