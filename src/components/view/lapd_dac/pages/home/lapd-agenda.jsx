@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
+import {attachModalListeners} from "../../../../../dist/js/modalToogle";
 
 function LapdAgendaList({ agendaData, setAgendaData }) {
     const [confirmationModalVisible, setConfirmationModalVisible] = useState(null);
+
+    useEffect(() => {
+        attachModalListeners();
+    })
 
     function showConfirmationModal(index) {
         setConfirmationModalVisible(index);

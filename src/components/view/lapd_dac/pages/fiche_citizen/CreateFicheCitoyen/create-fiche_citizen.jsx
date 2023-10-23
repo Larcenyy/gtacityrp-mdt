@@ -34,7 +34,7 @@ function CreateFicheCitizen() {
                             <ListeCitoyen/>
                         </div>
                         <div className={"blocked"}>
-                            <img style={{ width: "50px" }} src="/assets/images/icon/secure.svg"/>
+                            <img style={{ width: "50px" }} src="/assets/images/icon/secure.svg" alt={"secure"}/>
                             <p>Création d'une fiche <br/>{isLafd ? "patient" : "citoyen"} en cours..</p>
                         </div>
                     </div>

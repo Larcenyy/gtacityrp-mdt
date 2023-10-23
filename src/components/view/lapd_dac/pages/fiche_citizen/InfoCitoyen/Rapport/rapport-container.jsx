@@ -6,6 +6,8 @@ import {Link} from "react-router-dom";
 function Rapport({ rapport, type, citizenName, citizenId }) {
 
     const [rapportList, setRapportList] = useState(rapport);
+    const getUrl = window.location.href;
+    const isLafd = getUrl.includes("lafd");
 
     useEffect(() => {
         setRapportList(rapport);
@@ -57,7 +59,7 @@ function Rapport({ rapport, type, citizenName, citizenId }) {
                                 />
                             )
                         ))}
-                        <Link to={type === "Arrest" ? `/page/rapport-arrest?name=${citizenName}` : `/page/rapport-gav?name=${citizenName}`} className={"add-card"}>
+                        <Link to={type === "Arrest" ? `/lapd/page/rapport-arrest?name=${citizenName}` : `/lapd/page/rapport-gav?name=${citizenName}`} className={"add-card"}>
                             <img style={{ width: "15px" }} src="/assets/images/icon/plus.svg" alt={"Ajouter"} />
                         </Link>
                     </div>

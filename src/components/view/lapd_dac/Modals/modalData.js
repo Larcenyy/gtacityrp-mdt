@@ -20,6 +20,18 @@ export const modalData = [
         enableAgentCard: false,
         enableVehicleCard: true,
         enableMap: false,
+        enableTextArea: false,
+    },
+    {
+        id: "edit__agenda__id",
+        title: "Modifier l'ordre du jour",
+        descrip: "",
+        enableButtons: true,
+        enableTextArea: true,
+        enableSearchBar: false,
+        enableAgentCard: false,
+        enableVehicleCard: false,
+        enableMap: false,
     },
     {
         id: "call_verif",

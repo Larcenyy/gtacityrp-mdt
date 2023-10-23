@@ -64,9 +64,6 @@ function InfoCitoyen({ citizenId }) {
 
     // Fonction pour sauvegarder les nouvelles données
     const saveData = (citizenId, newData) => {
-        // Mettez en œuvre la logique pour sauvegarder les nouvelles données
-        // Vous pouvez utiliser une requête API, mettre à jour un état global, ou tout autre mécanisme de stockage de données.
-        // Assurez-vous de gérer correctement la sauvegarde des données selon votre application.
         console.log('Nouvelles données sauvegardées :', newData);
     };
 
