@@ -65,4 +65,16 @@ export const modalData = [
         enableMap: true,
         enableAgentCard: false
     },
+    {
+        id: "modalAddMDT",
+        title: "Ajouter une nouvelle donnée",
+        descrip: "",
+        enableButtons: true,
+        enableTextArea: false,
+        enableSearchBar: false,
+        enableAgentCard: false,
+        enableVehicleCard: false,
+        enableMap: false,
+        isModalMdt: true
+    },
 ];

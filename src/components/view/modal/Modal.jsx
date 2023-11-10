@@ -2,9 +2,12 @@ import React, {useState} from "react";
 import MapComponent from "../lapd_dac/leaflet-map/leaflet-map";
 import {officierData} from "../lapd_dac/pages/mdt/Tables/officierData";
 import {vehicleData} from "../lapd_dac/pages/mdt/Tables/vehicleData";
+import SelectOption from "../lapd_dac/pages/mdt/Tables/SelectOption";
+import {rowsData, unitRanks, unitTypes} from "../lapd_dac/pages/mdt/Tables/tableData";
+import TableRow from "../lapd_dac/pages/mdt/Tables/TableRow";
 
 const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, descrip,
-   enableAgentCard, enableButtons, enableMap, enableTextArea, enableSearchBar, method, enableVehicleCard }) => {
+   enableAgentCard, enableButtons, enableMap, enableTextArea, enableSearchBar, method, enableVehicleCard, isModalMdt }) => {
 
     const [searchValue, setSearchValue] = useState(""); // Variable d'état pour la valeur de recherche
 
@@ -80,6 +83,18 @@ const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, des
                                 </div>
                             </div>
                         ))}
+                </div>
+            )}
+            {isModalMdt && (
+                <div>
+                    <div>
+                        <p>Choisir un rang d'unité</p>
+                        <SelectOption name="unit_rank" id="unit_rank" options={unitRanks}/>
+                    </div>
+                    <div>
+                        <p>Choisir un type d'unité</p>
+                        <SelectOption name="unit_type" id="unit_type" options={unitTypes} />
+                    </div>
                 </div>
             )}
             {enableButtons && (

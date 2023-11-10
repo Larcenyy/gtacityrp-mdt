@@ -78,6 +78,9 @@ const PageMDT = () => {
                             ))}
                         </table>
                     </div>
+                    <div className={"addRowAgent openModal"} data-modal={"modalAddMDT"}>
+                        <img style={{ width: "15px" }} src="/assets/images/icon/plus.svg" alt="Permis Sniper" />
+                    </div>
                 </div>
 
                 {/***************** CALL DISPATCH SECTION *******************/}

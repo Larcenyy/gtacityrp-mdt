@@ -16,13 +16,7 @@ function TableRow({ data }) {
         const selectedOfficers = document.querySelectorAll('.officer__card.selected');
         const newOfficersData = Array.from(selectedOfficers).map((selectedOfficer) => {
             const officerId = selectedOfficer.getAttribute('data-id');
-            // Vous devez récupérer les données pertinentes de l'officier ici en fonction de l'ID.
-            // Par exemple, si vous avez un tableau de données d'officiers, vous pouvez le rechercher.
-            // Ensuite, créez une nouvelle entrée au tableau avec ces données.
-            // Assurez-vous de mettre à jour l'état de votre composant avec la nouvelle entrée.
         });
-
-        // Faites quelque chose avec les données récupérées, par exemple, les ajouter au tableau.
     };
 
     return (
