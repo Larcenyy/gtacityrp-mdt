@@ -48,8 +48,6 @@ function TableRow({ data }) {
                     <SelectOption name="unit_status" id="unit_status" options={unitStatuses} selectedValue={data.status} />
                 </td>
             </tr>
-
-            <ModalManager method={() => handleAddOfficer()} />
         </>
     );
 }

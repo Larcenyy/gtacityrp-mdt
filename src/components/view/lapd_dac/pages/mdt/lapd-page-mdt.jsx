@@ -8,11 +8,33 @@ import TableRow from "./Tables/TableRow";
 import {rowsData} from "./Tables/tableData";
 import ContainerCom from "./Messages/ContainerCom";
 import CardDispatchContainer from "./Dispatch/CardDispatchContainer";
+import ModalManager from "../../Modals/ModalMap";
 
 const PageMDT = () => {
+    const [tableData, setTableData] = useState(rowsData);
+
+    const addRowData = () => {
+        const newRowData = {
+            id: Math.random(), // Vous pouvez utiliser une meilleure logique pour l'ID
+            unitRank: "Un Rang",
+            unitType: "Un Type",
+            officers: [],
+            vehicles: [],
+            location: "Indisponible",
+            availability: "Disponible",
+            status: "10-01",
+        };
+
+        console.log("Adding row data:", newRowData);
+
+        setTableData((prevData) => [...prevData, newRowData]);
+        // Autres actions après l'ajout
+    };
+
+
+
     useEffect(() => {
         attachModalListeners();
-
         // Handle Delete Buttons
         const deleteButtons = document.querySelectorAll(".officer__delete, .vehicle__delete");
 
@@ -73,13 +95,13 @@ const PageMDT = () => {
                     <div className="content-mdt">
                         <table>
                             <TableHeader/>
-                            {rowsData.map((data, index) => (
+                            {tableData.map((data, index) => (
                                 <TableRow data={data} key={index}/>
                             ))}
                         </table>
                     </div>
-                    <div className={"addRowAgent openModal"} data-modal={"modalAddMDT"}>
-                        <img style={{ width: "15px" }} src="/assets/images/icon/plus.svg" alt="Permis Sniper" />
+                    <div className={"addRowAgent"} onClick={addRowData} >
+                        <img style={{ width: "15px" }} src="/assets/images/icon/plus.svg" alt="Ajouter une donée" />
                     </div>
                 </div>
 

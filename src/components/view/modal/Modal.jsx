@@ -10,6 +10,8 @@ const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, des
    enableAgentCard, enableButtons, enableMap, enableTextArea, enableSearchBar, method, enableVehicleCard, isModalMdt }) => {
 
     const [searchValue, setSearchValue] = useState(""); // Variable d'état pour la valeur de recherche
+    const [selectedRank, setSelectedRank] = useState(""); // État pour le rang sélectionné
+    const [selectedType, setSelectedType] = useState(""); // État pour le type sélectionné
 
     // Mise à jour de la valeur de recherche lorsque l'utilisateur tape dans la barre de recherche
     const handleSearchInputChange = (e) => {
@@ -85,21 +87,9 @@ const Modal = ({ children, textBouton, classButton, titlePlaceHolder, title, des
                         ))}
                 </div>
             )}
-            {isModalMdt && (
-                <div>
-                    <div>
-                        <p>Choisir un rang d'unité</p>
-                        <SelectOption name="unit_rank" id="unit_rank" options={unitRanks}/>
-                    </div>
-                    <div>
-                        <p>Choisir un type d'unité</p>
-                        <SelectOption name="unit_type" id="unit_type" options={unitTypes} />
-                    </div>
-                </div>
-            )}
             {enableButtons && (
                 <div className="buttons">
-                    <button onClick={method} className={classButton ? classButton : "button modify"}>{textBouton ? textBouton : "Ajouter"}</button>
+                    <button  onClick={method} className={classButton ? classButton : "button modify"}>{textBouton ? textBouton : "Ajouter"}</button>
                     <button className="button cancel closeModal">Annuler</button>
                 </div>
             )}
